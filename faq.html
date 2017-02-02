@@ -57,8 +57,9 @@
         <div style="background: rgba(128, 128, 128, .5)"><h1 style="color:white">FMC > FAQ</h1></div>
         <div style="background: rgba(128, 128, 128, .5)""><p class="lead" style="color:white"></br>A compilation of practical explanations about</br>ANSI/VITA 57.1-2008 (R2010), FPGA Mezzanine Card (FMC) Standard</br></br></div>
       </br></br></div>
-<h3>1. What form factors are specified?</h3>
-<p>Commercial grade and ruggedized form factor, each has region 1 2 3, 3 is always demanded by ruggedized form factor, ... examples</p>
+<h3>1. What form factors are specified by ANSI/VITA-57.1?</h3>
+<p>coming soon</p>
+<!--Commercial grade and ruggedized form factor, each has region 1 2 3, 3 is always demanded by ruggedized form factor, ... example pictures//-->
 
 <h3>2. What types of connectors can be used?</h3>
 <p>The FMC standard specifies a low-pin count (LPC) connector with 160 pins or high-pin count (HPC) connector with 400 pins.
@@ -157,8 +158,52 @@ there are two major manufacturers for the connectors on baseboard (female) and m
 		<td>10 mm</td>
 	</tr></tbody>
 </table>
-<h3>3. What is a FRU?</h3>
-<p>ipmi records, eeproms, ...</p>
+<h3>3. What EEPROM can be used for FRU information storage?</h3>
+<!--ipmi records, eeproms, ...//-->
+<p>In general, any serial EEPROM with I2C interface can be used. The most significant bits of the 7-bit I2C address should be 0b10100xx, where the two least significant bits are determined by the GA[1:0] pins of the FMC connector.
+Here is a list of commonly used chips we have seen on several FMC modules.
+</p>
+<table class="table">
+
+	<thead><tr>
+		<th>Manufacturer></th>
+		<th>Part number</th>
+		<th>Description</th>
+		<th>Memory size</th>
+	</tr></thead>
+	<tbody><tr>
+		<td>Microchip</td>
+		<td><a target="_new25" href="https://octopart.com/search?q=AT24C02D">AT24C02D</a></td>
+		<td>2k I2C Serial EEPROM</td>
+		<td>256 x 8bit</td>
+	</tr>
+	<tr>
+		<td>Microchip</font></td>
+		<td><a target="_new26" href="https://octopart.com/search?q=24AA64">24AA64</a></td>
+		<td>64k I2C Serial EEPROM</td>
+		<td>8K x 8bit</td>
+	</tr>
+	<tr>
+		<td>Microchip</font></td>
+		<td><a target="_new27" href="https://octopart.com/search?q=24LC64">24LC64</a></td>
+		<td>64k I2C Serial EEPROM</td>
+		<td>8K x 8bit</td>
+	</tr>
+	<tr>
+		<td>STMicroelectronics</td>
+		<td><a target="_new28" href="https://octopart.com/search?q=M24C02">M24C02</a></td>
+		<td>2k I2C Serial EEPROM</td>
+		<td>256 x 8bit</td>
+	</tr></tbody>
+</table>
+
+<h3>4. What is a FRU?</h3>
+<p>coming soon</p>
+
+<h3>5. How can I assemble the connectors?</h3>
+<p>coming soon</p>
+
+<!-- Mechanical components (bezel etc), Reference Dessign, ...//--> 
 
       <footer class="footer">
         <p>&copy; 2017 F M C H U B . O R G, ( i n f o @ f m c h u b . o r g )</p>
@@ -171,3 +216,5 @@ there are two major manufacturers for the connectors on baseboard (female) and m
     <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
+
