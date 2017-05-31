@@ -58,7 +58,128 @@
         <div style="background: rgba(100, 100, 100, .6)""><p class="lead" style="color:white"></br>A compilation of practical explanations about</br>ANSI/VITA 57.1-2008 (R2010), FPGA Mezzanine Card (FMC) Standard</br></br></div>
       </br></br></div>
 <h3>1. What form factors are specified by ANSI/VITA-57.1?</h3>
-<p>coming soon</p>
+<p>Firstly, FMC modules are categorized by their width. Single width (69&nbsp;mm) and double width (139&nbsp;mm) mezzanine modules are specified. Secondly, they are divided in
+	subtypes according to their cooling layout (air cooled or conduction cooled), mounting style (commercial grade or ruggedized) and module regions (optional region 1 for front panel I/O, region 2 for components,
+	and optional region 3 for rear extension). Not all combinations are possible, a list of suitable form factors is given below.
+</p>
+<table class="table">
+	<thead><tr>
+		<th>Width</th>
+		<th>Mounting</th>
+		<th>Cooling</th>
+		<th>Regions</th>
+		<th>Dimensions (L x W)</th>
+		<th>Drawings</th>
+	</tr></thead>
+	<tbody>
+	<tr>
+		<td>Single</td>
+		<td>Commercial grade</td>
+		<td>Air cooled</td>
+		<td>2</td>
+		<td>71.3 mm x 69.0 mm</td>
+		<td>
+			<a target="_newmechsingle2" href="https://github.com/FMCHUB/FMC_SINGLE_LPC_COMMERCIAL/raw/master/Drawings/FMC_SINGLE_LPC_R2_COMMERCIAL_AIR_COOLED.pdf">mechanical layout</a><br>
+			<a target="_newsingle2"     href="https://github.com/FMCHUB/FMC_SINGLE_LPC_COMMERCIAL/raw/master/Drawings/FMC_SINGLE_LPC_R2_COMMERCIAL_AIR_COOLED.jpg">3D PCB image</a>
+		</td>
+	</tr>
+	<tr>
+		<td>Single</td>
+		<td>Commercial grade</td>
+		<td>Air cooled</td>
+		<td>1, 2</td>
+		<td>76.5 mm x 69.0 mm</td>
+		<td>
+			<a target="_newmechsingle12" href="https://github.com/FMCHUB/FMC_SINGLE_LPC_COMMERCIAL/raw/master/Drawings/FMC_SINGLE_LPC_R1R2_COMMERCIAL_AIR_COOLED.pdf">mechanical layout</a><br>
+			<a target="_newsingle12"     href="https://github.com/FMCHUB/FMC_SINGLE_LPC_COMMERCIAL/raw/master/Drawings/FMC_SINGLE_LPC_R1R2_COMMERCIAL_AIR_COOLED.jpg">3D PCB image</a>
+		</td>
+	</tr>
+		<tr>
+		<td>Single</td>
+		<td>Commercial grade</td>
+		<td>Air cooled</td>
+		<td>2, 3</td>
+		<td>78.8 mm x 69.0 mm</td>
+		<td>
+			<a target="_newmechsingle23" href="https://github.com/FMCHUB/FMC_SINGLE_LPC_COMMERCIAL/raw/master/Drawings/FMC_SINGLE_LPC_R2R3_COMMERCIAL_AIR_COOLED.pdf">mechanical layout</a><br>
+			<a target="_newsingle23"     href="https://github.com/FMCHUB/FMC_SINGLE_LPC_COMMERCIAL/raw/master/Drawings/FMC_SINGLE_LPC_R2R3_COMMERCIAL_AIR_COOLED.jpg">3D PCB image</a>
+		</td>
+	</tr>
+	<tr>
+		<td>Single</td>
+		<td>Commercial grade</td>
+		<td>Air cooled</td>
+		<td>1, 2, 3</td>
+		<td>84.0 mm x 69.0 mm</td>
+		<td>
+			<a target="_newmechsingle123" href="https://github.com/FMCHUB/FMC_SINGLE_LPC_COMMERCIAL/raw/master/Drawings/FMC_SINGLE_LPC_R1R2R3_COMMERCIAL_AIR_COOLED.pdf">mechanical layout</a><br>
+			<a target="_newsingle123"     href="https://github.com/FMCHUB/FMC_SINGLE_LPC_COMMERCIAL/raw/master/Drawings/FMC_SINGLE_LPC_R1R2R3_COMMERCIAL_AIR_COOLED.jpg">3D PCB image</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+
+	<tr>
+		<td>Single</td>
+		<td>Ruggedized</td>
+		<td>Conduction cooled</td>
+		<td>2, 3</td>
+		<td>78.8 mm x 69.0 mm</td>
+		<td>
+			<a target="_newrmechsingle23" href="#">coming</a><br>
+			<a target="_newrsingle23"     href="#">soon</a>
+		</td>
+	</tr>
+	<tr>
+		<td>Single</td>
+		<td>Ruggedized</td>
+		<td>Conduction cooled</td>
+		<td>1, 2, 3</td>
+		<td>84.0 mm x 69.0 mm</td>
+		<td>
+			<a target="_newrmechsingle123" href="#">coming</a><br>
+			<a target="_newrsingle123"     href="#">soon</a>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	</tbody>
+
+	<tr>
+		<td>Double</td>
+		<td>...</td>
+		<td>...</td>
+		<td>...</td>
+		<td>... mm x 139.0 mm</td>
+		<td>
+			<a target="_newmechdouble123" href="#">coming</a><br>
+			<a target="_newdouble123"     href="#">soon</a>
+		</td>
+	</tr>
+
+		<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+
+	</table>
 <!--Commercial grade and ruggedized form factor, each has region 1 2 3, 3 is always demanded by ruggedized form factor, ... example pictures//-->
 
 <h3>2. What types of connectors can be used?</h3>
