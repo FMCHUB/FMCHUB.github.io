@@ -183,8 +183,8 @@
 <!--Commercial grade and ruggedized form factor, each has region 1 2 3, 3 is always demanded by ruggedized form factor, ... example pictures//-->
 
 <h3>2. What types of connectors can be used?</h3>
-<p>The FMC standard specifies a low-pin count (LPC) connector with 160 pins or high-pin count (HPC) connector with 400 pins.
-An LPC connector on mezzanine card side also fits into a HPC connector on baseboard side. Electrical signals are also compatible, as the LPC pinout is a reduced variant of the HPC specification. At the moment,
+<p>The FMC standard specifies a <a target="fmcpinout" href="http://FMCHUB.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html">low-pin count (LPC) connector</a> with 160 pins or <a target="fmcpinout" href="http://FMCHUB.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html">high-pin count (HPC) connector</a> with 400 pins.
+An <a target="fmcpinout" href="http://FMCHUB.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html">LPC connector</a> on mezzanine card side also fits into an <a target="fmcpinout" href="http://FMCHUB.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html">HPC connector</a> on baseboard side. Electrical signals are also compatible, as the <a target="fmcpinout" href="http://FMCHUB.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html">LPC pinout</a> is a reduced variant of the <a target="fmcpinout" href="http://FMCHUB.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html">HPC</a> specification. At the moment,
 there are two major manufacturers for the connectors on baseboard (female) and mezzanine card side (male), <a href="http://www.samtec.com" target="_samtec">Samtec</a> and <a href="http://www.molex.com" target="_molex">Molex</a>. The variants are listed in the table below.</p>
 <table class="table">
 	<thead><tr>
@@ -280,7 +280,7 @@ there are two major manufacturers for the connectors on baseboard (female) and m
 	</tr></tbody>
 </table>
 <h3>3. What EEPROM can be used for FRU information storage?</h3>
-<p>In general, any serial EEPROM with I2C interface can be used. The most significant bits of the 7-bit I2C address should be 0b10100xx, where the two least significant bits are determined by the GA[1:0] pins of the FMC connector.
+<p>In general, any serial EEPROM with I2C interface can be used. The most significant bits of the 7-bit I2C address should be 0b10100xx, where the two least significant bits are determined by the <a target="fmcpinout" href="http://FMCHUB.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html">GA[1:0] pins</a> of the <a target="fmcpinout" href="http://FMCHUB.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html">FMC connector</a>.
 Here is a list of commonly used chips we have seen on several FMC modules.
 </p>
 <table class="table">
