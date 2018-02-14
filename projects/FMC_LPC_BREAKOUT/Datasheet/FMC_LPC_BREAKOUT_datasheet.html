@@ -59,7 +59,7 @@ ul {
 <td align="left" width="52%"><a href="http://www.iamelectronic.com" target="_newiam"><img src="./LOGO_IAM_NAVY_WHITE.jpg" width="300px" border="0" alt="IAM Electronic - Instrumentation And Measurement Electronics"/></a></td>
 <td align="right" width="48%"><font class="topright">FMC LPC Breakout&nbsp;</font></br>
 
-</br></br><font class="revision">DS#T0003 REV 2018/02/13&nbsp;</br>
+</br></br><font class="revision">DS#T0003 REV 2018/02/14&nbsp;</br>
 PDF version (coming soon),
 <a href="http://fmchub.github.io/projects/FMC_LPC_BREAKOUT/Datasheet/FMC_LPC_BREAKOUT_datasheet.html">HTML version</a>
 </font></td>
@@ -98,12 +98,12 @@ PDF version (coming soon),
 
    <font class="subheadline">
    Block diagram</br></font></br>
-   <img src="./FMC_LPC_BREAKOUT_BLOCK_DIAGRAM.jpg" width="100%" alt="FMC LPC Breakout Block Diagram"/></br>
+   <img src="./FMC_LPC_BREAKOUT_BLOCK_DIAGRAM.jpg" width="100%" alt="FMC LPC Breakout board Block Diagram"/></br>
    <p align="justify">The photos below show the bottom side with LPC mezzanine card connector (MC-LPC-10) and top side with
       LPC carrier card connector (CC-LPC-10).</p>
 &nbsp;
-<img src="./FMC_LPC_BREAKOUT_MC_BOTTOM.jpg" alt="FMC LPC Breakout MC-LPC-10 TOP" width="48%"/>
-<img src="./FMC_LPC_BREAKOUT_CC_TOP.jpg" alt="FMC LPC Breakout CC-LPC-10 BOTTOM" width="48%"/></br>
+<img src="./FMC_LPC_BREAKOUT_MC_BOTTOM.jpg" alt="FMC LPC Breakout board with MC-LPC-10 on top" width="48%"/>
+<img src="./FMC_LPC_BREAKOUT_CC_TOP.jpg" alt="FMC LPC Breakout board with CC-LPC-10 on bottom" width="48%"/></br>
 <center>Bottom side&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Top side</center>
 </td>
 
@@ -129,7 +129,7 @@ PDF version (coming soon),
 <td colspan="2" align="left">
 <font class="subheadline">1. Description</font></br>
 <p align="justify">
-The <b>FMC LPC Breakout</b> module is a passive adapter for accessing all signals of <i>ANSI/VITA 57.1 FPGA&nbsp;Mezzanine&nbsp;Card&nbsp;(FMC) Standard</i>
+The <b>FMC LPC Breakout board</b> is a passive adapter for accessing all signals of <i>ANSI/VITA 57.1 FPGA&nbsp;Mezzanine&nbsp;Card&nbsp;(FMC) Standard</i>
 compliant low-pin count (LPC) connectors. All pins of the connector's rows C, D, G, and H are routed to a separate pad array on the top and bottom side.
 These pads were placed at a 1.27&nbsp;mm pitch to easily attach additional probes or solder wires.
 For special measuring tasks or for use as a stand-alone carrier, the power pins of the connector were routed to additional vias in the back of the module.
@@ -147,10 +147,10 @@ The FPGA mezzanine card has commercial grade form factor (single width, 78.80&nb
 <td colspan="2" align="left"><font class="subheadline">2. Application information</font></br>
 
 <p align="justify">
-The <b>FMC LPC Breakout</b> is predestined for three typical applications:</br>
+The FMC LPC Breakout module is predestined for three typical applications:</br>
 <p align="justify"><b>1. Passive FMC module</b></br>
 The board can be used as a passive FMC module or breadboard. Functionality must be realised by external circuitry on the prototyping area.</br>
-<img src="./FMC_LPC_BREAKOUT_WITH_CARRIER.JPG" alt="FMC LPC Breakout with separate power pin vias" width="65%"></br>
+<img src="./FMC_LPC_BREAKOUT_WITH_CARRIER.JPG" alt="FMC LPC Breakout board with separate power pin vias" width="65%"></br>
 <i>Fig. 1: FMC LPC Breakout module plugged on carrier board (Digilent Nexys Video™ Board, 410-316).</i></br></p>
 
 <p align="justify"><b>2. Simple FMC carrier</b></br>
@@ -160,14 +160,14 @@ a simple I2C programmer and reader for a FRU (field replaceable unit) record can
 
 <p align="justify"><b>3. Test point insertion (stacked assembly)</b></br>
 The most reasonable application of the module is probably its use as an external test point array for devices under test. The connectors on the top
-and bottom allow the stacking of at least two external FMC boards. Thus the FMC LPC Breakout in the middle of the stack between a carrier and mezzanine card provides test points for all signals passing through the connectors. With such a configuration, a real world FMC setup can be evaluated and debugged.
+and bottom allow the stacking of at least two external FMC boards. Thus the FMC LPC Breakout module in the middle of the stack between a carrier and mezzanine card provides test points for all signals passing through the connectors. With such a configuration, a real world FMC setup can be evaluated and debugged.
 </p>
 
 <p align="justify"><b>General information</b></br>
 Depending on the application, it is recommended to solder additional pin headers to the power pin array and to the breakout pad array. Standard
 pin headers are suitable and fit the PCB layout.</br>
-<img src="./FMC_LPC_BREAKOUT_POWER_PINS.JPG" alt="FMC LPC Breakout with separate power pin vias and pin headers" width="65%"></br>
-<i>Fig. 2: FMC LPC Breakout with separate power vias and equipped pin headers (20&nbsp;pos., 2.54&nbsp;mm pitch).</i></br>
+<img src="./FMC_LPC_BREAKOUT_POWER_PINS.JPG" alt="FMC LPC Breakout module with separate power pin vias and pin headers" width="65%"></br>
+<i>Fig. 2: FMC LPC Breakout module with separate power vias and equipped pin headers (20&nbsp;pos., 2.54&nbsp;mm pitch).</i></br>
 </p>
 </p>
 </td>
@@ -210,8 +210,8 @@ A description of the signals from the LPC connector can be found at <a href="htt
 
 <p align="justify">
 The ANSI/VITA 57.1 FMC standard describes different power supply pins on the LPC connector. The most important are routed to a separate via row next to the FMC connector in the back of the module (see fig. 3).</br>
-<img src="./FMC_LPC_BREAKOUT_POWER.JPG" alt="FMC LPC Breakout with separate power pin vias" width="80%"></br>
-<i>Fig. 3: FMC LPC Breakout with separate power vias (2.54&nbsp;mm pitch).</i></br>
+<img src="./FMC_LPC_BREAKOUT_POWER.JPG" alt="FMC LPC Breakout board with separate power pin vias" width="80%"></br>
+<i>Fig. 3: FMC LPC Breakout board with separate power vias (2.54&nbsp;mm pitch).</i></br>
 </br>
 A list of the power supply pins provided by the via row is shown in tab. 2.</br></br>
 <i>Tab. 2: Power pin vias and their signal names, locations, and trace widths on the PCB.</i></br>
@@ -349,8 +349,8 @@ A list of the power supply pins provided by the via row is shown in tab. 2.</br>
 
 <p align="justify">
 The signals from the LPC connector are routed to an array of pads (fig. 4).</br>
-<img src="./FMC_LPC_BREAKOUT_PADS.JPG" alt="FMC LPC Breakout with array of pads" width="80%"></br>
-<i>Fig. 4: FMC LPC Breakout with an array of pads (1.27&nbsp;mm pitch) for general purpose access to ANSI/VITA 57.1 signals.</i></br>
+<img src="./FMC_LPC_BREAKOUT_PADS.JPG" alt="FMC LPC Breakout board with array of pads" width="80%"></br>
+<i>Fig. 4: FMC LPC Breakout board with an array of pads (1.27&nbsp;mm pitch) for general purpose access to ANSI/VITA 57.1 signals.</i></br>
 </br>
 <i>Tab. 3: Signals of the ANSI/VITA 57.1 FMC LPC connector and pad array.</i></br>
 <table cellspacing="0" border="0">
@@ -698,21 +698,21 @@ The FMC LPC Breakout module can be ordered on different online market places or 
 
 <tr>
    <td valign="top">T0003</td>
-   <td valign="top">FMC LPC Breakout with both</br>MC-LPC-10 and CC-LPC-10 connectors on bottom and top side.</td>
+   <td valign="top">FMC LPC Breakout module with both</br>MC-LPC-10 and CC-LPC-10 connectors on bottom and top side.</td>
    <td valign="top">coming soon #1</br>coming soon #2</td>
    <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout%20T0003">info@iamelectronic.com</a></td>
 </tr>
 
 <tr>
    <td valign="top">T0003MC</td>
-   <td valign="top">FMC LPC Breakout only with</br>MC-LPC-10&nbsp;connector on bottom side.</td>
+   <td valign="top">FMC LPC Breakout module only with</br>MC-LPC-10&nbsp;connector on bottom side.</td>
    <td valign="top">not available (request quote)</td>
    <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout%20T0003MC">info@iamelectronic.com</a></td>
 </tr>
 
 <tr>
    <td valign="top">T0003CC</td>
-   <td valign="top">FMC LPC Breakout only with</br>CC-LPC-10&nbsp;connector on top side.</td>
+   <td valign="top">FMC LPC Breakout module only with</br>CC-LPC-10&nbsp;connector on top side.</td>
    <td valign="top">not available (request quote)</td>
    <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout%20T0003CC">info@iamelectronic.com</a></td>
 </tr>
@@ -732,6 +732,7 @@ Document number:</br>
 DS#T0003</br>
 </br>
 Version history: </br>
+2018/02/14: Minor changes (wording, formatting, etc.)</br>
 2018/02/13: Initial release
 
 </td>
