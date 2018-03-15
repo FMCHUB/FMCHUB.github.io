@@ -687,7 +687,7 @@ The LPC connector has 4 rows (C, D, G, H) with 40 pins each. The following table
 	</tr>
 </table></br></br>
 <a href="./VITA57_FMC_CONNECTORS_LPC.jpg" alt="VITA57 FMC connectors (LPC)" target="new_vita57_fmc_connectors_lpc"><img src="./VITA57_FMC_CONNECTORS_LPC.jpg" width="600px" alt="VITA57 FMC connectors (LPC)"></a>&nbsp;&nbsp;&nbsp;
-<a href="https://www.ebay.com/itm/183074495134" target="_new_fmc_breakout"><img src="./FMC_LPC_BREAKOUT_BOARD.jpg" width="410px" alt="Open-source Hardware: FMC LPC Breakout board" border="0"></a>
+<a href="https://fmchub.github.io/projects/FMC_LPC_BREAKOUT/Datasheet/FMC_LPC_BREAKOUT_datasheet.html" target="_new_fmc_breakout_datasheet"><img src="./FMC_LPC_BREAKOUT_BOARD.jpg" width="410px" alt="Open-source Hardware: FMC LPC Breakout board" border="0"></a>
 </br></br>
 Footprints can be viewed in <a target="_newlibaltium" href="https://github.com/FMCHUB/Lib_Altium/wiki">Lib_Altium</a> repository.</br>
 </br></br>
@@ -1268,7 +1268,7 @@ Footprints can be viewed in <a target="_newlibaltium" href="https://github.com/F
 	</tr>
 	<tr>
 		<td height="40" align="left" valign=bottom bgcolor="#FFFF66"><font size=3>CLK[0..3]_M2C_P,<br>CLK[0..3]_M2C_N</font></td>
-		<td align="left" valign=bottom><font size=3>4 user clock, differential pairs (CLK[3..4]_M2C only for HPC), bidrectional</font></td>
+		<td align="left" valign=bottom><font size=3>4 user clock, differential pairs (CLK[2..3]_M2C only for HPC), bidrectional</font></td>
 	</tr>
 	<tr>
 		<td height="5" align="left" valign=bottom><font size=3><br></font></td>
@@ -1324,7 +1324,7 @@ Footprints can be viewed in <a target="_newlibaltium" href="https://github.com/F
 	</tr>
 	<tr>
 		<td height="20" align="left" valign=bottom bgcolor="#6666FF"><font size=3>VIO_B_M2C</font></td>
-		<td align="left" valign=bottom><font size=3>This voltage s sourced by the mezzanine module which supports the HB bus. It is used to power the IO Bank of the FPGA.</font></td>
+		<td align="left" valign=bottom><font size=3>This voltage is sourced by the mezzanine module which supports the HB bus. It is used to power the IO Bank of the FPGA.</font></td>
 	</tr>
 	<tr>
 		<td height="5" align="left" valign=bottom><font size=3><br></font></td>
@@ -1453,6 +1453,26 @@ Footprints can be viewed in <a target="_newlibaltium" href="https://github.com/F
 	<tr>
 		<td height="20" align="left" valign=bottom bgcolor="#00CCFF"><font size=3>GND</font></td>
 		<td align="left" valign=bottom><font size=3>Signal ground</font></td>
+	</tr>
+	<tr>
+		<td height="5" align="left" valign=bottom><font size=3><br></font></td>
+		<td align="left" valign=bottom><font size=3><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font size=3><i>_M2C_</i></font></td>
+		<td align="left" valign=bottom><font size=3><i>Mezzanine-to-Carrier</i></font></td>
+	</tr>
+	<tr>
+		<td height="5" align="left" valign=bottom><font size=3><br></font></td>
+		<td align="left" valign=bottom><font size=3><br></font></td>
+	</tr>
+	<tr>
+		<td height="20" align="left" valign=bottom><font size=3><i>_C2M_</i></font></td>
+		<td align="left" valign=bottom><font size=3><i>Carrier-to-Mezzanine</i></font></td>
+	</tr>
+	<tr>
+		<td height="5" align="left" valign=bottom><font size=3><br></font></td>
+		<td align="left" valign=bottom><font size=3><br></font></td>
 	</tr>
 </table>
 <!-- ************************************************************************** -->
