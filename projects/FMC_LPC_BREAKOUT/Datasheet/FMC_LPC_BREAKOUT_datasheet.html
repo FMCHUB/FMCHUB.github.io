@@ -77,7 +77,7 @@ ul {
       <td align="right" width="48%"><font class="topright">
 
 FMC LPC Breakout&nbsp;</font></br>
-</br></br><font class="revision">DS#T0003 REV 2018/08/23&nbsp;</br>
+</br></br><font class="revision">DS#T0003 REV 2018/10/30&nbsp;</br>
 PDF version (coming soon),
 <a href="http://fmchub.github.io/projects/FMC_LPC_BREAKOUT/Datasheet/FMC_LPC_BREAKOUT_datasheet.html">HTML version</a>
 </font>
@@ -183,6 +183,42 @@ The most reasonable application of the module is probably its use as an external
 and bottom allow the stacking of at least two external FMC boards. Thus the FMC LPC Breakout module in the middle of the stack between a carrier and mezzanine card provides test points for all signals passing through the connectors. With such a configuration, a real world FMC setup can be evaluated and debugged.
 </p>
 
+<p align="justify"><b>4. Loopback testing</b></br>
+For the implementation of high-speed data links with FPGAs, loopback testing is a useful method for evaluating performance of the carrier platform and verifying the FPGA design.
+The FMC LPC Breakout Module can be hooked up as loopback device by shorting the appropriate pins on the board. We have checked different soldered wire connections at two line rates (1350 MHz and 3375 MHz) with Xilinx IBERT core on Xilinx Artix-7 FPGA (XC7A200T-1SBG484C).
+All the loose cable connections from Tab. 1 were capable of transmitting pseudorandom binary sequence pattens (7-bit PRBS pattern) at the tested data rates without any errors.
+</br></p></br>
+<i>Tab. 1: FMC LPC Breakout Module with different soldered wire connections for shorting the loopback. The eye scans were recorded with Xilinx IBERT core for GTP transceivers on a Artix-7 FPGA (XC7A200T-1SBG484C).</i></br>
+<table border="0" cellspacing="0" width="99%">
+<tr>
+	<td width="33%" style="border-bottom: 1px solid #000000" align="left"><b>Soldered wire connection</b></td>
+	<td width="33%" style="border-bottom: 1px solid #000000" align="left"><b>Eye scan at 1.350 GHz</b></td>
+	<td width="33%" style="border-bottom: 1px solid #000000" align="left"><b>Eye scan at 3.375 GHz</b></td>
+
+</tr>
+
+<tr>
+	<td></br><a href="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/fmc_loopback_short_wires.jpg"     target="_newloopback1"><img src="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/fmc_loopback_short_wires_thumb.jpg" alt="FMC LPC Breakout module, short circuit with short wires." width="100%"></a></td>
+	<td></br><a href="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/1350MHz_fmc_loopback_short_wires.jpg" target="_neweyescan1"><img src="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/1350MHz_fmc_loopback_short_wires.jpg" alt="FMC LPC Breakout module, Loopback test with short wires at 1350 MHz." width="100%"></a></td>
+	<td></br><a href="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/3375MHz_fmc_loopback_short_wires.jpg" target="_neweyescan2"><img src="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/3375MHz_fmc_loopback_short_wires.jpg" alt="FMC LPC Breakout module, Loopback test with short wires at 3375 MHz." width="100%"></a></td>	
+</tr>
+
+<tr>
+	<td></br><a href="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/fmc_loopback_long_wires.jpg"     target="_newloopback2"><img src="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/fmc_loopback_long_wires_thumb.jpg" alt="FMC LPC Breakout module, short circuit with long wires." width="100%"></a></td>
+	<td></br><a href="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/1350MHz_fmc_loopback_long_wires.jpg" target="_neweyescan3"><img src="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/1350MHz_fmc_loopback_long_wires.jpg" alt="FMC LPC Breakout module, Loopback test with long wires at 1350 MHz." width="100%"></a></td>
+	<td></br><a href="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/3375MHz_fmc_loopback_long_wires.jpg" target="_neweyescan4"><img src="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/3375MHz_fmc_loopback_long_wires.jpg" alt="FMC LPC Breakout module, Loopback test with long wires at 3375 MHz." width="100%"></a></td>	
+</tr>
+
+<tr>
+	<td></br><a href="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/fmc_loopback_thick_wires.jpg"     target="_newloopback3"><img src="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/fmc_loopback_thick_wires_thumb.jpg" alt="FMC LPC Breakout module, short circuit with thick wires." width="100%"></a></td>
+	<td></br><a href="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/1350MHz_fmc_loopback_thick_wires.jpg" target="_neweyescan5"><img src="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/1350MHz_fmc_loopback_thick_wires.jpg" alt="FMC LPC Breakout module, Loopback test with thick wires at 1350 MHz." width="100%"></a></td>
+	<td></br><a href="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/3375MHz_fmc_loopback_thick_wires.jpg" target="_neweyescan6"><img src="./FMC_BREAKOUT_MODULE_IBERT_EYE_SCAN/3375MHz_fmc_loopback_thick_wires.jpg" alt="FMC LPC Breakout module, Loopback test with thick wires at 3375 MHz." width="100%"></a></td>	
+</tr>
+
+</table>
+
+</p>
+
 <p align="justify"><b>General information</b></br>
 Depending on the application, it is recommended to solder additional pin headers to the power pin array and to the breakout pad array. Standard
 pin headers are suitable and fit the PCB layout.</br>
@@ -204,7 +240,7 @@ pin headers are suitable and fit the PCB layout.</br>
 <p align="justify">The printed circuit board is open-source hardware! You can download the <a href="https://github.com/FMCHUB/FMC_SINGLE_LPC_BREAKOUT/raw/master/Drawings/FMC_SINGLE_LPC_BREAKOUT_SCHEMATIC.pdf" target="_newfmclpcboard_schematic">FMC LPC breakout board schematics</a> and <a href="https://github.com/FMCHUB/FMC_SINGLE_LPC_BREAKOUT" target="_newgithubfmclpc">PCB layout files</a> in their latest
 revision from <a href="http://www.fmchub.com" target="_newfmchub">http://www.fmchub.com</a>. The parts list (see tab. 1) is very simple, because it consists of only two parts.</br></br>
 
-<i>Tab. 1: Parts list of the FMC LPC Breakout board.</i></br>
+<i>Tab. 2: Parts list of the FMC LPC Breakout board.</i></br>
 <table border="0" cellspacing="0" width="80%">
 	<tr>
 		<td width="20%" style="border-bottom: 1px solid #000000" align="left"><b>FMC connector</b></td>
@@ -234,7 +270,7 @@ The ANSI/VITA 57.1 FMC standard describes different power supply pins on the LPC
 <i>Fig. 3: FMC LPC Breakout board with separate power vias (2.54&nbsp;mm pitch).</i></br>
 </br>
 A list of the power supply pins provided by the via row is shown in tab. 2.</br></br>
-<i>Tab. 2: Power pin vias and their signal names, locations, and trace widths on the PCB.</i></br>
+<i>Tab. 3: Power pin vias and their signal names, locations, and trace widths on the PCB.</i></br>
 <table cellspacing="0" border="0">
 	<colgroup width="177"></colgroup>
 	<colgroup span="3" width="135"></colgroup>
@@ -372,7 +408,7 @@ The signals from the LPC connector are routed to an array of pads (fig. 4).</br>
 <img src="./FMC_LPC_BREAKOUT_PADS.JPG" alt="FMC LPC Breakout board with array of pads" width="80%"></br>
 <i>Fig. 4: FMC LPC Breakout board with an array of pads (1.27&nbsp;mm pitch) for general purpose access to ANSI/VITA 57.1 signals.</i></br>
 </br>
-<i>Tab. 3: Signals of the ANSI/VITA 57.1 FMC LPC connector and pad array.</i></br>
+<i>Tab. 4: Signals of the ANSI/VITA 57.1 FMC LPC connector and pad array.</i></br>
 <table cellspacing="0" border="0">
 	<colgroup width="42"></colgroup>
 	<colgroup width="137"></colgroup>
@@ -683,7 +719,7 @@ The signals from the LPC connector are routed to an array of pads (fig. 4).</br>
 <td colspan="2" align="left"><font class="subheadline">4. Mechanical data</font></br>
 <p align="justify">
 The board outline is defined by ANSI/VITA 57.1 standard for single width FMC modules. The board includes region 2 and region 3 of that standard. Region 1 for additional I/O connectivity with a front panel has been omitted, such that absolute board dimensions are 78.80&nbsp;mm&nbsp;x&nbsp;69&nbsp;mm. Cut outs on board shape have a radius of 1 mm.
-Exact dimensions are given in figure 5.</br></br>
+Exact dimensions are given in figure 5.</br></br></p>
 <img src="./FMC_LPC_BREAKOUT_DIMENSIONS.jpg" width="75%"></br>
 <i>Fig. 5: Mechanical drawing of the FMC LPC breakout board.</i></br>
 </br>
@@ -707,7 +743,7 @@ The mounting holes are plated but have no electrical connection. Their sizes and
 
 The FMC LPC Breakout module can be ordered at various online market places, or you can request a quotation by sending an e-mail to <a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout">info@iamelectronic.com</a>.</br>
 </br>
-<i>Tab. 4: Assembly variants of FMC LPC Breakout board with product numbers and market places.</i></br>
+<i>Tab. 5: Assembly variants of FMC LPC Breakout board with product numbers and market places.</i></br>
 <table width="98%" cellspacing="0" border="0">
 <tr>
    <td width="15%" style="border-bottom: 1px solid #000000" align="left">Product no.</td>
@@ -725,7 +761,7 @@ The FMC LPC Breakout module can be ordered at various online market places, or y
 					<a href="https://designsparkmarketplace.com/en/listings/429-fpga-mezzanine-card-fmc-breakout-board" target="_newdesignsparkfmc">Designspark</br>#429
 					</td>
    <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout%20T0003">info@iamelectronic.com</a></td>
-   <td valign="top">Normally in stock, otherwise 6 weeks</td>
+   <td valign="top">Normally in stock, otherwise 3 weeks</td>
 </tr>
 
 <tr>
@@ -733,7 +769,7 @@ The FMC LPC Breakout module can be ordered at various online market places, or y
    <td valign="top">FMC LPC Breakout module only with</br>MC-LPC-10&nbsp;connector on bottom side.</td>
    <td valign="top">not available (request quote)</td>
    <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout%20T0003MC">info@iamelectronic.com</a></td>
-   <td valign="top">6 weeks</td>
+   <td valign="top">Normally in stock, otherwise 3 weeks</td>
 </tr>
 
 <tr>
@@ -741,7 +777,7 @@ The FMC LPC Breakout module can be ordered at various online market places, or y
    <td valign="top">FMC LPC Breakout module only with</br>CC-LPC-10&nbsp;connector on top side.</td>
    <td valign="top">not available (request quote)</td>
    <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout%20T0003CC">info@iamelectronic.com</a></td>
-   <td valign="top">6 weeks</td>
+   <td valign="top">Normally in stock, otherwise 3 weeks</td>
 </tr>
 </table>
 
@@ -759,6 +795,7 @@ Document number:</br>
 DS#T0003</br>
 </br>
 Version history: </br>
+2018/10/30: Added loopback testing results to 2. Application information</br>
 2018/08/23: Added Designspark Marketplace to 6. Ordering information</br>
 2018/03/15: Added Standard lead times to 5. Ordering information</br>
 2018/02/22: Added links for schematics and pcb files, update ordering information</br>
