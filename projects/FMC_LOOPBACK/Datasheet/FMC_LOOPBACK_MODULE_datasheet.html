@@ -1,0 +1,514 @@
+
+<html>
+<head>
+<title>FPGA Mezzanine Card (FMC) Loopback Module</title>
+<style>
+font { 
+   font-family: Times New Roman, Serif;
+   color: navy;
+}
+
+font.topright { 
+   font-size: 2em;
+   font-weight: bold;
+}
+
+font.revision { 
+   font-size: 1em;
+}
+
+font.headline { 
+   font-size: 2.5em;
+   color: black;
+   font-weight: bold;
+}
+
+font.subheadline { 
+   font-size: 1.5em;
+   color: black;
+   font-weight: bold;
+}
+font.imprint { 
+   font-size: 0.75em;
+   color: black;
+   font-weight: none;
+}
+
+hr.style-one {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.0));
+}
+
+hr.style-two {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 128, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 128, 0));
+}
+
+ul {
+   font-size: 1.33em;
+   font-face: bold;
+   color: black;
+}
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83790429-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<table width="750px" border="0" bgcolor="#FFFFFF">
+   <tr>
+      <td align="left" width="52%"><a href="http://www.iamelectronic.com" target="_newiam"><img src="./LOGO_IAM_NAVY_WHITE.jpg" width="300px" border="0" alt="IAM Electronic - Instrumentation And Measurement Electronics"/></a></td>
+      <td align="right" width="48%"><font class="topright">
+
+FMC Loopback Module&nbsp;</font></br>
+</br></br><font class="revision">DS#T0007 REV 2019/04/09&nbsp;</br>
+PDF version (coming soon),
+<a href="http://fmchub.github.io/projects/FMC_LOOPBACK_MODULE/Datasheet/FMC_LOOPBACK_MODULE_datasheet.html">HTML version</a>
+</font>
+
+      </td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="center"><font class="headline">FPGA Mezzanine Card (FMC)</br>Loopback Module</font></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+<tr>
+<td align="left" valign="top"><font class="subheadline">
+   Features</font></br>
+   <ul>
+		<li>Passive plug-in module, no configuration required</li>
+		<li>Works at up to 10 Gbit/s with multi-gigabit transceivers</li>
+    <li>11x LEDs for visual feedback of the applied supply voltages</li>
+    <li>High-Pin Count (HPC) connector according to ANSI/VITA 57.1 FMC</li>
+    <li>Mates with HPC or LPC carrier boards</li>
+		<li>All FMC data and clock pins are completely controlled by the FPGA</li>
+		<li>Optional pin header (2.54&nbsp;mm pitch) for voltage monitoring</li>
+		<li>Practical design for the best price-performance ratio</li>
+		<li>2-layer printed circuit board (PCB)</li>
+		<li>Reference designs are available</li>
+    <li>Open source hardware</li>
+   </ul>
+</td>
+
+<td rowspan="2" align="left" valign="top">
+
+   <font class="subheadline">
+   Block diagram</br></font></br>
+   <img src="./FMC_LOOPBACK_MODULE_BLOCK_DIAGRAM.jpg" width="100%" alt="FMC Loopback Module Block Diagram"/></br>
+   <p align="justify">The photos below show the top side with LEDs to indicate applied voltages and bottom side with HPC mezzanine card connector (MC-HPC-10).</p>
+&nbsp;
+<img src="./FMC_LOOPBACK_MODULE_TOP.JPG" alt="FMC Loopback Module with High-Pin Count (HPC) connector on bottom" width="48%"/>
+<img src="./FMC_LOOPBACK_MODULE_BOTTOM.JPG" alt="FMC Loopback Module with LEDs on top" width="48%"/></br>
+<center>Top side&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bottom side</center>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+
+<font class="subheadline">Applications</font></br>
+   <ul>
+      <li>Easy prototyping and analysis of high-speed data links</li>
+      <li>Testing and debugging FMC carrier boards</li>
+      <li>Fast verification of signal integrity on FMC carrier boards</li>
+      <li>Research and education with FPGAs</li>
+   </ul>
+</br>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left">
+<font class="subheadline">1. Description</font></br>
+<p align="justify">
+The <b>FMC Loopback Module</b> is a passive plug-in adapter for ANSI/VITA 57.1 FPGA Mezzanine Card (FMC) connectors.
+The loopback board is designed to mate a High-Pin Count (HPC) connector, but also fits without restrictions to Low-Pin Count (LPC) connectors.
+According to the FMC standard, all signals of an FPGA IO bank (LA, HA and HB bank) are connected by the mezzanine board as loopback.
+This means that each pin of an IO bank has a fixed endpoint through the FMC loopback card. These signal pairs must be defined as In/Out pairs
+in the FPGA on the carrier side. Apart from that necessary IO constraints, the FMC Loopback Board does not require any further configuration
+for its full functionality.</br>
+An FMC loopback test of an FMC carrier board is essential to identify production faults (e.g. defective solder joints of the FPGA package
+or FMC connector). In addition to production tests, a loopback test reveals information about the signal integrity on the carrier board
+(e.g. by eye scans). Finally, the FMC loopback module can be used to implement high-speed data links at an early prototyping stage,
+where the transmitter and receiver logic is controlled by a single FPGA. Such a performance test can be used to determine latency,
+throughput or data loss of high-speed serial data links (e.g. JESD204B).
+
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">2. Application information</font></br>
+
+<p align="justify">
+  The FMC loopback module is suitable for checking the user-defined data signals (LA, HA or HB bank signals),
+  the user clock signals (CLKx_M2C_P/N, CLKx_C2M_P/N) or the multi-gigabit transceiver signals (DPx_C2M_P/N, DPx_M2C_P/N)
+  with the corresponding clock signals (GBTCLKx_M2C_P/N). Depending on which FMC connector is used on the carrier,
+  the pins available for a loopback test must be selected accordingly. In almost all cases the carrier has a fully occupied connector
+  according to ANSI/VITA 57.1 LPC definition.</p>
+
+<p align="justify"><b>2.1 Low-Pin count (LPC) connector loopback</b></br>
+The pins used by the LPC connector are a subset of the High-Pin count (HPC) connector's pins. There are in total 34 differential
+pairs for user data (LAx_P/N pins), 2 diff. pairs dedicated to user clock signals, 1 multi-gigabit transceiver consisting
+of 1 diff. TX pair (DP0_M2C_P/N) and 1 diff. RX pair (DP0_C2M_P/N) with corresponding reference clock (GBTCLK0_M2C_P/N).
+All these signals can be used in a loopback test. Optionally, the JTAG pins TDI and TDO can be short-circuited on the PCB and
+the PRSNT_M2C_L signal can be connected to GND. A typical application with an LPC carrier board is shown below.</br>
+</br>
+<img src="./FMC_LOOPBACK_MODULE_LPC_CARRIER.JPG" alt="FMC Loopback Module plugged on LPC carrier board (turned off)" width="65%"></br>
+<i>Fig. 1: FMC Loopback Module plugged on LPC carrier board (Digilent Nexys Video&trade; Board, 410-316).</i></br>
+</br>
+Some carrier boards require the PRSNT_M2C_L pin to be pulled down, indicating that a mezzanine module is present
+and therefore supply voltages may be activated or adjusted. In case that all supply voltages are switched on by the
+carrier, the FMC loopback card's LEDs will light up. Fig. 1 shows the case where the carrier board is switched off,
+but the 12&nbsp;V supply rail still supplies the LEDs, because the DC power supply is plugged into the board.
+After the carrier is switched on, the following situation occurs.</br>
+</br>
+<img src="./FMC_LOOPBACK_MODULE_LPC_CARRIER_VADJ_LOW.JPG" alt="FMC Loopback Module plugged on LPC carrier board (turned on)" width="65%"></br>
+<i>Fig. 2: FMC Loopback Module plugged on switched on LPC carrier board.</i></br>
+</br> 
+Please note that the voltage pins VADJ (2x on the LPC connector, 4x in total on a HPC carrier) are an adjustable voltage level
+from the carrier to the mezzanine card in the range of 0 .. 3.3&nbsp;V. Typical values are
+1.2&nbsp;V, 1.8&nbsp;V, 2.5&nbsp;V or 3.3&nbsp;V. In case the voltage VADJ is set below the LEDs forward voltage of 2.1V
+the LEDs associated to these pins (LED1, LED2, LED10, LED11) will not light up. To check the correct voltage level, you must measure
+directly at the test points next to the LEDs with a voltmeter.</br> 
+</br>
+<img src="./FMC_LOOPBACK_MODULE_LPC_CARRIER_VADJ12_MEAS.JPG" alt="FMC Loopback Module plugged on LPC carrier board with too low VADJ" width="49%">
+<img src="./FMC_LOOPBACK_MODULE_LPC_CARRIER_VADJ33_MEAS.JPG" alt="FMC Loopback Module plugged on LPC carrier board with too low VADJ" width="49%"></br>
+<i>Fig. 3: FMC Loopback Module plugged on LPC carrier board with too low voltage level on VADJ pins (left) and sufficient voltage level (right).</i></br>
+</br>
+An important detail is that <b>the GND pins on the loopback bard are not tied together</b>! In case an LED does not light up, the
+reason is either a low voltage, a defective voltage pin or a defective GND pin on the carrier (device under test)!</br>
+The test of the supply voltages with the LEDs gives a first quick impression about possible errors of the DUT. A test of the data lines gives
+of course a much more detailed insight into the correct function, and should be always carried out. Fig.4 shows an overview of the available
+data lines of an LPC carrier with attached FMC loopback board.</br>
+</br><img src="./FMC_LOOPBACK_MODULE_BLOCK_DIAGRAM_LPC.JPG" alt="FMC Loopback module, Block diagram for LPC pins" width="99%"></br>
+<i>Fig. 4: Blockdiagram of the FMC Loopback Module's Low-Pin-Count (LPC) pins. This is only a subset of all available pins on the board.</i></br>
+</br>
+Please note that in an LPC only configuration, the user data pair LA18_P/N has no endpoint, because the target pins GBTCLK1_M2C_P/N are located in the HPC rows of
+the connector.</br>
+Furthermore it has to be mentioned that a clocking of the Gigabit-transceiver by FPGA output pins does not achieve best performance. But in order to keep
+the operation of the board as simple as possible, we have chosen to provide an internal clock generation by the FPGA over a programmable external clock
+source. So the user don't have to deal with other devices and can stick to the same FPGA device. This approach provides maximum flexibility
+in clock generation and also allows data rates up to 10 Gbit/s (see section 2.2 HPC loopback).</br>
+</br>
+<b>2.1.A Eye-scan reference design with clock from silicon MEMS oscillator</b></br>
+<table border=0>
+   <tr>
+      <td>Board:</td>
+      <td>Digilent Nexys Video Artix-7 FPGA</td>
+   </tr>
+   <tr>
+      <td>FPGA:</td>
+      <td>Xilinx XC7A200T-1SBG484C </td>
+   </tr>
+   <tr>
+      <td>Repository / Download:</td>
+      <td><a href="https://www.github.com/fmchub" target="_newdigilenteyescanexample">https://www.github.com/fmchub</td>
+   </tr>
+   <tr>
+      <td>Notes:</td>
+      <td>Reference clock is 135&nbsp;MHz generated by external oscillator on carrier board</td>
+   </tr>   
+</table>
+</br><a href="././FMC_LOOPBACK_MODULE_LPC_CARRIER_EYE_SCAN.JPG" target="_neweyescanartix7"><img src="./FMC_LOOPBACK_MODULE_LPC_CARRIER_EYE_SCAN.JPG" alt="FMC Loopback module, Eye scan with 3.375 Gbit/s" width="99%"></a></br>
+<i>Fig. 5: Eye scan with Xilinx IBERT core at 3.375 Gbit/s and reference clock from silicon MEMS oscillator (135&nbsp;MHz)</i></br>
+</br>
+
+<b>2.1.B Eye-scan reference design with clock from built-in Xilinx PLL</b></br>
+<table border=0>
+   <tr>
+      <td>Board:</td>
+      <td>Digilent Nexys Video Artix-7 FPGA</td>
+   </tr>
+   <tr>
+      <td>FPGA:</td>
+      <td>Xilinx XC7A200T-1SBG484C </td>
+   </tr>
+   <tr>
+      <td>Repository / Download:</td>
+      <td><a href="https://www.github.com/fmchub" target="_newdigilenteyescanexample">https://www.github.com/fmchub</td>
+   </tr>
+   <tr>
+      <td>Notes:</td>
+      <td>Reference clock is 125&nbsp;MHz generated by built-in Xilinx PLL out of 100&nbsp;MHz clock. The generated clock is output by the FPGA via pins LA01_P/N and routed to pins GBTCLK0_M2C_P/N through the loopback adapter.</td>
+   </tr>    
+</table>
+</br><a href="./FMC_LOOPBACK_MODULE_LPC_CARRIER_EYE_SCAN_3750.JPG" target="_neweyescanartix7"><img src="./FMC_LOOPBACK_MODULE_LPC_CARRIER_EYE_SCAN_3750.JPG" alt="FMC Loopback module, Eye scan with 3.750 Gbit/s" width="99%"></a></br>
+<i>Fig. 6: Eye scan with Xilinx IBERT core at 3.750 Gbit/s and reference clock from built-in Xilinx PLL (125&nbsp;MHz).</i></br>
+</br>
+
+<!-- <b>2.1.B Loopback pattern reference design</b></br> //-->
+</p>
+
+<p align="justify"><b>2.2 HPC loopback</b></br>
+Since the LPC connector is a subset of the HPC connector, all previous instructions also apply to the HPC connector. Looking at the power test with the LEDs, this time of course all LEDs must light up if the VADJ voltage reaches a valid voltage level.
+Below is an example application where the FMC loopback board is attached to an FMC HPC carrier board (Avnet UltraZed-EV with Carrier Card).</br>
+</br>
+<img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER.JPG" alt="FMC Loopback Module plugged on HPC carrier board (turned on)" width="65%"></br>
+<i>Fig. 7: FMC Loopback Module plugged on HPC carrier board (Avnet UltraZed-EV with Carrier Card).</i></br>
+</br>
+Even if the adjustable voltage is for that example below the forward voltage of the LEDs (2.1&nbsp;V), you can still see a dimmed light.</br>
+</br>
+<img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_VADJ_1P8V.JPG" alt="FMC Loopback Module plugged on HPC carrier board with VADJ 1.8V" width="65%"></br>
+<i>Fig. 8: FMC Loopback Module plugged on HPC carrier board with VADJ of 1.8&nbsp;V. A dimmed light of the LEDS (LED1, LED2, LED10, LED11) is visible.</i></br>
+</br>
+The HPC connector has in total 160 user data lines. That means 80 differntial pairs, or for a loopback application 40 differential pairs for transmitting data and 40 differential pairs for receiving data.
+These signals are divided into the banks LA, HA, HB on the connector. Additionally there are 10 Multi-gigabit transceiver (10 transmitter and 10 receiver) available along with 2 differntial clock input pairs,
+which can be sourced from LA01_P/N pins and LA18_P/N. Further, there are 2 general purpose clock transmitter and 2 clock receiver pairs connected through the loopback adapter. The block diagram in fig. 9
+gives a schematic overview of all signals.</br>
+</br><img src="./FMC_LOOPBACK_MODULE_BLOCK_DIAGRAM.JPG" alt="FMC Loopback module, Block diagram for HPC pins (all pins)" width="99%"></br>
+<i>Fig. 9: Blockdiagram of the FMC Loopback Module's High-Pin-Count (HPC) pins.</i></br>
+</br>
+With Xilinx IBERT core, the FMC loopback module achieves a throughput of 10&nbsp;Gbit/s per MGT lane, which is in total 8x&nbsp;10 Gbit/s. The HPC carrier does only provide 8 out of 10 MGT lanes.</br>
+</br><a href="./FMC_LOOPBACK_MODULE_HPC_MGT10x.JPG" target="_new8x10gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_MGT10x.JPG" alt="FMC Loopback module, 8x 10 GBit/s" width="99%"></a></br>
+<i>Fig. 10: The FMC Loopback Module is capable of a maximum throuput of 8x 10&nbsp;Gbit/s over multi-gigabit transceiver. The HPC carrier does only provide 8 out of 10 MGT lanes.</i></br>
+</br>
+Eye scans were performed at 4 different lane rates from 2.970&nbsp;Gbit/s up to 10&nbsp;Gbit/s.</br>
+</br><a href="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_2970.JPG" target="_new29gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_2970.JPG" alt="FMC Loopback module, Eye scan at 2.970 GBit/s" width="99%"></a></br>
+<i>Fig. 11: An Eye-scan with FMC loopback board and Xilinx IBERT core at 2.970&nbsp;GBit/s MGT lane rate.</i></br>
+</br>
+</br><a href="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_5940.JPG" target="_new59gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_5940.JPG" alt="FMC Loopback module, Eye scan at 5.940 GBit/s" width="99%"></a></br>
+<i>Fig. 12: An Eye-scan with FMC loopback board and Xilinx IBERT core at 5.940&nbsp;GBit/s MGT lane rate.</i></br>
+</br>
+</br><a href="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_8500.JPG" target="_new85gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_8500.JPG" alt="FMC Loopback module, Eye scan at 8.500 GBit/s" width="99%"></a></br>
+<i>Fig. 13: An Eye-scan with FMC loopback board and Xilinx IBERT core at 8.500&nbsp;GBit/s MGT lane rate.</i></br>
+</br>
+</br><a href="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_10000.JPG" target="_new100gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_10000.JPG" alt="FMC Loopback module, Eye scan at 10.000 GBit/s" width="99%"></a></br>
+<i>Fig. 14: An Eye-scan with FMC loopback board and Xilinx IBERT core at 10.000&nbsp;GBit/s MGT lane rate.</i></br>
+</br>
+
+<p align="justify"><b>2.3 General information</b></br>
+At this point it is important to mention again that the FMC Loopback module has been optimized for the best price/performance ratio. All results were achieved with a 2 layer PCB with FR-4 material.
+The signal lanes are not impedance controlled!
+</p>
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">3. Electrical data (pin description)</font></br>
+<p align="justify">
+The printed circuit board is open-source hardware! You can download the <a href="https://github.com/FMCHUB/FMC_LOOPBACK/raw/master/FMC_LOOPBACK.pdf" target="_newfmcloopbackboard_schematic">FMC Loopback Module schematics</a> and <a href="https://github.com/FMCHUB/FMC_LOOPBACK/" target="_newgithubfmcloopback">FMC Loopback board layout files</a> in their latest
+revision from <a href="http://www.fmchub.com" target="_newfmchub">http://www.fmchub.com</a>. 
+</br>
+</br>
+<i>Tab. 1: Bill of materials (BOM) of FMC Loopback Board</i></br>
+<table cellspacing="0" border="0">
+	<colgroup width="177"></colgroup>
+	<colgroup span="6" width="100"></colgroup>
+	<tr>
+    <td style="border-bottom: 1px solid #000000" align="left" height="20" valign=bottom width="13%"><b>Comment</b></td>
+    <td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="35%"><b>Description</b></td>
+    <td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="15%"><b>Designator</b></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="12%"><b>Manufacturer</b></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="20%"><b>Partnumber</b></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="5%"><b>Qty</b></td>
+	</tr>
+	<tr>
+		<td height="19"  valign=top>LED green</td>
+    <td align="left" valign=top>SMD mono-color Chip LED, WL-SMCW, Green</td>
+    <td height="19"  valign=top>LED1, ..., LED11</td>
+		<td align="left" valign=top>Wuerth Elektronik</td>
+    <td align="left" valign=top>150060GS75000</td>
+    <td align="left" valign=top>11</td>
+   </tr>
+   <tr>
+		<td height="19"  valign=top>MC-HPC-10</td>
+    <td align="left" valign=top>MC-HPC-10, FMC High-pin count connector, lead free, 400 I/Os, male, 10 mm mated stack height</td>
+    <td height="19"  valign=top>P1</td>
+		<td align="left" valign=top>Samtec</td>
+    <td align="left" valign=top>ASP-134488-01</td>
+    <td align="left" valign=top>1</td>
+   </tr>
+   <tr>
+		<td height="19"  valign=top>100R</td>
+    <td align="left" valign=top>100R 0.1W 5% 0603 (1608 Metric)  SMD</td>
+    <td height="19"  valign=top>R1, ..., R7, R10, R11</td>
+		<td align="left" valign=top>Panasonic</td>
+    <td align="left" valign=top>ERJ-3GEYJ101V</td>
+    <td align="left" valign=top>9</td>
+   </tr>
+   <tr>
+		<td height="19"  valign=top>1K8</td>
+    <td align="left" valign=top>1K8 0.1W 5% 0603 (1608 Metric)  SMD</td>
+    <td height="19"  valign=top>R8, R9</td>
+		<td align="left" valign=top>Yageo</td>
+    <td align="left" valign=top>RC0603JR-071K8L</td>
+    <td align="left" valign=top>2</td>
+   </tr>
+</table>
+
+A description of the signals from the HPC connector can be found at</br> <a href="https://fmchub.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html" target="_newfmcsignals">https://fmchub.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html</a>.</p>
+
+A list of all signals with their sources and destinations through the loopback module is shown tab. 2.</br></br>
+<i>Tab. 2: Signals with their source and destination pins (locations), trace widths and trace lengths on the PCB.</i></br>
+<table cellspacing="0" border="0">
+	<colgroup width="177"></colgroup>
+	<colgroup span="6" width="100"></colgroup>
+	<tr>
+    <td style="border-bottom: 1px solid #000000" height="20" valign=bottom width="5%"><b></b></td>
+    <td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="25%"><b>Source</b></td>
+    <td style="border-bottom: 1px solid #000000" align="right" valign=bottom  width="5%"><b></b></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="25%"><b>Destination</b></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="20%"><b>Trace width</b></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="20%"><b>Trace length</b></td>
+	</tr>
+	<tr>
+		<td height="19" valign=bottom>A2</td>
+      <td align="left" valign=bottom>DP1_M2C_P</td>
+      <td height="19"  valign=bottom>A22</td>
+		<td align="left" valign=bottom>DP1_C2M_P</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+   <tr>
+		<td height="19" valign=bottom>tbd</td>
+      <td align="left" valign=bottom>tbd</td>
+      <td height="19"  valign=bottom>tbd</td>
+		<td align="left" valign=bottom>tbd</td>
+      <td align="left" valign=bottom>tbd</td>
+      <td align="left" valign=bottom>tbd</td>
+	</tr>
+</table>
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">4. Mechanical data</font></br>
+<p align="justify">
+The board outline is not defined by ANSI/VITA 57.1 standard. It was chosen in such a way that the space requirement is very small. However, the outer dimensions do not exceed the defined outlines of the ANSI/VITA 57.1 FMC standard,
+so the FMC loopback board should fit on any FMC carrier board. Exact dimensions are given in figure 15.</br>
+<img src="./FMC_LOOPBACK_MODULE_DIMENSIONS.jpg" width="75%"></br>
+<i>Fig. 15: Mechanical drawing of the FMC Loopback Module.</i></br>
+</br>
+The mounting holes are plated but have no electrical connection. Their sizes and positions are in accordance with ANSI/VITA&nbsp;57.1.</p>
+</br>
+<a href="./FMC_LOOPBACK_MODULE_FULL_VIEW_TOP.JPG" target="_newloopbackfullviewtop"><img src="./FMC_LOOPBACK_MODULE_FULL_VIEW_TOP_thumb.JPG" width="99%"></a></br>
+<i>Fig. 16: Product photo of FMC Loopback Module (top view).</i></br>
+</br>
+<a href="./FMC_LOOPBACK_MODULE_FULL_VIEW_BOTTOM.JPG" target="_newloopbackfullviewtop"><img src="./FMC_LOOPBACK_MODULE_FULL_VIEW_BOTTOM_thumb.JPG" width="99%"></a></br>
+<i>Fig. 17:  Product photo of FMC Loopback Module (bottom view).</i></br>
+
+</p>
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">5. Ordering information</font></br>
+
+The FMC Loopback module can be ordered at various online market places, or you can request a quotation by sending an e-mail to <a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20Loopback%20Module%20T0007">info@iamelectronic.com</a>.</br>
+</br>
+<i>Tab. 5: Assembly variants of FMC LPC Breakout board with product numbers and market places.</i></br>
+<table width="98%" cellspacing="0" border="0">
+<tr>
+   <td width="15%" style="border-bottom: 1px solid #000000" align="left">Product no.</td>
+   <td width="40%" style="border-bottom: 1px solid #000000" align="left">Description</td> 
+   <td width="20%" style="border-bottom: 1px solid #000000" align="left">Market place</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Request quote</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Standard lead time</td>
+</tr>
+
+<tr>
+   <td valign="top">T0007</td>
+   <td valign="top">FMC Loopback Module with </br>MC-HPC-10 connectors and green LEDs.</td>
+   <td valign="top"><a href="https://www.ebay.com" target="_newebayfmcloop">Ebay #tbd</a></br>
+					<a href="https://www.tindie.com" target="_newtindiefmcloop">Tindie tbd</br>#11490</br>
+					<a href="https://designsparkmarketplace.com" target="_newdesignsparkfmcloop">Designspark</br>#tbd
+					</td>
+   <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20Loopback%20Module%20T0007">info@iamelectronic.com</a></td>
+   <td valign="top">Normally in stock, otherwise 3 weeks</td>
+</tr>
+
+</table>
+
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">6. Document history</font></br>
+Document number:</br>
+DS#T0007</br>
+</br>
+Version history: </br>
+2019/04/09: Initial release
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">7. Imprint</font></br>
+<font class="imprint">
+Name and registered office of the company:</br>
+IAM Electronic GmbH</br>
+Bucksdorffstr. 43</br>
+04159 Leipzig</br>
+Germany</br>
+</br>
+Contact:</br>
+Phone: +49 341 26496031</br>
+E-Mail: info@iamelectronic.com</br>
+</br>
+Chief Executive Officer: Dr. Philipp F&oumldisch</br>
+</br>
+Commercial register:</br>
+Register court: Amtsgericht Leipzig</br>
+Register number: HRB 34071</br>
+Value Added Tax Identification Number: DE313797981</br>
+</font>
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
