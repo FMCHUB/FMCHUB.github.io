@@ -146,7 +146,7 @@ PDF version (coming soon),
 <p align="justify">
 The <b>FMC Loopback Module</b> is a passive plug-in adapter for ANSI/VITA 57.1 FPGA Mezzanine Card (FMC) connectors.
 The loopback board is designed to mate a High-Pin Count (HPC) connector, but also fits without restrictions to Low-Pin Count (LPC) connectors.
-According to the FMC standard, all signals of an FPGA IO bank (LA, HA and HB bank) are connected by the mezzanine board as loopback.
+According to the FMC standard, all signals of an FPGA are connected by the mezzanine board as loopback.
 This means that each pin of an IO bank has a fixed endpoint through the FMC loopback card. These signal pairs must be defined as In/Out pairs
 in the FPGA on the carrier side. Apart from that necessary IO constraints, the FMC Loopback Board does not require any further configuration
 for its full functionality.</br>
@@ -230,7 +230,7 @@ in clock generation and also allows data rates up to 10 Gbit/s (see section 2.2 
    </tr>
    <tr>
       <td>Repository / Download:</td>
-      <td><a href="https://www.github.com/fmchub" target="_newdigilenteyescanexample">https://www.github.com/fmchub</td>
+      <td><a href="https://github.com/FMCHUB/FMC_LOOPBACK/tree/master/FPGA_REFERENCE_DESIGNS/ARTIX_VIDEO_BOARD/fmc_loopback_gtp/ibert_7series_gtp_3375_ex" target="_newdigilenteyescanexample3375">https://www.github.com/fmchub</td>
    </tr>
    <tr>
       <td>Notes:</td>
@@ -253,7 +253,7 @@ in clock generation and also allows data rates up to 10 Gbit/s (see section 2.2 
    </tr>
    <tr>
       <td>Repository / Download:</td>
-      <td><a href="https://www.github.com/fmchub" target="_newdigilenteyescanexample">https://www.github.com/fmchub</td>
+      <td><a href="https://github.com/FMCHUB/FMC_LOOPBACK/tree/master/FPGA_REFERENCE_DESIGNS/ARTIX_VIDEO_BOARD/fmc_loopback_gtp/ibert_7series_gtp_3750_ex" target="_newdigilenteyescanexample3750">https://www.github.com/fmchub</td>
    </tr>
    <tr>
       <td>Notes:</td>
@@ -264,7 +264,29 @@ in clock generation and also allows data rates up to 10 Gbit/s (see section 2.2 
 <i>Fig. 6: Eye scan with Xilinx IBERT core at 3.750 Gbit/s and reference clock from built-in Xilinx PLL (125&nbsp;MHz).</i></br>
 </br>
 
-<!-- <b>2.1.B Loopback pattern reference design</b></br> //-->
+<b>2.1.B Loopback pattern reference design</b></br>
+<table border=0>
+   <tr>
+      <td>Board:</td>
+      <td>Digilent Nexys Video Artix-7 FPGA</td>
+   </tr>
+   <tr>
+      <td>FPGA:</td>
+      <td>Xilinx XC7A200T-1SBG484C </td>
+   </tr>
+   <tr>
+      <td>Repository / Download:</td>
+      <td><a href="https://github.com/FMCHUB/FMC_LOOPBACK/tree/master/FPGA_REFERENCE_DESIGNS/ARTIX_VIDEO_BOARD/fmc_loopback_pattern" target="_newdigilenteyescanexample3750">https://www.github.com/fmchub</td>
+   </tr>
+   <tr>
+      <td>Notes:</td>
+      <td>Use SW0 and BTNC of the board to control pattern generator:</br>SW0='1': All Ones Pattern, all LEDs must light up</br>SW0='0': Press and hold BTNC, running LEDs light up when all patterns are successful</td>
+   </tr>    
+</table>
+</br><img src="./FMC_LOOPBACK_MODULE_PATTERN_CHECK.GIF" alt="FMC Loopback module, Pattern check" width="319px"></br>
+<i>Fig. 7: Loopback demo with pattern generator. The LEDs of the carrier board show the correct function.</i></br>
+</br>
+
 </p>
 
 <p align="justify"><b>2.2 HPC loopback</b></br>
@@ -272,36 +294,36 @@ Since the LPC connector is a subset of the HPC connector, all previous instructi
 Below is an example application where the FMC loopback board is attached to an FMC HPC carrier board (Avnet UltraZed-EV with Carrier Card).</br>
 </br>
 <img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER.JPG" alt="FMC Loopback Module plugged on HPC carrier board (turned on)" width="65%"></br>
-<i>Fig. 7: FMC Loopback Module plugged on HPC carrier board (Avnet UltraZed-EV with Carrier Card).</i></br>
+<i>Fig. 8: FMC Loopback Module plugged on HPC carrier board (Avnet UltraZed-EV with Carrier Card).</i></br>
 </br>
 Even if the adjustable voltage is for that example below the forward voltage of the LEDs (2.1&nbsp;V), you can still see a dimmed light.</br>
 </br>
 <img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_VADJ_1P8V.JPG" alt="FMC Loopback Module plugged on HPC carrier board with VADJ 1.8V" width="65%"></br>
-<i>Fig. 8: FMC Loopback Module plugged on HPC carrier board with VADJ of 1.8&nbsp;V. A dimmed light of the LEDS (LED1, LED2, LED10, LED11) is visible.</i></br>
+<i>Fig. 9: FMC Loopback Module plugged on HPC carrier board with VADJ of 1.8&nbsp;V. A dimmed light of the LEDS (LED1, LED2, LED10, LED11) is visible.</i></br>
 </br>
 The HPC connector has in total 160 user data lines. That means 80 differntial pairs, or for a loopback application 40 differential pairs for transmitting data and 40 differential pairs for receiving data.
 These signals are divided into the banks LA, HA, HB on the connector. Additionally there are 10 Multi-gigabit transceiver (10 transmitter and 10 receiver) available along with 2 differntial clock input pairs,
 which can be sourced from LA01_P/N pins and LA18_P/N. Further, there are 2 general purpose clock transmitter and 2 clock receiver pairs connected through the loopback adapter. The block diagram in fig. 9
 gives a schematic overview of all signals.</br>
 </br><img src="./FMC_LOOPBACK_MODULE_BLOCK_DIAGRAM.JPG" alt="FMC Loopback module, Block diagram for HPC pins (all pins)" width="99%"></br>
-<i>Fig. 9: Blockdiagram of the FMC Loopback Module's High-Pin-Count (HPC) pins.</i></br>
+<i>Fig. 10: Blockdiagram of the FMC Loopback Module's High-Pin-Count (HPC) pins.</i></br>
 </br>
 With Xilinx IBERT core, the FMC loopback module achieves a throughput of 10&nbsp;Gbit/s per MGT lane, which is in total 8x&nbsp;10 Gbit/s. The HPC carrier does only provide 8 out of 10 MGT lanes.</br>
 </br><a href="./FMC_LOOPBACK_MODULE_HPC_MGT10x.JPG" target="_new8x10gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_MGT10x.JPG" alt="FMC Loopback module, 8x 10 GBit/s" width="99%"></a></br>
-<i>Fig. 10: The FMC Loopback Module is capable of a maximum throuput of 8x 10&nbsp;Gbit/s over multi-gigabit transceiver. The HPC carrier does only provide 8 out of 10 MGT lanes.</i></br>
+<i>Fig. 11: The FMC Loopback Module is capable of a maximum throuput of 8x 10&nbsp;Gbit/s over multi-gigabit transceiver. The HPC carrier does only provide 8 out of 10 MGT lanes.</i></br>
 </br>
 Eye scans were performed at 4 different lane rates from 2.970&nbsp;Gbit/s up to 10&nbsp;Gbit/s.</br>
 </br><a href="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_2970.JPG" target="_new29gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_2970.JPG" alt="FMC Loopback module, Eye scan at 2.970 GBit/s" width="99%"></a></br>
-<i>Fig. 11: An Eye-scan with FMC loopback board and Xilinx IBERT core at 2.970&nbsp;GBit/s MGT lane rate.</i></br>
+<i>Fig. 12: An Eye-scan with FMC loopback board and Xilinx IBERT core at 2.970&nbsp;GBit/s MGT lane rate.</i></br>
 </br>
 </br><a href="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_5940.JPG" target="_new59gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_5940.JPG" alt="FMC Loopback module, Eye scan at 5.940 GBit/s" width="99%"></a></br>
-<i>Fig. 12: An Eye-scan with FMC loopback board and Xilinx IBERT core at 5.940&nbsp;GBit/s MGT lane rate.</i></br>
+<i>Fig. 13: An Eye-scan with FMC loopback board and Xilinx IBERT core at 5.940&nbsp;GBit/s MGT lane rate.</i></br>
 </br>
 </br><a href="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_8500.JPG" target="_new85gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_8500.JPG" alt="FMC Loopback module, Eye scan at 8.500 GBit/s" width="99%"></a></br>
-<i>Fig. 13: An Eye-scan with FMC loopback board and Xilinx IBERT core at 8.500&nbsp;GBit/s MGT lane rate.</i></br>
+<i>Fig. 14: An Eye-scan with FMC loopback board and Xilinx IBERT core at 8.500&nbsp;GBit/s MGT lane rate.</i></br>
 </br>
 </br><a href="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_10000.JPG" target="_new100gbps"><img src="./FMC_LOOPBACK_MODULE_HPC_CARRIER_EYE_SCAN_10000.JPG" alt="FMC Loopback module, Eye scan at 10.000 GBit/s" width="99%"></a></br>
-<i>Fig. 14: An Eye-scan with FMC loopback board and Xilinx IBERT core at 10.000&nbsp;GBit/s MGT lane rate.</i></br>
+<i>Fig. 15: An Eye-scan with FMC loopback board and Xilinx IBERT core at 10.000&nbsp;GBit/s MGT lane rate.</i></br>
 </br>
 
 <p align="justify"><b>2.3 General information</b></br>
@@ -383,7 +405,8 @@ A list of all signals with their sources and destinations through the loopback m
 		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="25%"><b>Destination</b></td>
 		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="20%"><b>Trace width</b></td>
 		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="20%"><b>Trace length</b></td>
-	</tr>
+   </tr>
+   
 	<tr>
 		<td height="19" valign=bottom>A2</td>
       <td align="left" valign=bottom>DP1_M2C_P</td>
@@ -392,6 +415,152 @@ A list of all signals with their sources and destinations through the loopback m
       <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
       <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
    </tr>
+   <tr>
+		<td height="19" valign=bottom>A3</td>
+      <td align="left" valign=bottom>DP1_M2C_N</td>
+      <td height="19"  valign=bottom>A23</td>
+		<td align="left" valign=bottom>DP1_C2M_N</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+
+   <tr>
+		<td height="19" valign=bottom>A6</td>
+      <td align="left" valign=bottom>DP2_M2C_P</td>
+      <td height="19"  valign=bottom>A26</td>
+		<td align="left" valign=bottom>DP2_C2M_P</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+   <tr>
+		<td height="19" valign=bottom>A7</td>
+      <td align="left" valign=bottom>DP2_M2C_N</td>
+      <td height="19"  valign=bottom>A27</td>
+		<td align="left" valign=bottom>DP2_C2M_N</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+
+   <tr>
+		<td height="19" valign=bottom>A10</td>
+      <td align="left" valign=bottom>DP3_M2C_P</td>
+      <td height="19"  valign=bottom>A30</td>
+		<td align="left" valign=bottom>DP3_C2M_P</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+   <tr>
+		<td height="19" valign=bottom>A11</td>
+      <td align="left" valign=bottom>DP3_M2C_N</td>
+      <td height="19"  valign=bottom>A31</td>
+		<td align="left" valign=bottom>DP3_C2M_N</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+
+   <tr>
+		<td height="19" valign=bottom>A14</td>
+      <td align="left" valign=bottom>DP4_M2C_P</td>
+      <td height="19"  valign=bottom>A34</td>
+		<td align="left" valign=bottom>DP4_C2M_P</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+   <tr>
+		<td height="19" valign=bottom>A15</td>
+      <td align="left" valign=bottom>DP4_M2C_N</td>
+      <td height="19"  valign=bottom>A35</td>
+		<td align="left" valign=bottom>DP4_C2M_N</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+
+   <tr>
+		<td height="19" valign=bottom>A18</td>
+      <td align="left" valign=bottom>DP5_M2C_P</td>
+      <td height="19"  valign=bottom>A38</td>
+		<td align="left" valign=bottom>DP5_C2M_P</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+   <tr>
+		<td height="19" valign=bottom>A19</td>
+      <td align="left" valign=bottom>DP5_M2C_N</td>
+      <td height="19"  valign=bottom>A39</td>
+		<td align="left" valign=bottom>DP5_C2M_N</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+
+   <tr>
+		<td height="19" valign=bottom>B4</td>
+      <td align="left" valign=bottom>DP9_M2C_P</td>
+      <td height="19"  valign=bottom>B24</td>
+		<td align="left" valign=bottom>DP9_C2M_P</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+   <tr>
+		<td height="19" valign=bottom>B5</td>
+      <td align="left" valign=bottom>DP9_M2C_N</td>
+      <td height="19"  valign=bottom>B25</td>
+		<td align="left" valign=bottom>DP9_C2M_N</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+
+   <tr>
+		<td height="19" valign=bottom>B8</td>
+      <td align="left" valign=bottom>DP8_M2C_P</td>
+      <td height="19"  valign=bottom>B28</td>
+		<td align="left" valign=bottom>DP8_C2M_P</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+   <tr>
+		<td height="19" valign=bottom>B9</td>
+      <td align="left" valign=bottom>DP8_M2C_N</td>
+      <td height="19"  valign=bottom>B29</td>
+		<td align="left" valign=bottom>DP8_C2M_N</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+
+   <tr>
+		<td height="19" valign=bottom>B12</td>
+      <td align="left" valign=bottom>DP7_M2C_P</td>
+      <td height="19"  valign=bottom>B32</td>
+		<td align="left" valign=bottom>DP7_C2M_P</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+   <tr>
+		<td height="19" valign=bottom>B13</td>
+      <td align="left" valign=bottom>DP7_M2C_N</td>
+      <td height="19"  valign=bottom>B33</td>
+		<td align="left" valign=bottom>DP7_C2M_N</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+
+   <tr>
+		<td height="19" valign=bottom>B16</td>
+      <td align="left" valign=bottom>DP6_M2C_P</td>
+      <td height="19"  valign=bottom>B36</td>
+		<td align="left" valign=bottom>DP6_C2M_P</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+   <tr>
+		<td height="19" valign=bottom>B17</td>
+      <td align="left" valign=bottom>DP6_M2C_N</td>
+      <td height="19"  valign=bottom>B37</td>
+		<td align="left" valign=bottom>DP6_C2M_N</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+      <td align="left" valign=bottom>0.x&nbsp;mm (x&nbsp;mil)</td>
+   </tr>
+
+
    <tr>
 		<td height="19" valign=bottom>tbd</td>
       <td align="left" valign=bottom>tbd</td>
@@ -415,15 +584,15 @@ A list of all signals with their sources and destinations through the loopback m
 The board outline is not defined by ANSI/VITA 57.1 standard. It was chosen in such a way that the space requirement is very small. However, the outer dimensions do not exceed the defined outlines of the ANSI/VITA 57.1 FMC standard,
 so the FMC loopback board should fit on any FMC carrier board. Exact dimensions are given in figure 15.</br>
 <img src="./FMC_LOOPBACK_MODULE_DIMENSIONS.jpg" width="75%"></br>
-<i>Fig. 15: Mechanical drawing of the FMC Loopback Module.</i></br>
+<i>Fig. 16: Mechanical drawing of the FMC Loopback Module.</i></br>
 </br>
 The mounting holes are plated but have no electrical connection. Their sizes and positions are in accordance with ANSI/VITA&nbsp;57.1.</p>
 </br>
 <a href="./FMC_LOOPBACK_MODULE_FULL_VIEW_TOP.JPG" target="_newloopbackfullviewtop"><img src="./FMC_LOOPBACK_MODULE_FULL_VIEW_TOP_thumb.jpg" width="99%"></a></br>
-<i>Fig. 16: Product photo of FMC Loopback Module (top view).</i></br>
+<i>Fig. 17: Product photo of FMC Loopback Module (top view).</i></br>
 </br>
 <a href="./FMC_LOOPBACK_MODULE_FULL_VIEW_BOTTOM.JPG" target="_newloopbackfullviewtop"><img src="./FMC_LOOPBACK_MODULE_FULL_VIEW_BOTTOM_thumb.jpg" width="99%"></a></br>
-<i>Fig. 17:  Product photo of FMC Loopback Module (bottom view).</i></br>
+<i>Fig. 18:  Product photo of FMC Loopback Module (bottom view).</i></br>
 
 </p>
 
@@ -439,7 +608,7 @@ The mounting holes are plated but have no electrical connection. Their sizes and
 
 The FMC Loopback Module can be ordered at various online market places, or you can request a quotation by sending an e-mail to <a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20Loopback%20Module%20T0007">info@iamelectronic.com</a>.</br>
 </br>
-<i>Tab. 5: Assembly variants of FMC Loopback Module with product numbers and market places.</i></br>
+<i>Tab. 3: Assembly variants of FMC Loopback Module with product numbers and market places.</i></br>
 <table width="98%" cellspacing="0" border="0">
 <tr>
    <td width="15%" style="border-bottom: 1px solid #000000" align="left">Product no.</td>
@@ -476,6 +645,7 @@ Document number:</br>
 DS#T0007</br>
 </br>
 Version history: </br>
+2019/04/10: Added links to reference design + minor changes
 2019/04/09: Initial release
 
 </td>
