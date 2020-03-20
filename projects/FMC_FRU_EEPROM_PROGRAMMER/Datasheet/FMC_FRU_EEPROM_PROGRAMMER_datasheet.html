@@ -1,0 +1,459 @@
+
+<html>
+<head>
+<title>FPGA Mezzanine Card (FMC) FRU EEPROM Programmer</title>
+<style>
+font { 
+   font-family: Times New Roman, Serif;
+   color: navy;
+}
+
+font.topright { 
+   font-size: 2em;
+   font-weight: bold;
+}
+
+font.revision { 
+   font-size: 1em;
+}
+
+font.headline { 
+   font-size: 2.5em;
+   color: black;
+   font-weight: bold;
+}
+
+font.subheadline { 
+   font-size: 1.5em;
+   color: black;
+   font-weight: bold;
+}
+font.imprint { 
+   font-size: 0.75em;
+   color: black;
+   font-weight: none;
+}
+
+hr.style-one {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.0));
+}
+
+hr.style-two {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 128, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 128, 0));
+}
+
+ul {
+   font-size: 1.33em;
+   font-face: bold;
+   color: black;
+}
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83790429-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<table width="750px" border="0" bgcolor="#FFFFFF">
+   <tr>
+      <td align="left" width="52%"><a href="http://www.iamelectronic.com" target="_newiam"><img src="./LOGO_IAM_NAVY_WHITE.jpg" width="300px" border="0" alt="IAM Electronic - Instrumentation And Measurement Electronics"/></a></td>
+      <td align="right" width="48%"><font class="topright">FMC FRU EEPROM Programmer&nbsp;</font></br>
+      </br></br><font class="revision">DS#T0009 REV 2020/03/20&nbsp;</br>
+PDF version (coming soon),
+<a href="http://fmchub.github.io/projects/FMC_FRU_EEPROM_PRORAGMMER/Datasheet/FMC_FRU_EEPROM_PROGRAMMER_datasheet.html">HTML version</a>
+</font>
+
+      </td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="center"><font class="headline">FPGA Mezzanine Card (FMC) FRU</br>EEPROM Programmer</font></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+<tr>
+<td align="left" valign="top"><font class="subheadline">
+   Features</font></br>
+   <ul>     
+    <li>Easy FMC FRU EEPROM programming and readout</li>
+    <li>In-circuit configuration of FRU records</li>
+    <li>Fully open-source product</li>
+    <li>USB serial port device</li>
+    <li>USB powered 3P3VAUX voltage rail</li>
+    <li>External power supply for 12&nbsp;V and 3.3&nbsp;V voltage rails</li>            
+    <li>Write enable/protection output</li>
+    <li>Selectable GA[1:0] addressing pins</li>
+    <li>Selectable PG_C2M flag</li>
+    <li>AVR ISP programming header</li>
+   </ul>
+</td>
+
+<td rowspan="2" align="left" valign="top">
+
+   <font class="subheadline">
+   Block diagram</br></font></br>
+   <img src="./FMC_FRU_EEPROM_PROGRAMMER_BLOCK_DIAGRAM.JPG" width="100%" alt="FMC FRU EEPROM Programmer block diagram"/></br>
+   <p align="justify">The photo below shows the top side of the FMC FRU EEPROM Programmer.</p>
+&nbsp;
+<img src="./FMC_FRU_EEPROM_PROGRAMMER.JPG" alt="FMC FRU EEPROM Programmer" width="98%"/>
+<center>FMC FRU EEPROM Programmer with FMC carrier card connector (CC-LPC-10) and peripherals for USB data interface and power supply.</center>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+
+<font class="subheadline">Applications</font></br>
+   <ul>     
+      <li>Small batch FMC module programming</li>
+      <li>Compliance and production tests</li>
+      <li>Professional production of FMC boards</li>
+      <li>Prototyping of FMC modules</li>
+   </ul>
+</br>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left">
+<font class="subheadline">1. Description</font></br>
+<p align="justify">
+The <b>FMC FRU EEPROM Programmer</b> and the related toolchain is a powerful programming tool for FMC&nbsp;FRU&nbsp;(Field Replacable Unit) records.
+The programming adapter is designed for in-circuit configuration of ANSI/VITA&nbsp;57.1 FPGA Mezzanine Cards (FMC) according to the IPMI Platform Management FRU Information Storage Definition.
+The board runs with open-source firmware and software for user-friendly configuration of I2C-compatible serial EEPROMs. Its microcontroller (Microchip ATmega32U4) translates a user command protocol from the serial interface into corresponding
+I2C read/write accesses to any compatible EEPROM devices. A user application on the PC host simplifies file transfers to the EEPROM via a USB cable. By eliminating the need for customer-specific FPGA firmware to program an FMC module,
+the standalone programming adapter is suitable for reliable small-batch production and prototyping.
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">2. Application information</font></br>
+<p align="justify">
+For easy programming of an FMC EEPROM, we recommend the use of our complete open-source toolchain consisting of
+<a href="https://github.com/FMCHUB/FMC_FRU_EEPROM_PROGRAMMER/tree/master/PCB_ALTIUM" target="_newgithubpcb">FMC EEPROM programming hardware</a>,
+User command protocol implemented in <a href="https://github.com/FMCHUB/FMC_FRU_EEPROM_PROGRAMMER/tree/master/FIRMWARE_ATMEL" target="_newgithubfw">ATmega32U firmware</a>,
+and <a href="https://github.com/FMCHUB/FMC_FRU_EEPROM_PROGRAMMER/tree/master/SOFTWARE_CMD_TOOLS" target="_newgithubsw">command line tool</a> for the PC.
+
+All parts of the <a href="https://github.com/FMCHUB/FMC_FRU_EEPROM_PROGRAMMER" target="_newgithub">FMC FRU programmer toolchain</a> are freely available on GitHub.
+
+</br><b>By default, the microcontroller is programmed with the latest firmware revision on delivery!</b>
+
+
+
+</p>
+
+<p align="justify"><b>2.1 FMC EEPROM Programming Hardware</b></br>
+Putting the hardware into operation is quite simple. Just plug a USB cable into the Micro-USB socket. The red LED lights up as soon as the USB power supply is present. The green and orange LEDs should also (briefly) show some activity (fig.&nbsp;1).</br>
+</br>
+<img src="./FMC_FRU_EEPROM_PROGRAMMER_HARDWARE.gif" alt="FMC FRU EEPROM Programmer Hardware" width="65%"></br>
+<i>Fig.&nbsp;1: Putting the FMC FRU EEPROM Programmer into operation. The red LED (D3) indicates the power-on state. The orange LED (D1) and green LED (D2) also show some activity.</i></br>
+</br>
+
+An FMC module can be plugged into the programming adapter at any time. As long as a compatible module is plugged in (PRSNT_M2C_L is low), the green LED lights up permanently (fig.&nbsp;2).
+</br>
+<img src="./FMC_FRU_EEPROM_PROGRAMMER_PRSNT.JPG" alt="FMC FRU EEPROM Programmer with FMC Module plugged in " width="65%"></br>
+<i>Fig.&nbsp;2: The green LED (D2) lights up continuously when an ANSI/VITA 57.1 compliant FMC module is plugged in.</i></br>
+</br>
+
+If there is the need to overwrite the firmware of the ATmega32U microcontroller, any AVR programmer with AVR ISP connector can be used. The connector must simply be plugged onto the 6-pin header (fig.&nbsp;3). The signals are also marked on the carrier board.
+</br>
+<img src="./FMC_FRU_EEPROM_PROGRAMMER_ATMEL.jpg" alt="FMC FRU EEPROM Programmer with Atmel programmer plugged in " width="65%"></br>
+<i>Fig.&nbsp;3: The FMC programmer board is compatible with the AVR ISP header.</i></br>
+</br>
+</p>
+
+
+
+<p align="justify"><b>2.2 Microchip ATmega32U4 microcontroller firmware</b></br>
+The microcontroller will be identified via the USB interface as serial port / terminal. The following parameters must be set for communication with a host PC.
+</br></br>
+      <table cellspacing="0" border="0">
+            <tr>
+               <td align="left" valign=top style="font-family:Courier;font-size:0.75em">Baudrate:</td>
+               <td align="left" valign=top style="font-family:Courier;font-size:0.75em">115200</td>
+            </tr>
+            <tr>
+                  <td align="left" valign=top style="font-family:Courier;font-size:0.75em">Data: &nbsp;&nbsp;&nbsp;</td>
+                  <td align="left" valign=top style="font-family:Courier;font-size:0.75em">8 data bits</td>
+           </tr>             
+            <tr>
+                  <td align="left" valign=top style="font-family:Courier;font-size:0.75em">Start/Stop: &nbsp;&nbsp;&nbsp;</td>
+                  <td align="left" valign=top style="font-family:Courier;font-size:0.75em">1 start bit, 1 stop bit</td>
+           </tr>            
+           <tr>
+               <td align="left" valign=top style="font-family:Courier;font-size:0.75em">Parity bit:</td>
+               <td align="left" valign=top style="font-family:Courier;font-size:0.75em">none</td>
+            </tr>
+            <tr>
+               <td align="left" valign=top style="font-family:Courier;font-size:0.75em">Flow control:</td>
+               <td align="left" valign=top style="font-family:Courier;font-size:0.75em">none</td>
+            </tr>
+      </table>
+</br>
+The complete implementation of the firmware for the microcontroller is available on the <a href="https://github.com/FMCHUB/FMC_FRU_EEPROM_PROGRAMMER/tree/master/FIRMWARE_ATMEL" target="_newgithubfw">FMC FRU EEPROM Programmer GitHub repository</a>.
+It can be compiled by using Atmel Studio 7. The source code implements the user command protocol, which interprets the following commands:
+</br></br>
+<i>Tab. 1: Serial port commands from host PC to FMC programmer</i></br>
+<table cellspacing="0" border="0">
+	<colgroup width="177"></colgroup>
+	<colgroup span="6" width="100"></colgroup>
+	<tr>
+    <td style="border-bottom: 1px solid #000000" align="left" height="20" valign=bottom width="12%"><b>Command</b></td>
+    <td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="43%"><b>Description</b></td>
+    <td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="25%"><b>Example (hex)</b></td>
+    <td style="border-bottom: 1px solid #000000" align="left" valign=bottom width="20%"><b>Response (hex)</b></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>
+	<tr>
+		<td align="left" valign=top style="font-family:Courier;font-size:0.75em">'b' (0x62)</td>
+      <td align="left" valign=top style="font-family:Courier;font-size:0.75em">set number of bytes to read in a burst</br>Argument 1: n bytes to read (1 byte)</br>Response 1: ACK (0x06)</br>Response 2: Argument 1 value</td>
+      <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x62 0x08</td>
+		<td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x06 0x08</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'f' (0x66)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">returns always 0xFF</br>Argument 1: -</br>Response 1: 0xFF</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x66</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0xFF</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>   
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'g' (0x67)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">get global address (GA) pins</br>of dip switch SW1</br>Argument 1: -</br>Response 1: GA[1:0] in hex (0x00 .. 0x03)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x67</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x03</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>   
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'p' (0x70)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">get plugged-in state</br>(inverted PRSNT_M2C_L pin)</br>Argument 1: -</br>Response 1: 0x00=not plugged, 0x01=plugged</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x70</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x01</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>   
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'P' (0x50)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">get protection polarity</br>Argument 1: -</br>Response 1: 0x00 or 0x01</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x50</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x01</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>   
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'r' (0x72)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">read with 1 byte addressing</br>Argument 1: I2C Addr (1 byte)</br>Argument 2: Mem Addr (1 byte)</br>Response 1: ACK (0x06)</br>Response 2: Mem data (up to n byte)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x72 0x50 0x01</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x06 0xFF</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>   
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'R' (0x52)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">Read with 2 byte addressing</br>Argument 1: I2C Addr (1 byte)</br>Argument 2: Mem Addr MSB (1 byte)</br>Argument 3: Mem Addr LSB (1 byte)</br>Response 1: ACK (0x06) or NACK (0x3F)</br>Response 2: Mem data (up to n byted)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x72 0x50 0x00 0x01</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x06 0xFF</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>   
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'s' (0x73)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">scan for EEPROM addresses</br>Argument 1: -</br>Response 1: I2C Addr (7 bit format)</br>Response n: 0xFF (end of list)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x73</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x50 0xFF</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>   
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'v' (0x76)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">version of firmware</br>Argument 1: -</br>Response 1: Major version</br>Response 2: Minor version</br>Response 3: Build no.</br>Response 4: 0xFF</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x73</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x01 0x01 0x01 0xFF</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>   
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'w' (0x77)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">write with 1 byte addressing</br>Argument 1: I2C Addr (1 byte)</br>Argument 2: Mem Addr (1 byte)</br>Argument 3: Mem Data 1 (1 byte)</br>Argument n: Mem Data n-2 (1 byte)</br>Response 1: ACK (0x06) or NACK (0x3F)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x77 0x50 0x00 0xFF</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x06</i></td>
+   </tr>
+   <tr><td colspan=4 height="10px">&nbsp;</td></tr>   
+   <tr>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">'W' (0x57)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">Write with 2 byte addressing</br>Argument 1: I2C Addr (1 byte)</br>Argument 2: Mem Addr MSB (1 byte)</br>Argument 3: Mem Addr LSB (1 byte)</br>Argument 4: Mem Data 1 (1 byte)</br>Argument n: Mem Data n-3 (1 byte)</br>Response 1: ACK (0x06) or NACK (0x3F)</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em">0x77 0x50 0x00 0x01 0xFF</td>
+         <td align="left" valign=top style="font-family:Courier;font-size:0.75em"><i>0x06</i></td>
+   </tr>
+</table>
+
+</br>
+</p>
+
+<p align="justify"><b>2.3 Command line tool</b></br>
+For easy use and out-of-the-box functionality, there is a simple console application for Microsoft Windows. The executable binaries and the source code are available on <a href="https://github.com/FMCHUB/FMC_FRU_EEPROM_PROGRAMMER/tree/master/SOFTWARE_CMD_TOOLS/win/FMC_FRU_EEPROM_PROGRAMMER" target="_newgithubsw">FMC FRU EEPROM Programmer GitHub repository</a>.
+
+</br>
+<img src="./FMC_FRU_EEPROM_PROGRAMMER_CONSOLE_APP.JPG" alt="FMC FRU EEPROM Programmer command line tool" width="75%"></br>
+<i>Fig.&nbsp;4: Example usage of the command line tool with parameters -p -s -i and -m. The application reports all necessary status information of the FMC module's EEPROM.</i></br>
+</br>
+The most important calls for uploading and downloading files are shown in the examples below:</br></br>
+<b>2.3.1 File download</b></br>
+<img src="./FMC_FRU_EEPROM_PROGRAMMER_CONSOLE_APP_DOWNLOAD.JPG" alt="FMC FRU EEPROM Programmer command line tool, Download command" width="75%"></br>
+<i>Fig.&nbsp;5: Example usage of the command line tool with parameters -m and -d. Firstly, the application sets the EEPROM parameters by memory autodetect function. Secondly, the application transfers the content from the FMC EEPROM to a file on the host PC (download).</i></br>
+</br></br>
+<b>2.3.2 File upload</b></br>
+<img src="./FMC_FRU_EEPROM_PROGRAMMER_CONSOLE_APP_UPLOAD.JPG" alt="FMC FRU EEPROM Programmer command line tool, Upload command" width="75%"></br>
+<i>Fig.&nbsp;6: Example usage of the command line tool with parameters -m and -u. Firstly, the application sets the EEPROM parameters by memory autodetect function. Secondly, the application transfers a file from the host PC to the FMC EEPROM (upload).</i></br>
+</br>
+</br>
+<b>2.3.3 Driver installation</b></br>
+In case you are using Microsoft Windows 7, the FMC FRU EEPROM Programmer needs an addiotional driver file. It is located in the <a href="https://github.com/FMCHUB/FMC_FRU_EEPROM_PROGRAMMER/tree/master/DRIVER/win" target="_newgithubdriver">GitHub repository DRIVER directory</a>.
+On Windows 10, the driver files for the hardware will be automatically installed.
+</p>
+
+</td>
+</tr>
+
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">3. Electrical data</font></br>
+<p align="justify">
+      The schematics can be downloaded from GitHub:</br><a href="https://github.com/FMCHUB/FMC_FRU_EEPROM_PROGRAMMER/raw/master/PCB_ALTIUM/Schematic_FRU_Programmer.pdf" target="_newgithubschematic">https://github.com/FMCHUB/FMC_FRU_EEPROM_PROGRAMMER/.../Schematic_FRU_Programmer.pdf</a>
+
+</br></br>
+   T.B.D.
+<!-- TODO
+Section - Electrical data
+ - I2C frequency etc
+ - 3.3V logic
+ - External power supply pins
+ - Write protection   
+//-->
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">4. Mechanical data</font></br>
+<p align="justify">
+   </br>
+   <img src="./FMC_FRU_EEPROM_PROGRAMMER_MECH.JPG" alt="FMC FRU EEPROM Programmer mechanical data" width="75%"></br>
+   <i>Fig.&nbsp;7: Mechanical dimensions of the FMC FRU EEPROM Programmer.</i></br>
+   </br>      
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">5. Ordering information</font></br>
+
+The FMC FRU EEPROM Programmer can be ordered at various online market places, or you can request a quotation by sending an e-mail to <a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20FRU%20EEPROM%20PROGRAMMER%20T0009">info@iamelectronic.com</a>.</br>
+</br>
+<i>Tab. 3: Assembly variants of FMC FRU EEPROM Programmer with product numbers and market places.</i></br>
+<table width="98%" cellspacing="0" border="0">
+<tr>
+   <td width="15%" style="border-bottom: 1px solid #000000" align="left">Product no.</td>
+   <td width="40%" style="border-bottom: 1px solid #000000" align="left">Description</td> 
+   <td width="20%" style="border-bottom: 1px solid #000000" align="left">Market place</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Request quote</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Standard lead time</td>
+</tr>
+
+<tr>
+   <td valign="top">T0009</td>
+   <td valign="top">FMC FRU EEPROM Programmer</br>with CC-LPC-10 connector and ATmega32U4.</td>
+   <td valign="top"><a href="http://www.iamelectronic.com/shop/produkt/fpga-mezzanine-card-fmc-fru-eeprom-programmer/" target="_newiamshopfmcfru">IAM Electronic Shop</a></br></br>
+                    <a href="https://www.ebay.com/itm/xxx" target="_newebayfmcfru">Ebay #xxx</a></br></br>
+					     <a href="https://www.tindie.com/products/xxx/" target="_newtindiefmcfru">Tindie</br>#xxx</br></br>
+					
+					</td>
+   <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20FRU%20EEPROM%20PROGRAMMER%20T0009">info@iamelectronic.com</a></td>
+   <td valign="top">Normally in stock, otherwise 4 weeks</td>
+</tr>
+
+</table>
+
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">6. Document history</font></br>
+Document number:</br>
+DS#T0009</br>
+</br>
+Version history: </br>
+2020/03/20: Initial release
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">7. Imprint</font></br>
+<font class="imprint">
+Name and registered office of the company:</br>
+IAM Electronic GmbH</br>
+Bucksdorffstr. 43</br>
+04159 Leipzig</br>
+Germany</br>
+</br>
+Contact:</br>
+Phone: +49 341 26496031</br>
+E-Mail: info@iamelectronic.com</br>
+</br>
+Chief Executive Officer: Dr. Philipp F&oumldisch</br>
+</br>
+Commercial register:</br>
+Register court: Amtsgericht Leipzig</br>
+Register number: HRB 34071</br>
+Value Added Tax Identification Number: DE313797981</br>
+</font>
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
