@@ -309,6 +309,7 @@ there are two major manufacturers for the connectors on baseboard (female) and m
 </br>GA[0] is connected to address bit[1] and GA[1] is connected to address bit[0]. Address bit [2] of the 7-bit address[6:0] indicates the addressing width.
 </br>EEPROMs with a size of 256 Bytes or lower use one-byte addresses, which should be masked with a low address-bit[2]. Larger EEPROMS use two-byte addresses, which is masked with a high address-bit[2]. 
 </br>For example, the address 0b1010001 can be used for an EEPROM with 256 Bytes (GA[1:0] = 0b10). The address 0b101010101 can be used accordingly for larger EEPROMs with two-byte addresses.
+</br>You can use the <a href="https://fmchub.github.io/projects/FMC_FRU_EEPROM_PROGRAMMER/Datasheet/FMC_FRU_EEPROM_PROGRAMMER_datasheet.html" target="_newfmcprogrammer">FMC FRU EEPROM Programmer</a> to verify and configure an I2C EEPROM.</br>
 </br>Here is a list of commonly used memory chips we have seen on several FMC modules.
 </p>
 <table class="table">
