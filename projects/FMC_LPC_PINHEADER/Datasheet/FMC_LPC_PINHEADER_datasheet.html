@@ -1,0 +1,361 @@
+
+<html>
+<head>
+<title>FPGA Mezzanine Card (FMC) LPC to Pin header Board</title>
+<style>
+font { 
+   font-family: Times New Roman, Serif;
+   color: navy;
+}
+
+font.topright { 
+   font-size: 2em;
+   font-weight: bold;
+}
+
+font.revision { 
+   font-size: 1em;
+}
+
+font.headline { 
+   font-size: 2.5em;
+   color: black;
+   font-weight: bold;
+}
+
+font.subheadline { 
+   font-size: 1.5em;
+   color: black;
+   font-weight: bold;
+}
+font.imprint { 
+   font-size: 0.75em;
+   color: black;
+   font-weight: none;
+}
+
+hr.style-one {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.0));
+}
+
+hr.style-two {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 128, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 128, 0));
+}
+
+ul {
+   font-size: 1.33em;
+   font-face: bold;
+   color: black;
+}
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83790429-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<table width="750px" border="0" bgcolor="#FFFFFF">
+   <tr>
+      <td align="left" width="52%"><a href="http://www.iamelectronic.com" target="_newiam"><img src="./LOGO_IAM_NAVY_WHITE.jpg" width="300px" border="0" alt="IAM Electronic - Instrumentation And Measurement Electronics"/></a></td>
+      <td align="right" width="48%"><font class="topright">
+
+FMC LPC Pin Header&nbsp;</font></br>
+</br></br><font class="revision">DS#T0011 REV 2020/11/02&nbsp;</br>
+PDF version (coming soon),
+<a href="http://fmchub.github.io/projects/FMC_LPC_PINHEADER/Datasheet/FMC_LPC_PINHEADER_datasheet.html">HTML version</a>
+</font>
+
+      </td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="center"><font class="headline">Pin Header Board for Low-Pin Count</br>FMC Connectors</font></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+<tr>
+<td align="left" valign="top"><font class="subheadline">
+   Features</font></br>
+   <ul>
+     <li>Low-pin count (LPC) connector</li>      
+     <li>Handy breakout for FMC carriers</li>
+	  <li>Pin headers with 2.54 mm pitch</li>
+	  <li>SMA connectors for high-speed data (multi gigabit transceivers)</li>
+	  <li>SMA connector for dedicated clock IO</li>
+	  <li>EEPROM for FRU information storage</li>
+	  <li>Small form factor</li>
+     <li>Open-source hardware</li>
+   </ul>
+</td>
+
+<td rowspan="2" align="left" valign="top">
+
+   <font class="subheadline">
+   Block diagram</br></font></br>
+   <img src="./FMC_LPC_PINHEADER_BLOCK_DIAGRAM.jpg" width="100%" alt="FMC LPC Pin Header board Block Diagram"/></br>
+   <p align="justify">The photos below show the bottom side with LPC mezzanine card connector (MC-LPC-10) and top side with pin headers (2.54&nbsp;grid) and SMA connectors.</p>
+&nbsp;
+<img src="./FMC_LPC_PINHEADER_BOTTOM.jpg" alt="FMC LPC Pin Header board with ... on top" width="48%"/>
+<img src="./FMC_LPC_PINHEADER_TOP.jpg" alt="FMC LPC Pin Header board with ... on top" width="48%"/></br>
+<center>Bottom side&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Top side</center>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+
+<font class="subheadline">Applications</font></br>
+   <ul>
+	  <li>Easy prototyping</li>
+	  <li>Logic Analyzer</li>
+	  <li>Clock Synthesizer</li>
+	  <li>Trigger-Generator</li>
+	  <li>Pattern-Generator</li>
+	  <li>Board-to-Board interconnections</li>
+	  <li>Debugging and test of digital designs</li>
+      <li>Research and education with FPGAs</li>
+   </ul>
+</br>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left">
+<font class="subheadline">1. Description</font></br>
+<p align="justify">
+The FMC pin header board was developed to make the high density FMC connector of many FPGA boards easily accessible.
+In many applications easily pluggable connections are required to process and check the digital signals.
+The use of 2.54&nbsp;mm pin headers is very common. Thus, the FMC pin header board enables a variety of applications for digital signal processing and testing.
+The total number of 68&nbsp;user signals (LAxx_P/N), 4&nbsp;user clocks (CLKx_M2C_P/N) and 3&nbsp;voltage rails (VADJ, 3P3V and 12PV0) from the carrier card connector are routed to the 2.54&nbsp;mm pin grid on top of the adapter board.
+In addition, the high-speed data lanes (multi-gigabit transceivers) are easily accessible via SMA connectors on the edge of the PCB.
+Finally, the board allows complete interconnection of all signals from the FMC connector.
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">2. Application information</font></br>
+<p align="justify">
+
+   Fig.&nbsp;1 shows a typical application of the FMC pin header adapter where two carrier boards are connected together. Loose cables can be used for digital signals in the range of several 10&nbsp;MHz.</br></br>
+   <img src="./FMC_LPC_PINHEADER_APPLICATION.jpg" alt="Board-to-board interconnection with the FMC LPC Pin Header Board" width="98%"/></br>
+   <i>Fig. 1: Board-to-board interconnection with the FMC LPC pin header board.</i></br></br>
+
+   For high-speed data connections between two boards, the SMA connectors should be used. Data rates of several gigabits per second are common and depend on the FPGA of the carrier board.
+   Fig.&nbsp;2 below shows the test setup for measuring the maximum datarates of the Pin-Header Board with a loopback configuration. The SMA cables are about 50&nbsp;cm long.</br></br>
+   <img src="./FMC_LPC_PINHEADER_LOOPBACK.jpg" alt="Loopback connection with the FMC LPC Pin Header Board" width="98%"/></br>
+   <i>Fig. 2: Loopback connection with the FMC LPC pin header board.</i></br></br>
+
+   The SMA connectors of the Pin Header Board have been tested with datarates up to 8.5&nbsp;Gbps without
+   errors. Even faster connections are possible, but then the cable quality and length are more important than the characteristics of the board itself.
+   Fig.&nbsp;3 and fig.&nbsp;4 show the results of an eyescan with an Xilinx Zynq Ultrascale+ FPGA.</br></br>
+   <img src="./FMC_LPC_PINHEADER_5G94_EYESCAN.jpg" alt="Eyescan of loopback connection with datarate of 5.94 Gbps" width="98%"/></br>
+   <i>Fig. 3: Eyescan of the loopback connection with a datarate of 5.94&nbsp;Gbps.</i></br></br>
+
+   <img src="./FMC_LPC_PINHEADER_8G5_EYESCAN.jpg" alt="Eyescan of loopback connection with datarate of 8.5 Gbps" width="98%"/></br>
+   <i>Fig. 4: Eyescan of the loopback connection with a datarate of 8.5&nbsp;Gbps.</i></br></br>
+
+</p>
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">3. Electrical data (pin description)</font></br>
+   <p align="justify">
+</br></br>The printed circuit board is open-source hardware! You can download the <a href="https://raw.githubusercontent.com/FMCHUB/FMC_LPC_PINHEADER/main/Drawings/FMC_PINHEADER_BOARD_SCHEMATICS.pdf" target="_newfmclpcpinheqader_schematic">FMC LPC pinheader board schematics</a> and <a href="https://github.com/FMCHUB/FMC_LPC_PINHEADER" target="_newgithubfmclpcpinh">PCB layout files</a> in their latest
+revision from <a href="http://www.fmchub.com" target="_newfmchub">http://www.fmchub.com</a>.</br></br></p>
+<p align="justify"><b>3.1 Pinout of the 2.54&nbsp;mm pin headers</b></br></br>
+
+    Fig.&nbsp;5 and tab.&nbsp;1 show the connections of the FMC signals on the pin header connectors J1, J2, and J3.</br></br>
+
+   <img src="./FMC_LPC_PINHEADER_PINOUT.jpg" alt="Pin assignments of the FMC Pin Header Board" width="98%"/></br></br>
+   <i>Fig. 5: Pin assignments of the FMC LPC pins to the pin headers J1, J2, and J3.</i></br>
+
+   <center>
+      <i>Tab. 1: Pin assignments of all FMC connector pins to the Pin Header Board.</i></br>
+      <table cellspacing="0" border="0" width="99%">
+    <tr>
+        <td width="14%" style="border-bottom: 1px solid #000000" align="left" valign=bottom><b>FMC pin name</b></td>
+        <td width="25%" style="border-bottom: 1px solid #000000" align="left" valign=bottom><b>FMC pin designator</b></td>
+        <td width="38%" style="border-bottom: 1px solid #000000" align="left" valign=bottom><b>Pin Header</b></td>
+        <td width="10%" style="border-bottom: 1px solid #000000" align="left" valign=bottom><b>Pin number</b></td>
+    </tr>
+    
+    <tr>
+      <td>LA00_P_CC</td>
+      <td>G6</td>
+      <td>J2</td>
+      <td align="center">5</td>
+    </tr>
+    <tr>
+      <td>LA00_N_CC</td>
+      <td>G7</td>
+      <td>J2</td>
+      <td align="center">6</td>
+    </tr>
+    
+    <tr>
+      <td>LA01_P_CC</td>
+      <td>t.b.d.</td>
+      <td>t.b.d.</td>
+      <td align="center">t.b.d.</td>
+    </tr>
+    <tr>
+      <td>LA01_N_CC</td>
+      <td>t.b.d.</td>
+      <td>t.b.d.</td>
+      <td align="center">t.b.d.</td>
+    </tr>
+    
+      </table>
+    </center>
+</p>
+
+</br></br><p align="justify"><b>3.2 SMA Connectors for Gigabit transceivers</b></br></br>
+
+   The FMC LPC connector has one multi-gigabit transceiver data pair (DP0_M2C_P/N and DP0_M2C_P/N) and a corresponding differential clock input (GBTCLK0_M2C_P/N).
+   These six signals are all routed to the SMA connectors. The circuitry is shown in Fig.&nbsp;6.</br></br>
+
+   <img src="./FMC_LPC_PINHEADER_SMA.jpg" alt="SMA connectors of the FMC Pin Header Board" width="98%"/></br>
+   <i>Fig. 6: SMA connectors with corresponding Gigabit transceiver ports on the FMC connector (schematic view).</i></br></br>
+
+   Fig.&nbsp;7 shows the signal assignemnts, but the designators of the signals can be also read on the circuit board.</br></br>.
+   <img src="./FMC_LPC_PINHEADER_SMA_NAMES.jpg" alt="SMA connectors for gigabit transceiver signals." width="98%"/></br>
+   <i>Fig. 7: SMA connectors and their associated Gigabit transceiver signals.</i></br>
+</p>
+
+</br></br><p align="justify"><b>3.3 SMA Connector for clock IO</b></br></br>
+   One of the FMC connector pins CLK0_M2C_P (pin H4) or CLK1_M2C_P (pin G2) can be routed a separate SMA connector on the board edge. A zero ohm resistor determines which clock signal will be used.
+   The clock signals are also routed to the 2.54&nbsp;mm pin headers J1 and J2. By default, the signal CLK0_M2C_P (CLK0_P) is selected by resistor R1 (see fig.&nbsp;8 and fig.&nbsp;9).</br>
+
+   <img src="./FMC_LPC_PINHEADER_SMA_CLKIO.jpg" alt="SMA connector with clock selection jumper (resistor)" width="98%"/></br>
+   <i>Fig. 8: Clock selection circuit with a zero ohm resistor. The SMA connector can be used as clock input or clock output.</i></br></br>
+
+   <img src="./FMC_LPC_PINHEADER_JUMPER.jpg" alt="Jumper (resistor) clock selection" width="98%"/></br>
+   <i>Fig. 9: Resistors R1 and R2 for selecting the clock signal CLK0_M2C_P (Pin H4) or CLK1_M2C_P (Pin G2) of the SMA connector. The size of the resistor is 1206 and can be easily soldered by hand.</i></br></br>
+
+   The SMA connector (designator CLK_IO) for the dedicated clock signal is on the left side of the board (front view, see fig.&nbsp;10).</br></br>
+   <img src="./FMC_LPC_PINHEADER_SMA_CLKIO_NAME.jpg" alt="SMA connector for dedicated clock signals." width="98%"/></br>
+   <i>Fig. 10: The SMA connector for the dedicated clock input/output is on the left side of the board.</i></br>
+</p>
+
+</br></br><p align="justify"><b>3.4 FMC FRU EEPROM</b></br></br>
+The EEPROM for storing FMC FRU (field replaceable unit) information is an M24C02 with 2&nbsp;Kbit (256&nbsp;Byte). The FRU record determines the voltage on the VADJ rail of the FMC connector.
+By default, the FRU EEPROM is programmed to request 3.3&nbsp;V from the carrier board. Further, the memory stores the board information such as manufacturer name and product number. The devices
+can be read and written by the I2C interface of the FMC connector. The Pin Header board includes 4K7 pull-up resistors on the SCL and SDA signal lanes. The I2C address of the M24C02 is defined by
+the GA0 and GA1 pins of the FMC connector in accordance with the ANSI/VITA57.1 standard.</br>
+
+<img src="./FMC_LPC_PINHEADER_FRU_EEPROM.jpg" alt="FMC FRU EEPROM of the Pin Header board." width="98%"/></br></br>
+<img src="./FMC_LPC_PINHEADER_FRU_EEPROM_IC.jpg" alt="FMC FRU EEPROM of the Pin Header board." width="98%"/></br>
+<i>Fig. 11: The M24C02 EEPROM stores the FMC FRU information record.</i></br>
+
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">4. Mechanical data</font></br>
+<p align="justify">
+   The board outline is defined by the ANSI/VITA 57.1 standard for single width FMC modules. It has a shortened length of the standard size and fits into any ANSI/VITA 57.1 compliant carrier board.
+   The exact dimensions are given in fig.&nbsp;12.</br></br></p>
+   <img src="./FMC_LPC_PINHEADER_MECHANICAL.jpg" alt="FMC LPC Pin Header board, Mechanical dimensions" width="48%"/></br></br>
+   <i>Fig. 12: Mechanical drawing of the FMC LPC Pin Header Board.</i></br>
+   </br>The mounting holes are plated but have no electrical connection. Their sizes and positions are in accordance with ANSI/VITA 57.1 single width FMC modules.
+</p>
+</td>
+</tr>
+
+<tr> 
+   <td colspan="2" align="right"><hr class="style-one"></td>
+   </tr>
+   
+   <tr> 
+   <td colspan="2" align="left"><font class="subheadline">6. Ressources</font></br>
+      [1] Schematics: <a href="https://raw.githubusercontent.com/FMCHUB/FMC_LPC_PINHEADER/main/Drawings/FMC_PINHEADER_BOARD_SCHEMATICS.pdf" target="_newfmclpcpinheqader_schematic">FMC_PINHEADER_BOARD_SCHEMATICS.pdf</a></br>
+      [2] PCB drawings: <a href="https://raw.githubusercontent.com/FMCHUB/FMC_LPC_PINHEADER/main/Drawings/FMC_PINHEADER_BOARD_PCB_LAYERS.pdf" target="_newfmclpcpinheqader_pcblayers">FMC_PINHEADER_BOARD_PCB_LAYERS.pdf</a></br>
+      [3] Mechanical dimensions: <a href="https://raw.githubusercontent.com/FMCHUB/FMC_LPC_PINHEADER/main/Drawings/FMC_PINHEADER_BOARD_MECHANICAL_DIMENSIONS.pdf" target="_newfmclpcpinheqader_mech">FMC_PINHEADER_BOARD_MECHANICAL_DIMENSIONS.pdf</a></br>
+      [4] Github repository: <a href="https://github.com/FMCHUB/FMC_LPC_PINHEADER" target="_newgithubfmcpinheader">https://github.com/FMCHUB/FMC_LPC_PINHEADER</a></br>   
+   </td>
+   </tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">7. Document history</font></br>
+Document number:</br>
+DS#T0011</br>
+</br>
+Version history: </br>
+2020/11/02: Initial release
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">8. Imprint</font></br>
+<font class="imprint">
+Name and registered office of the company:</br>
+IAM Electronic GmbH</br>
+Bucksdorffstr. 43</br>
+04159 Leipzig</br>
+Germany</br>
+</br>
+Contact:</br>
+Phone: +49 341 26496031</br>
+E-Mail: info@iamelectronic.com</br>
+</br>
+Chief Executive Officer: Dr. Philipp F&oumldisch</br>
+</br>
+Commercial register:</br>
+Register court: Amtsgericht Leipzig</br>
+Register number: HRB 34071</br>
+Value Added Tax Identification Number: DE313797981</br>
+</font>
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
