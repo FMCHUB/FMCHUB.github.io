@@ -71,7 +71,7 @@ ul {
       <td align="right" width="48%"><font class="topright">
 
 FMC SFP Adapter&nbsp;</font></br>
-</br></br><font class="revision">DS#T0012 REV 2022/05/18&nbsp;</br>
+</br></br><font class="revision">DS#T0012 REV 2022/05/19&nbsp;</br>
 PDF version (coming soon),
 <a href="http://fmchub.github.io/projects/FMC_SFP_ADAPTER/Datasheet/FMC_SFP_ADAPTER_datasheet.html">HTML version</a>
 </font>
@@ -155,7 +155,31 @@ or test points on the PCB. No configuration of the card is necessary for easy st
 <tr> 
 <td colspan="2" align="left"><font class="subheadline">2. Application information</font></br>
 <p align="justify">
-T.B.D.
+
+   <p align="justify"><b>1. Loopback test</b></br>
+      The modules can be used in a loopback test to check the components of a board-to-board connection. These tests are useful for evaluating an FPGA test design on carrierboard or transceiver tests. We have tested the FMC SFP adapter with various SFP optical transceivers.</br>
+      <img src="./transceiver_for_fmc_sfp.jpg" alt="SFP Transceivers for FMC SFP Adapter" width="85%"></br>
+      <i>Fig. 1: SFP transceivers used for testing the FMC SFP adapter.</i></br></br>
+
+      Our test have been carried out with two FMC carrier boards with Xilinx FPGAs (fig.&nbsp;2). We use the Xilinx IBERT core for loopback testing. The "far end PMA" loopback mode must be enabled on one of the boards.</br>
+      <img src="./FMC_SFP_Loopback_Setup.jpg" alt="FMC SFP Adapter loopback test" width="85%"></br>
+      <i>Fig. 2: FMC loopback configuration with two carrier boards and two FMC SFP adapter modules.</i></br></br>
+
+      The eyediagrams for different transceivers and data rates are shown in fig.&nbsp;3&nbsp;..&nbsp;5</br>
+      <img src="./FMC_Loopback_1000BASE_SFP_1250GBPS.jpg" alt="Eyediagram 1000BASE SFP with 1250 Gigabit/s" width="85%"></br>
+      <i>Fig. 3: Eyediagram from Xilinx IBERT with 1000BASE SFP Transceivers in loopback configuration with 1.25&nbsp;Gb/s.</i></br></br>
+
+      <img src="./FMC_Loopback_10G_SFP+_1250GBPS.jpg" alt="Eyediagram 10G SFP+ with 1250 Gigabit/s" width="85%"></br>
+      <i>Fig. 4: Eyediagram from Xilinx IBERT with 10G SFP+ Transceivers in loopback configuration with 1.25&nbsp;Gb/s.</i></br></br>
+
+      <img src="./FMC_Loopback_10G_SFP+_3750GBPS.jpg" alt="Eyediagram 10G SFP+ with 3750 Gigabit/s" width="85%"></br>
+      <i>Fig. 5: Eyediagram from Xilinx IBERT with 10G SFP+ Transceivers in loopback configuration with 3.75&nbsp;Gb/s.</i></br></br>
+
+      During all tests, we did not receive a single bit error. The bit error rate (BER) was also checked with the Xilinx IBERT core (fig.&nbsp;6).</br>
+      <img src="./FMC_SFP_BER_3g750.jpg" alt="Bit error rate with FMC SFP adapter" width="98%"></br>
+      <i>Fig. 6: The bit error rate of the FMC SFP adapter with a 10G SFP+ transceiver in loopback mode at 3.75&nbsp;Gb/s.</i></br></br>
+   </p>
+
 </p>
 
 </td>
@@ -168,7 +192,7 @@ T.B.D.
 <tr> 
 <td colspan="2" align="left"><font class="subheadline">3. Electrical data (pin description)</font></br>
    <p align="justify">
-</br></br>The printed circuit board is open-source hardware! You can download the <a href="https://github.com/FMCHUB/FMC_SFP_ADAPTER/blob/main/Drawings/FMC_SFP_ADAPTER.pdf" target="_newfmclpcpinheqader_schematic">FMC LPC SFP Adapter board schematics</a> and <a href="https://github.com/FMCHUB/FMC_LPC_PINHEADER" target="_newgithubfmclpcpinh">PCB layout files</a> in their latest
+The printed circuit board is open-source hardware! You can download the <a href="https://github.com/FMCHUB/FMC_SFP_ADAPTER/blob/main/Drawings/FMC_SFP_ADAPTER.pdf" target="_newfmclpcpinheqader_schematic">FMC LPC SFP Adapter board schematics</a> and <a href="https://github.com/FMCHUB/FMC_LPC_PINHEADER" target="_newgithubfmclpcpinh">PCB layout files</a> in their latest
 revision from <a href="http://www.fmchub.com" target="_newfmchub">http://www.fmchub.com</a>.</br></br></p>
 <p align="justify"><b>3.1 Pinout of the FMC LPC Connector</b></br></br>
 
@@ -295,6 +319,7 @@ Document number:</br>
 DS#T0012</br>
 </br>
 Version history: </br>
+2022/19/05: New content in section application information (1. loopback test)
 2022/18/05: Initial release
 
 </td>
