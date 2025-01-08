@@ -1,0 +1,784 @@
+
+<html>
+<head>
+<title>FPGA Mezzanine Card (FMC) HPC to LPC Breakout Board</title>
+<style>
+font { 
+   font-family: Times New Roman, Serif;
+   color: navy;
+}
+
+font.topright { 
+   font-size: 2em;
+   font-weight: bold;
+}
+
+font.revision { 
+   font-size: 1em;
+}
+
+font.headline { 
+   font-size: 2.5em;
+   color: black;
+   font-weight: bold;
+}
+
+font.subheadline { 
+   font-size: 1.5em;
+   color: black;
+   font-weight: bold;
+}
+font.imprint { 
+   font-size: 0.75em;
+   color: black;
+   font-weight: none;
+}
+
+hr.style-one {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.0));
+}
+
+hr.style-two {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 128, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 128, 0));
+}
+
+ul {
+   font-size: 1.33em;
+   font-face: bold;
+   color: black;
+}
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83790429-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<table width="750px" border="0" bgcolor="#FFFFFF">
+   <tr>
+      <td align="left" width="52%"><a href="http://www.iamelectronic.com" target="_newiam"><img src="./LOGO_IAM_NAVY_WHITE.jpg" width="300px" border="0" alt="IAM Electronic - Instrumentation And Measurement Electronics"/></a></td>
+      <td align="right" width="48%"><font class="topright">
+
+FMC HPC to LPC<br>Breakout&nbsp;</font></br>
+</br></br><font class="revision">DS#T0018 REV 2025/01/08&nbsp;</br>
+PDF version (coming soon),
+<a href="http://fmchub.github.io/projects/FMC_LPC_BREAKOUT/Datasheet/FMC_LPC_BREAKOUT_datasheet.html">HTML version</a>
+</font>
+
+      </td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="center"><font class="headline">Breakout board for High-Pin Count</br>FPGA Mezzanine Cards</font></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+<tr>
+<td align="left" valign="top"><font class="subheadline">
+   Features</font></br>
+   <ul>
+      <li>ANSI/VITA 57.1 compliant</li>
+      <li>Commercial grade form factor</li>
+      <li>High-pin count (HPC) connectors</li>
+	  <li>Low-pin count (LPC) breakout pads</li>
+      <li>Breakout of carrier card connector</li>
+      <li>Breakout of mezzanine card connector</li>
+      <li>Stackable assembly</li>
+      <li>Separate breakout of power pins</li>
+      <li>Breakout pads with 1.27 mm pitch</li>
+      <li>Prototyping area with 2.54 mm grid</li>
+      <li>Open-source hardware</li>
+   </ul>
+</td>
+
+<td rowspan="2" align="left" valign="top">
+
+   <font class="subheadline">
+   Block diagram</br></font></br>
+   <img src="./FMC_HPC_BREAKOUT_BLOCK_DIAGRAM.jpg" width="100%" alt="FMC HPC to LPC Breakout board Block Diagram"/></br>
+   <p align="justify">The photos below show the bottom side with HPC mezzanine card connector (MC-HPC-10) and top side with HPC carrier card connector (CC-HPC-10).</p>
+&nbsp;
+<img src="./FMC_HPC_BREAKOUT_MC_BOTTOM.jpg" alt="FMC HPC to LPC Breakout board with MC-HPC-10 on top" width="48%"/>
+<img src="./FMC_HPC_BREAKOUT_CC_TOP.jpg" alt="FMC HPC to LPC Breakout board with CC-HPC-10 on bottom" width="48%"/></br>
+<center>Bottom side&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Top side</center>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+
+<font class="subheadline">Applications</font></br>
+   <ul>
+      <li>Easy prototyping</li>
+      <li>Testing and debugging of FMC boards</li>
+      <li>Research and education with FPGAs</li>
+   </ul>
+</br>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left">
+<font class="subheadline">1. Description</font></br>
+<p align="justify">
+The <b>FMC HPC to LPC Breakout board</b> is a passive adapter for accessing all signals of <i>ANSI/VITA 57.1 FPGA&nbsp;Mezzanine&nbsp;Card&nbsp;(FMC) Standard</i>
+compliant low-pin count (LPC) connectors. The board has two high-pin count (HPC) connectors. All <b>HPC signals are plated through from the top to bottom</b> connector.
+This means that the breakout board can be used with all combinations of HPC and LPC carrier boards and mezzanine cards. All pins of the connector's rows C, D, G, and H are routed to a separate pad array on the top and bottom side.
+These pads were placed at a 1.27&nbsp;mm pitch to easily attach additional probes or solder wires.
+For special measuring tasks or for use as a stand-alone carrier, the power pins of the connector were routed to additional vias in the back of the module.
+Furthermore, simple electrical circuits can be realized on the prototyping area, which is a field of non connected vias with a pitch of 2.54&nbsp;mm.
+The FPGA mezzanine card has commercial grade form factor (single width, 78.80&nbsp;mm x 69&nbsp;mm) and is designed for air cooling.
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">2. Application information</font></br>
+
+<p align="justify">
+The FMC HPC to LPC Breakout module is predestined for three typical applications:</br>
+<p align="justify"><b>1. Passive FMC module</b></br>
+The board can be used as a passive FMC module or breadboard. Functionality must be realised by external circuitry on the prototyping area.</br>
+<img src="./FMC_HPC_BREAKOUT_WITH_CARRIER.JPG" alt="FMC HPC to LPC Breakout board with separate power pin vias" width="65%"></br>
+<i>Fig. 1: FMC HPC to LPC Breakout module plugged on carrier board (Digilent Nexys Video&trade; Board, 410-316).</i></br></p>
+
+<p align="justify"><b>2. Simple FMC carrier</b></br>
+The module can also be used as simple FMC carrier board. This card cannot be used to implement a whole application, but basic functions can be provided.
+For example, the correct behavior of an attached FMC module can be verified by providing an external power supply through the FMC HPC to LPC Breakout board. Or even
+a simple I2C programmer and reader for a FRU (field replaceable unit) record can be implemented with this carrier board as a basis.</p>
+
+<p align="justify"><b>3. Test point insertion (stacked assembly)</b></br>
+The most reasonable application of the module is probably its use as an external test point array for devices under test. The connectors on the top
+and bottom allow the stacking of at least two external FMC boards. Thus the FMC HPC to LPC Breakout module in the middle of the stack between a carrier and mezzanine card provides test points for all LPC signals passing through the connectors. With such a configuration, a real world FMC setup can be evaluated and debugged.
+</p>
+
+<p align="justify"><b>General information</b></br>
+Depending on the application, it is recommended to solder additional pin headers to the power pin array and to the breakout pad array. Standard
+pin headers are suitable and fit the PCB layout.</br>
+<img src="./FMC_HPC_BREAKOUT_POWER_PINS.JPG" alt="FMC HPC to LPC Breakout module with separate power pin vias and pin headers" width="65%"></br>
+<i>Fig. 2: FMC HPC to LPC Breakout module with separate power vias and<br>equipped pin headers (20&nbsp;pos., 2.54&nbsp;mm pitch).</i></br>
+</p>
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">3. Electrical data (pin description)</font></br>
+<p align="justify">
+
+<p align="justify">The printed circuit board is open-source hardware! You can download the <a href="https://github.com/FMCHUB/FMC_SINGLE_LPC_BREAKOUT/raw/master/Drawings/FMC_SINGLE_LPC_BREAKOUT_SCHEMATIC.pdf" target="_newfmchpcboard_schematic">FMC HPC to LPC breakout board schematics</a> and <a href="https://github.com/FMCHUB/FMC_SINGLE_LPC_BREAKOUT" target="_newgithubfmclpc">PCB layout files</a> in their latest
+revision from <a href="http://www.fmchub.com" target="_newfmchub">http://www.fmchub.com</a>. The parts list (see tab. 1) is very simple, because it consists of only two parts.</br></br>
+
+<i>Tab. 1: Parts list of the FMC LPC Breakout board.</i></br>
+<table border="0" cellspacing="0" width="80%">
+	<tr>
+		<td width="20%" style="border-bottom: 1px solid #000000" align="left"><b>FMC connector</b></td>
+		<td width="20%" style="border-bottom: 1px solid #000000" align="left"><b>Samtec part no.</b></td>
+		<td width="20%" style="border-bottom: 1px solid #000000" align="left"><b>Molex part no.</b></td>
+		<td width="40%" style="border-bottom: 1px solid #000000" align="left"><b>Description</b></td>
+	</tr>
+	<tr>
+		<td>1. CC-LPC-10</td>
+		<td><a target="_new7" href="https://octopart.com/search?q=ASP-134603-01">ASP-134603-01</a></td>
+		<td><a target="_new8" href="https://octopart.com/search?q=45971-4305">45971-4305</a></td>
+		<td>female, baseboard side, Low-pin count (LPC), 160 I/O, tin-lead</td>
+	</tr>
+        <tr>
+		<td>2. MC-LPC-10</b></td>
+                <td><a target="_new23" href="https://octopart.com/search?q=ASP-134604-01">ASP-134604-01</a></td>
+		<td><a target="_new24" href="https://octopart.com/search?q=45970-4305">45970-4305</a></td>
+		<td>male, mezzanine card side, Low-pin count (LPC), 160 I/O, lead-free, 10 mm mated stack height</td>
+	</tr>
+</table></br>
+
+A description of the signals from the HPC and LPC connector can be found at <a href="https://fmchub.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html" target="_newfmcsignals">https://fmchub.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html</a>.</p>
+
+<p align="justify">
+The ANSI/VITA 57.1 FMC standard describes different power supply pins on the LPC connector. The most important are routed to a separate via row next to the FMC connector in the back of the module (see fig. 3).</br>
+<img src="./FMC_HPC_BREAKOUT_POWER.JPG" alt="FMC HPC to LPC Breakout board with separate power pin vias" width="80%"></br>
+<i>Fig. 3: FMC HPC to LPC Breakout board with separate power vias (2.54&nbsp;mm pitch).</i></br>
+</br>
+A list of the power supply pins provided by the via row is shown in tab. 2.</br></br>
+<i>Tab. 2: Power pin vias and their signal names, locations, and trace widths on the PCB.</i></br>
+<table cellspacing="0" border="0">
+	<colgroup width="177"></colgroup>
+	<colgroup span="3" width="135"></colgroup>
+	<tr>
+		<td style="border-bottom: 1px solid #000000" height="20" align="left" valign=bottom><b>Signal name </b></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><b>Source </b></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><b>Destination </b></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><b>Trace width </b></td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>VADJ </td>
+		<td align="left" valign=bottom>H40 </td>
+		<td align="left" valign=bottom>Power Via #1</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>VADJ </td>
+		<td align="left" valign=bottom>G39 </td>
+		<td align="left" valign=bottom>Power Via #2</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>G38 </td>
+		<td align="left" valign=bottom>Power Via #3</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>D39 </td>
+		<td align="left" valign=bottom>Power Via #4</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>3P3V </td>
+		<td align="left" valign=bottom>C39 </td>
+		<td align="left" valign=bottom>Power Via #5</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>G40 </td>
+		<td align="left" valign=bottom>Power Via #6</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>12P0V </td>
+		<td align="left" valign=bottom>C37 </td>
+		<td align="left" valign=bottom>Power Via #7</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>D25 </td>
+		<td align="left" valign=bottom>Power Via #8</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>12P0V </td>
+		<td align="left" valign=bottom>C35 </td>
+		<td align="left" valign=bottom>Power Via #9</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>C21 </td>
+		<td align="left" valign=bottom>Power Via #10</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>3P3V </td>
+		<td align="left" valign=bottom>D40 </td>
+		<td align="left" valign=bottom>Power Via #11</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>D19 </td>
+		<td align="left" valign=bottom>Power Via #12</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>3P3V </td>
+		<td align="left" valign=bottom>D38 </td>
+		<td align="left" valign=bottom>Power Via #13</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>G14 </td>
+		<td align="left" valign=bottom>Power Via #14</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>3P3V </td>
+		<td align="left" valign=bottom>D36 </td>
+		<td align="left" valign=bottom>Power Via #15</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>G11 </td>
+		<td align="left" valign=bottom>Power Via #16</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>3P3VAUX </td>
+		<td align="left" valign=bottom>D32 </td>
+		<td align="left" valign=bottom>Power Via #17</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>D3 </td>
+		<td align="left" valign=bottom>Power Via #18</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>PRSNT_M2C_L </td>
+		<td align="left" valign=bottom>H2 </td>
+		<td align="left" valign=bottom>Power Via #19</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+	<tr>
+		<td height="19" align="left" valign=bottom>GND </td>
+		<td align="left" valign=bottom>C1 </td>
+		<td align="left" valign=bottom>Power Via #20</td>
+		<td align="left" valign=bottom>0.35&nbsp;mm (13.78&nbsp;mil)</td>
+	</tr>
+</table>
+</p>
+
+<p align="justify">
+The signals from the LPC connector are routed to an array of pads (fig. 4).</br>
+<img src="./FMC_HPC_BREAKOUT_PADS.JPG" alt="FMC HPC to LPC Breakout board with array of pads" width="80%"></br>
+<i>Fig. 4: FMC HPC to LPC Breakout board with an array of pads (1.27&nbsp;mm pitch) for<br>general purpose access to ANSI/VITA 57.1 signals.</i></br>
+</br>
+<i>Tab. 3: Signals of the ANSI/VITA 57.1 FMC LPC connector and pad array.</i></br>
+<table cellspacing="0" border="0">
+	<colgroup width="42"></colgroup>
+	<colgroup width="137"></colgroup>
+	<colgroup width="136"></colgroup>
+	<colgroup span="2" width="137"></colgroup>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom>Pin #</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=bottom>Row H</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=bottom>Row G</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=bottom>Row D</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=bottom>Row C</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="1" sdnum="1031;">1</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#6666FF">VREF_A_M2C</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#6666FF">PG_C2M</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="2" sdnum="1031;">2</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#6666FF">PRSNT_M2C_L</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF66">CLK1_M2C_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF3333">DP0_C2M_P</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="3" sdnum="1031;">3</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF66">CLK1_M2C_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF3333">DP0_C2M_N</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="4" sdnum="1031;">4</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF66">CLK0_M2C_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF99FF">GBTCLK0_M2C_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="5" sdnum="1031;">5</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF66">CLK0_M2C_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF99FF">GBTCLK0_M2C_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="6" sdnum="1031;">6</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA00_P_CC</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF3333">DP0_M2C_P</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="7" sdnum="1031;">7</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA02_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA00_N_CC</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF3333">DP0_M2C_N</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="8" sdnum="1031;">8</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA02_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA01_P_CC</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="9" sdnum="1031;">9</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA03_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA01_N_CC</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="10" sdnum="1031;">10</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA04_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA03_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA06_P</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="11" sdnum="1031;">11</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA04_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA05_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA06_N</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="12" sdnum="1031;">12</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA08_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA05_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="13" sdnum="1031;">13</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA07_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA08_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="14" sdnum="1031;">14</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA07_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA09_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA10_P</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="15" sdnum="1031;">15</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA12_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA09_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA10_N</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="16" sdnum="1031;">16</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA11_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA12_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="17" sdnum="1031;">17</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA11_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA13_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="18" sdnum="1031;">18</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA16_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA13_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA14_P</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="19" sdnum="1031;">19</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA15_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA16_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA14_N</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="20" sdnum="1031;">20</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA15_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA17_P_CC</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="21" sdnum="1031;">21</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA20_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA17_N_CC</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="22" sdnum="1031;">22</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA19_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA20_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA18_P_CC</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="23" sdnum="1031;">23</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA19_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA23_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA18_N_CC</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="24" sdnum="1031;">24</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA22_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA23_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="25" sdnum="1031;">25</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA21_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA22_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="26" sdnum="1031;">26</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA21_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA26_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA27_P</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="27" sdnum="1031;">27</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA25_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA26_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA27_N</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="28" sdnum="1031;">28</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA24_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA25_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="29" sdnum="1031;">29</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA24_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">TCK</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="30" sdnum="1031;">30</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA29_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">TDI</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">SCL</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="31" sdnum="1031;">31</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA28_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA29_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">TDO</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">SDA</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="32" sdnum="1031;">32</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA28_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">3P3VAUX</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="33" sdnum="1031;">33</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA31_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">TMS</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="34" sdnum="1031;">34</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA30_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA31_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">TRST_L</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">GA0</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="35" sdnum="1031;">35</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA30_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF33FF">GA1</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF6600">12P0V</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="36" sdnum="1031;">36</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA33_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99FF66">3P3V</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="37" sdnum="1031;">37</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA32_P</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA33_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FF6600">12P0V</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="38" sdnum="1031;">38</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#FFFF99">LA32_N</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99FF66">3P3V</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="39" sdnum="1031;">39</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#CCFF00">VADJ</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99FF66">3P3V</td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" height="19" align="center" valign=bottom sdval="40" sdnum="1031;">40</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#CCFF00">VADJ</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#99FF66">3P3V</td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom bgcolor="#00CCFF">GND</td>
+	</tr>
+</table>
+<!-- END TABLE//-->
+</p>
+
+<p align="justify">Please note that all Ground pins on the FMC HPC to LPC Breakout board are <b><u>not</u></b> tied together. This also applies to all other pins with identical function on the connector. Traces from the LPC connector to the breakout pads have a minimum width of 0.127&nbsp;mm (5&nbsp;mil).
+</p>
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">4. Mechanical data</font></br>
+<p align="justify">
+The board outline is defined by ANSI/VITA 57.1 standard for single width FMC modules. The board includes region 2 and region 3 of that standard. Region 1 for additional I/O connectivity with a front panel has been omitted, such that absolute board dimensions are 78.80&nbsp;mm&nbsp;x&nbsp;69&nbsp;mm. Cut outs on board shape have a radius of 1 mm.
+Exact dimensions are given in figure 5.</br></br>
+<img src="./FMC_HPC_BREAKOUT_DIMENSIONS.jpg" width="75%"></br>
+<i>Fig. 5: Mechanical drawing of the FMC HPC to LPC breakout board.</i></br>
+</br>
+The mounting holes are plated but have no electrical connection. Their sizes and positions are in accordance with ANSI/VITA 57.1 single width FMC modules with commercial grade mounting (air cooled).</p>
+
+<img src="./FMC_HPC_BREAKOUT_FULL_VIEW_BOTTOM.JPG" width="75%"></br>
+<i>Fig. 6: Product photo of FMC HPC to LPC board (bottom view).</i></br>
+</br>
+<img src="./FMC_HPC_BREAKOUT_FULL_VIEW_TOP.JPG" width="75%"></br>
+<i>Fig. 7: Product photo of FMC HPC to LPC breakout board (top view).</i></br>
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">5. Ordering information</font></br>
+
+The FMC HPC to LPC Breakout module can be ordered at various online market places, or you can request a quotation by sending an e-mail to <a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20HPC%20to%20LPC%20Breakout">info@iamelectronic.com</a>.</br>
+</br>
+<i>Tab. 4: Assembly variants of FMC HPC to LPC Breakout board with product numbers and market places.</i></br>
+<table width="98%" cellspacing="0" border="0">
+<tr>
+   <td width="15%" style="border-bottom: 1px solid #000000" align="left">Product no.</td>
+   <td width="40%" style="border-bottom: 1px solid #000000" align="left">Description</td> 
+   <td width="20%" style="border-bottom: 1px solid #000000" align="left">Market place</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Request quote</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Standard lead time</td>
+</tr>
+
+<tr>
+   <td valign="top">T0018</td>
+   <td valign="top">FMC HPC to LPC Breakout module with both</br>MC-HPC-10 and CC-HPC-10 connectors on bottom and top side.</td>
+   <td valign="top"><a href="https://www.ebay.com/itm/183089704738" target="_newebayfmc">Ebay #XXX</a></br>
+                    <a href="https://www.tindie.com/products/11490/" target="_newtindiefmc">Tindie</br>#XXX</td>
+   <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout%20T0003">info@iamelectronic.com</a></td>
+   <td valign="top">Normally in stock, 6 weeks</td>
+</tr>
+
+<tr>
+   <td valign="top">T0018C</td>
+   <td valign="top">FMC HPC to LPC Breakout module with custom assembly.</td>
+   <td valign="top">request quote</td>
+   <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout%20T0018MC">info@iamelectronic.com</a></td>
+   <td valign="top">8 weeks</td>
+</tr>
+
+</table>
+
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">6. Document history</font></br>
+Document number:</br>
+DS#T0018</br>
+</br>
+Version history: </br>
+<!--2025/01/08: Minor changes (wording, formatting, etc.)</br>//-->
+2025/01/08: Initial release
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">7. Imprint</font></br>
+<font class="imprint">
+Name and registered office of the company:</br>
+IAM Electronic GmbH</br>
+Bucksdorffstr. 43</br>
+04159 Leipzig</br>
+Germany</br>
+</br>
+Contact:</br>
+Phone: +49 341 26496031</br>
+E-Mail: info@iamelectronic.com</br>
+</br>
+Chief Executive Officer: Dr. Philipp F&oumldisch</br>
+</br>
+Commercial register:</br>
+Register court: Amtsgericht Leipzig</br>
+Register number: HRB 34071</br>
+Value Added Tax Identification Number: DE313797981</br>
+</font>
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
