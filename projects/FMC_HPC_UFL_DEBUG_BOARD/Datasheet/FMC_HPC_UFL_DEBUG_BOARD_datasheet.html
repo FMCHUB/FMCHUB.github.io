@@ -1,0 +1,864 @@
+
+<html>
+<head>
+<title>FPGA Mezzanine Card (FMC) HPC-U.FL Debug Board</title>
+<style>
+font { 
+   font-family: Times New Roman, Serif;
+   color: navy;
+}
+
+font.topright { 
+   font-size: 2em;
+   font-weight: bold;
+}
+
+font.revision { 
+   font-size: 1em;
+}
+
+font.headline { 
+   font-size: 2.5em;
+   color: black;
+   font-weight: bold;
+}
+
+font.subheadline { 
+   font-size: 1.5em;
+   color: black;
+   font-weight: bold;
+}
+
+font.subsubheadline { 
+   font-size: 1.25em;
+   color: black;
+   font-weight: bold;
+}
+
+font.imprint { 
+   font-size: 0.75em;
+   color: black;
+   font-weight: none;
+}
+
+hr.style-one {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.0));
+}
+
+hr.style-two {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 128, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 128, 0));
+}
+
+ul {
+   font-size: 1.33em;
+   font-face: bold;
+   color: black;
+}
+
+ul.applicationinfo {
+   font-family: Times New Roman, Serif;
+   font-size: 1.0em;
+}
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83790429-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<table width="750px" border="0" bgcolor="#FFFFFF">
+   <tr>
+      <td align="left" width="52%"><a href="http://www.iamelectronic.com" target="_newiam"><img src="./LOGO_IAM_NAVY_WHITE.jpg" width="300px" border="0" alt="IAM Electronic - Instrumentation And Measurement Electronics"/></a></td>
+      <td align="right" width="48%"><font class="topright">
+
+FMC HPC-U.FL</br>Debug Board&nbsp;</font></br>
+</br></br><font class="revision">DS#T0017 REV 2025/05/09&nbsp;</br>
+PDF version (coming soon),
+<a href="http://fmchub.github.io/projects/FMC_HPC_UFL_DEBUG_BOARD/Datasheet/FMC_HPC_UFL_DEBUG_BOARD_datasheet.html">HTML version</a>
+</font>
+
+      </td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="center"><font class="headline">Debug board for High-Pin Count</br>FPGA Mezzanine Cards</font></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+<tr>
+<td align="left" valign="top"><font class="subheadline">
+   Features</font></br>
+   <ul>
+	<li>FMC High-Pin Count (HPC) connector interface</li>
+    <li>156 routed signals accessible via<br>Hirose U.FL connectors</li>
+	<li>Up to 6 GHz signal bandwidth</li>
+    <li>Flexible high-speed signal access via pluggable connections</li>
+    <li>Breakout of 68 LPC LA bank signals</li>
+    <li>Breakout of 48 HPC HA bank signals</li>
+    <li>Breakout of 8 dedicated clock signals</li>
+    <li>16 differential MGT signal pairs breakout</li>
+    <li>8 SMA and 8 clamp probe connection points</li>
+    <li>Stackable mechanical design</li>
+    <li>Independent breakout of power pins</li>
+	<li>Independent breakout of JTAG bus</li>
+	<li>Independent breakout of JTAG bus</li>
+    <li>Open-source hardware design</li>
+   </ul>
+</td>
+
+<td rowspan="2" align="left" valign="top">
+
+   <font class="subheadline">
+   Block diagram</br></font></br>
+   <img src="./FMC_HPC_UFL_DEBUG_BOARD_BLOCK_DIAGRAM.jpg" width="100%" alt="FMC HPC-U.FL Debug Board Block Diagram"/></br>
+   <p align="justify">The photos below show the bottom side with HPC mezzanine card connector (MC-HPC-10) and U.FL connectors, and top side with
+      HPC carrier card connector (CC-HPC-10) and testpoints.</p>
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_BOTTOM.jpg" alt="FMC HPC-U.FL Debug Board" width="99%"/></br>
+<center>Top side</center>
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_TOP.jpg" alt="FMC HPC-U.FL Debug Board" width="99%"/><br>
+<center>Bottom side</center>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+
+<font class="subheadline">Applications</font></br>
+   <ul>
+	  <li>Debugging and testing of FMC modules</li>
+	  <li>Direct probing of high- and low-speed signals</li>	        
+	  <li>Signal loopback and board-to-board connections</li>
+	  <li>Educational use and research involving FPGAs</li>
+   </ul>
+</br>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left">
+<font class="subheadline">1. Description</font></br>
+<p align="justify">
+The <b>FMC HPC-U.FL Debug Board</b> is a diagnostic tool developed for use with FPGA Mezzanine Cards (FMC) utilizing the High-Pin Count (HPC) interface.
+The board facilitates signal access and measurement by routing key HPC signals to U.FL, SMA, and clamp connectors.
+This allows developers and researchers to probe, analyze, and re-route FMC signals with minimal effort and without modifying the system under test.
+Signal routing includes 156 U.FL-accessible signals, with breakouts for 68 LPC LA bank lines, 48 HPC HA bank lines, 8 clock signals, and 16 differential MGT pairs.
+The board additionally provides 8 SMA connectors and 8 clamp connection points, which can be linked to any U.FL breakout line, enabling compatibility with standard test equipment.
+The debug board supports a range of configurations including board-to-board and loopback setups.
+The mechanical design supports stackable usage, and the board includes a power breakout area for voltage monitoring and injection.
+It empowers developers with full flexibility to re-route and monitor signals from the FMC HPC connector, drastically simplifying the debugging process and accelerating development cycles. 
+
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">2. Application information</font></br>
+
+<p align="justify">
+The <b>FMC HPC-U.FL Debug Board</b> is designed to provide structured and flexible access to FPGA Mezzanine Card (FMC) signals, supporting a wide range of debugging, testing, and educational applications.
+Whether probing low-speed control signals or routing high-speed transceiver lanes, the board simplifies the setup and execution of complex testing scenarios.
+Its modular architecture and various breakout connectors (U.FL, SMA, and clamp) enable engineers to quickly reconfigure signal paths, visualize waveforms, and evaluate system performance in real time.
+In the following subsections, typical application use cases are explained in more detail.
+
+</br>
+<p align="justify"><font class="subsubheadline">2.1 Oscilloscope Probing of Low-Speed Signals</font></br>
+For low-speed signal probing, the FMC Debug Board features 8 clamp connectors, 4 next to each other on one side. A large ground plane is exposed at the edge of the circuit board.
+The clamp points are intended for use with probe hooks or standard oscilloscope probe clips, enabling easy access to control, configuration, and other low-speed digital signals.
+They can be wired to any of the U.FL breakout points, enabling flexible selection of signals for measurement.</br>
+
+</br><b>Advantages:</b>
+<ul class="applicationinfo">
+	<li>Quick and tool-less attachment of oscilloscope probes</li>
+	<li>Ideal for control and configuration signals where signal integrity is less critical</li>	        
+	<li>Safe for beginners and useful in educational environments</li>
+	<li>Supports temporary test setups without permanent modifications</li>
+</ul>
+
+</br><b>Limitations:</b>
+<ul class="applicationinfo">
+	<li>Clamp connectors are not impedance-matched and therefore not suited for high-speed or sensitive analog signals</li>
+	<li>Increased susceptibility to noise and interference</li>	        
+	<li>Limited signal bandwidth due to connector and wiring parasitics</li>
+</ul>
+
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_PROBES.JPG" alt="FMC HPC-U.FL Debug Board with Oscilloscope Probing via Clamp Connectors" width="65%"></br>
+<i>Figure 2.1: Oscilloscope probing via clamp Connectors, the FMC HPC-U.FL debug board is plugged in below the device under test.</i></br></br>
+
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_PROBES2.JPG" alt="FMC HPC-U.FL Debug Board with Oscilloscope Probing via Clamp Connectors" width="65%"></br>
+<i>Figure 2.2: Close-up view of oscilloscope probing via clamp connectors, the FMC HPC-U.FL debug board is plugged in below the device under test.</i></br>
+
+</p>
+
+
+</br>
+<p align="justify"><font class="subsubheadline">2.2 Oscilloscope Probing of High-Speed Signals</font></br>
+For high-speed signal measurements, the board provides 8 SMA connectors.
+These SMA ports can be linked to any U.FL signal using configurable jumpers or cables, allowing precise and stable access to fast differential or single-ended lines.
+Alternatively, high speed cables can be connected directly to the U.FL connectors (with the correct and required end-to-end connectors).</br>
+
+</br><b>Advantages:</b>
+<ul class="applicationinfo">
+	<li>SMA or U.FL connectors maintain good signal integrity at high frequencies</li>
+	<li>Secure, repeatable connections suitable for test automation</li>	        
+	<li>Suitable for differential pairs, clock lines, and transceiver signals</li>
+	<li>Compatible with high-frequency cables and test adapters</li>
+</ul>
+
+</br><b>Limitations:</b>
+<ul class="applicationinfo">
+	<li>Proper termination must be ensured to avoid reflections (e.g. 50 Ohm terminators)</li>
+	<li>Various adapters may be needed depending on the measurement equipment</li>	        
+	<li>More rigid and than probe clamps</li>
+</ul>
+
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_SMA_ADAPTER.JPG" alt="FMC HPC-U.FL Debug Board with High-Speed Probing via U.FL to SMA Adapter" width="65%"></br>
+<i>Figure 2.3: High-Speed Probing via U.FL to SMA Adapter</i></br></br>
+
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_SMA_BREAKOUT.JPG" alt="FMC HPC-U.FL Debug Board with High-Speed Probing via U.FL cables and SMA connectors" width="65%"></br>
+<i>Figure 2.4: High-Speed Probing via U.FL cables and SMA connectors</i></br>
+
+</p>
+
+<p align="justify"><font class="subsubheadline">2.3 Loopback Testing of High-Speed Signals</font></br>
+The FMC debug board supports loopback testing through direct U.FL-to-U.FL cable connections.
+This allows developers to test signal paths, validate transceiver behavior, or benchmark link performance under real-world routing conditions.<br>
+
+</br><b>Advantages:</b>
+<ul class="applicationinfo">
+	<li>Flexible loopback configuration with minimal setup using short U.FL cables</li>
+	<li>Datarates up to 6 Gigabit per second</li>	        
+	<li>Enables internal signal routing for diagnostics or bit-error rate (BER) testing</li>
+	<li>Efficient for validating signal continuity and protocol integrity</li>
+</ul>
+
+
+</br><b>Caution:</b></br>
+Improper loopback connections can result in mismatched voltage levels or unintended current paths.
+Care must be taken to understand the signal function, type (differential/single-ended), and electrical characteristics before connecting any two U.FL points.</br></br>
+
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_LOOPBACK.JPG" alt="FMC HPC-U.FL Debug Board with Loopback Testing with U.FL Cables" width="65%"></br>
+<i>Figure 2.5: Loopback Testing with U.FL Cables</i></br>
+</p>
+
+<br><img src="./FMC_HPC_UFL_DEBUG_BOARD_LOOPBACK_BER.png" alt="FMC HPC-U.FL Debug Board with U.FL cable loopback. BER at 6.25 Gbps" width="99%"></br>
+<i>Figure 2.6: U.FL cable loopback. Bit-error rate (BER) testing at 6.25 Gbps</i></br>
+</p>
+
+<br><img src="./FMC_HPC_UFL_DEBUG_BOARD_LOOPBACK_EYE.png" alt="FMC HPC-U.FL Debug Board with U.FL cable loopback. Eye-scan at 6.25 Gbps" width="65%"></br>
+<i>Figure 2.7: U.FL cable loopback. Eye-scan at 6.25 Gbps</i></br>
+</p>
+
+<p align="justify"><font class="subsubheadline">2.4 Board-to-Board Connections of FMC Signals</font></br>
+The FMC debug board supports board-to-board communication using U.FL cables, SMA cables, or even direct wiring through the clamp connectors.
+This allows developers to bridge FMC modules, create test setups across multiple FPGAs, or integrate the debug board into a larger multi-board development environment.</br>
+
+</br><b>Advantages:</b>
+<ul class="applicationinfo">
+	<li>Fast reconfiguration of inter-board connections</li>
+	<li>Enables distributed system testing or emulation</li>	        
+	<li>Supports differential and single-ended signaling</li>
+	<li>Ideal for FPGA-to-FPGA validation or synchronized testing</li>
+</ul>
+
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_BOARD_TO_BOARD.JPG" alt="FMC HPC-U.FL Debug Board with Board-to-Board Interconnection Example" width="65%"></br>
+<i>Figure 2.8: Board-to-Board Interconnection Example</i></br>
+</p>
+
+<p align="justify"><font class="subsubheadline">2.5 General Information</font></br>
+The board is supplied with 8 U.FL cables to support common probing and interconnection tasks.
+Users are responsible for configuring the routing using these cables or compatible jumpers.
+To ensure mechanical safety and electrical reliability, spacers or standoffs should be installed when mounting the board to an FMC carrier or chassis.
+This prevents connector damage and minimizes mechanical stress.
+Note that the debug board's mechanical dimensions do not comply with the FMC single-width standard.
+Due to extended breakout areas and connector placement, users must verify fitment with mechanical enclosures or adjacent components on the carrier board.
+The board includes breakout pad arrays for JTAG and I2C access and a dedicated power pin array.
+Where needed, users are encouraged to solder standard 2.54 mm pin headers to these locations.
+The PCB layout supports common through-hole headers for flexible system integration and extension.
+
+<br><img src="./FMC_HPC_UFL_DEBUG_BOARD_PINS.JPG" alt="FMC HPC-U.FL Debug Board with breakout pad arrays for JTAG, I2C, and power pins" width="65%"></br>
+<i>Figure 2.9: Breakout pad arrays for JTAG, I2C, and power pins</i></br>
+</p>
+
+
+<br><img src="./FMC_HPC_UFL_DEBUG_BOARD_KIT.JPG" alt="FMC HPC-U.FL Debug Board with included accessories" width="65%"></br>
+<i>Figure 2.10: FMC HPC-U.FL Debug Board with included accessories</i></br>
+</p>
+
+
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">3. Electrical data (pin description)</font></br>
+<p align="justify">
+This section details the electrical design information, including signal routing characteristics, connector mapping, and reference documentation.
+</p>
+
+<p align="justify">
+   <font class="subsubheadline">3.1 Signal Mapping to U.FL connectors</font>
+</br></br><i>Table 3.1: U.FL connectors to FMC signals assignment (sorted by connector #id).</i></br></br>
+<table width="98%" cellspacing="0" border="0">
+<tr>
+   <td width="15%" style="border-bottom: 1px solid #000000" align="left">Connector</td>
+   <td width="15%" style="border-bottom: 1px solid #000000" align="left">FMC Pin</td> 
+   <td width="20%" style="border-bottom: 1px solid #000000" align="left">FMC Signal Name</td>
+   <td width="15%" style="border-bottom: 1px solid #000000" align="left">Bank</td>
+   <td width="20%" style="border-bottom: 1px solid #000000" align="left">Routed length (mm)</td>
+   <td width="15%" style="border-bottom: 1px solid #000000" align="left">Delay (ps)</td>
+</tr>
+
+<tr><td>J1</td><td>A26</td><td>DP2_C2M_P</td><td>DP_2</td><td>94,31</td><td>520,008</td></tr>
+<tr><td>J2</td><td>A27</td><td>DP2_C2M_N</td><td>DP_2</td><td>94,3</td><td>519,947</td></tr>
+<tr><td>J3</td><td>A30</td><td>DP3_C2M_P</td><td>DP_3</td><td>69,843</td><td>488,574</td></tr>
+<tr><td>J4</td><td>A31</td><td>DP3_C2M_N</td><td>DP_3</td><td>69,796</td><td>488,362</td></tr>
+<tr><td>J5</td><td>A34</td><td>DP4_C2M_P</td><td>DP_4</td><td>81,039</td><td>570,434</td></tr>
+<tr><td>J6</td><td>A35</td><td>DP4_C2M_N</td><td>DP_4</td><td>81,038</td><td>570,36</td></tr>
+<tr><td>J7</td><td>B36</td><td>DP6_C2M_P</td><td>DP_6</td><td>97,897</td><td>540,472</td></tr>
+<tr><td>J8</td><td>B37</td><td>DP6_C2M_N</td><td>DP_6</td><td>97,88</td><td>540,377</td></tr>
+<tr><td>J9</td><td>A38</td><td>DP5_C2M_P</td><td>DP_5</td><td>92,455</td><td>509,424</td></tr>
+<tr><td>J10</td><td>A39</td><td>DP5_C2M_N</td><td>DP_5</td><td>92,427</td><td>509,263</td></tr>
+<tr><td>J11</td><td>K23</td><td>HA23_N</td><td>HA</td><td>58,702</td><td>344,537</td></tr>
+<tr><td>J12</td><td>K22</td><td>HA23_P</td><td>HA</td><td>58,628</td><td>344,092</td></tr>
+<tr><td>J13</td><td>D18</td><td>LA13_N</td><td>LA</td><td>72,524</td><td>503,013</td></tr>
+<tr><td>J14</td><td>D26</td><td>LA26_P</td><td>LA</td><td>55,929</td><td>382,769</td></tr>
+<tr><td>J15</td><td>D20</td><td>LA17_P_CC</td><td>LA</td><td>53,119</td><td>362,364</td></tr>
+<tr><td>J16</td><td>F17</td><td>HA15_N</td><td>HA</td><td>48,354</td><td>327,935</td></tr>
+<tr><td>J17</td><td>E16</td><td>HA16_N</td><td>HA</td><td>49,328</td><td>334,831</td></tr>
+<tr><td>J18</td><td>F11</td><td>HA08_N</td><td>HA</td><td>45,7</td><td>308,492</td></tr>
+<tr><td>J19</td><td>D8</td><td>LA01_P_CC</td><td>LA</td><td>112,277</td><td>791,942</td></tr>
+<tr><td>J20</td><td>F5</td><td>HA00_N_CC</td><td>HA</td><td>58,205</td><td>399,819</td></tr>
+<tr><td>J21</td><td>E7</td><td>HA05_N</td><td>HA</td><td>50,453</td><td>343,004</td></tr>
+<tr><td>J22</td><td>C6</td><td>DP0_M2C_P</td><td>DP_0</td><td>74,716</td><td>523,992</td></tr>
+<tr><td>J23</td><td>D5</td><td>GBTCLK0_M2C_N</td><td>GBTCLK_0</td><td>74,346</td><td>521,305</td></tr>
+<tr><td>J24</td><td>C3</td><td>DP0_C2M_N</td><td>DP_0</td><td>65,647</td><td>458,08</td></tr>
+<tr><td>J25</td><td>D17</td><td>LA13_P</td><td>LA</td><td>72,542</td><td>503,406</td></tr>
+<tr><td>J26</td><td>D27</td><td>LA26_N</td><td>LA</td><td>55,954</td><td>382,948</td></tr>
+<tr><td>J27</td><td>D21</td><td>LA17_N_CC</td><td>LA</td><td>53,212</td><td>363,041</td></tr>
+<tr><td>J28</td><td>F16</td><td>HA15_P</td><td>HA</td><td>48,399</td><td>327,734</td></tr>
+<tr><td>J29</td><td>E15</td><td>HA16_P</td><td>HA</td><td>49,297</td><td>334,605</td></tr>
+<tr><td>J30</td><td>F10</td><td>HA08_P</td><td>HA</td><td>45,622</td><td>307,92</td></tr>
+<tr><td>J31</td><td>D9</td><td>LA01_N_CC</td><td>LA</td><td>112,529</td><td>793,769</td></tr>
+<tr><td>J32</td><td>F4</td><td>HA00_P_CC</td><td>HA</td><td>58,3</td><td>399,73</td></tr>
+<tr><td>J33</td><td>E6</td><td>HA05_P</td><td>HA</td><td>50,476</td><td>342,918</td></tr>
+<tr><td>J34</td><td>C7</td><td>DP0_M2C_N</td><td>DP_0</td><td>74,253</td><td>520,627</td></tr>
+<tr><td>J35</td><td>D4</td><td>GBTCLK0_M2C_P</td><td>GBTCLK_0</td><td>74,417</td><td>521,82</td></tr>
+<tr><td>J36</td><td>C2</td><td>DP0_C2M_P</td><td>DP_0</td><td>65,886</td><td>459,817</td></tr>
+<tr><td>J37</td><td>D15</td><td>LA09_N</td><td>LA</td><td>88,386</td><td>618,455</td></tr>
+<tr><td>J38</td><td>C27</td><td>LA27_N</td><td>LA</td><td>63,545</td><td>438,07</td></tr>
+<tr><td>J39</td><td>C22</td><td>LA18_P_CC</td><td>LA</td><td>55,427</td><td>379,123</td></tr>
+<tr><td>J40</td><td>E18</td><td>HA20_P</td><td>HA</td><td>56,402</td><td>385,95</td></tr>
+<tr><td>J41</td><td>F14</td><td>HA12_N</td><td>HA</td><td>51,258</td><td>348,85</td></tr>
+<tr><td>J42</td><td>E10</td><td>HA09_N</td><td>HA</td><td>57,391</td><td>393,386</td></tr>
+<tr><td>J43</td><td>C10</td><td>LA06_P</td><td>LA</td><td>110,664</td><td>780,224</td></tr>
+<tr><td>J44</td><td>E3</td><td>HA01_N_CC</td><td>HA</td><td>50,329</td><td>342,043</td></tr>
+<tr><td>J45</td><td>A10</td><td>DP3_M2C_P</td><td>DP_3</td><td>88,901</td><td>489,14</td></tr>
+<tr><td>J46</td><td>A11</td><td>DP3_M2C_N</td><td>DP_3</td><td>88,934</td><td>489,33</td></tr>
+<tr><td>J47</td><td>B16</td><td>DP6_M2C_P</td><td>DP_6</td><td>81,399</td><td>455,394</td></tr>
+<tr><td>J48</td><td>B17</td><td>DP6_M2C_N</td><td>DP_6</td><td>81,375</td><td>455,255</td></tr>
+<tr><td>J49</td><td>D14</td><td>LA09_P</td><td>LA</td><td>88,403</td><td>618,58</td></tr>
+<tr><td>J50</td><td>C26</td><td>LA27_P</td><td>LA</td><td>63,536</td><td>438,007</td></tr>
+<tr><td>J51</td><td>C23</td><td>LA18_N_CC</td><td>LA</td><td>55,48</td><td>379,51</td></tr>
+<tr><td>J52</td><td>E19</td><td>HA20_N</td><td>HA</td><td>56,198</td><td>384,721</td></tr>
+<tr><td>J53</td><td>F13</td><td>HA12_P</td><td>HA</td><td>51,259</td><td>348,604</td></tr>
+<tr><td>J54</td><td>E9</td><td>HA09_P</td><td>HA</td><td>57,371</td><td>393,24</td></tr>
+<tr><td>J55</td><td>C11</td><td>LA06_N</td><td>LA</td><td>110,61</td><td>779,932</td></tr>
+<tr><td>J56</td><td>E2</td><td>HA01_P_CC</td><td>HA</td><td>50,37</td><td>342,477</td></tr>
+<tr><td>J57</td><td>A14</td><td>DP4_M2C_P</td><td>DP_4</td><td>81,492</td><td>455,921</td></tr>
+<tr><td>J58</td><td>A15</td><td>DP4_M2C_N</td><td>DP_4</td><td>81,754</td><td>457,416</td></tr>
+<tr><td>J59</td><td>A18</td><td>DP5_M2C_P</td><td>DP_5</td><td>81,709</td><td>457,162</td></tr>
+<tr><td>J60</td><td>A19</td><td>DP5_M2C_N</td><td>DP_5</td><td>81,62</td><td>456,656</td></tr>
+<tr><td>J61</td><td>C15</td><td>LA10_N</td><td>LA</td><td>100,809</td><td>708,769</td></tr>
+<tr><td>J62</td><td>C19</td><td>LA14_N</td><td>LA</td><td>86,443</td><td>604,345</td></tr>
+<tr><td>J63</td><td>D23</td><td>LA23_P</td><td>LA</td><td>61,244</td><td>421,335</td></tr>
+<tr><td>J64</td><td>F19</td><td>HA19_P</td><td>HA</td><td>60,807</td><td>418,11</td></tr>
+<tr><td>J65</td><td>E13</td><td>HA13_N</td><td>HA</td><td>56,931</td><td>390,043</td></tr>
+<tr><td>J66</td><td>F8</td><td>HA04_N</td><td>HA</td><td>60,597</td><td>416,665</td></tr>
+<tr><td>J67</td><td>D11</td><td>LA05_P</td><td>LA</td><td>110,349</td><td>777,938</td></tr>
+<tr><td>J68</td><td>G3</td><td>CLK1_M2C_N</td><td>CLK_1</td><td>58,715</td><td>403,135</td></tr>
+<tr><td>J69</td><td>A2</td><td>DP1_M2C_P</td><td>DP_1</td><td>92,583</td><td>519,207</td></tr>
+<tr><td>J70</td><td>A3</td><td>DP1_M2C_N</td><td>DP_1</td><td>82,241</td><td>460,196</td></tr>
+<tr><td>J71</td><td>B20</td><td>GBTCLK1_M2C_P</td><td>GBTCLK_1</td><td>89,27</td><td>491,246</td></tr>
+<tr><td>J72</td><td>B21</td><td>GBTCLK1_M2C_N</td><td>GBTCLK_1</td><td>89,282</td><td>491,314</td></tr>
+<tr><td>J73</td><td>C14</td><td>LA10_P</td><td>LA</td><td>100,961</td><td>709,863</td></tr>
+<tr><td>J74</td><td>C18</td><td>LA14_P</td><td>LA</td><td>86,411</td><td>604,092</td></tr>
+<tr><td>J75</td><td>D24</td><td>LA23_N</td><td>LA</td><td>61,28</td><td>421,624</td></tr>
+<tr><td>J76</td><td>F20</td><td>HA19_N</td><td>HA</td><td>60,765</td><td>417,885</td></tr>
+<tr><td>J77</td><td>E12</td><td>HA13_P</td><td>HA</td><td>57,017</td><td>390,67</td></tr>
+<tr><td>J78</td><td>F7</td><td>HA04_P</td><td>HA</td><td>60,708</td><td>417,358</td></tr>
+<tr><td>J79</td><td>D12</td><td>LA05_N</td><td>LA</td><td>110,361</td><td>778,026</td></tr>
+<tr><td>J80</td><td>G2</td><td>CLK1_M2C_P</td><td>CLK_1</td><td>58,673</td><td>403,155</td></tr>
+<tr><td>J81</td><td>A6</td><td>DP2_M2C_P</td><td>DP_2</td><td>91,805</td><td>514,768</td></tr>
+<tr><td>J82</td><td>A7</td><td>DP2_M2C_N</td><td>DP_2</td><td>91,721</td><td>514,287</td></tr>
+<tr><td>J83</td><td>A22</td><td>DP1_C2M_P</td><td>DP_1</td><td>92,299</td><td>517,588</td></tr>
+<tr><td>J84</td><td>A23</td><td>DP1_C2M_N</td><td>DP_1</td><td>82,186</td><td>459,886</td></tr>
+<tr><td>J85</td><td>G37</td><td>LA33_N</td><td>LA</td><td>60,564</td><td>421,835</td></tr>
+<tr><td>J86</td><td>G34</td><td>LA31_N</td><td>LA</td><td>57,384</td><td>398,599</td></tr>
+<tr><td>J87</td><td>G31</td><td>LA29_N</td><td>LA</td><td>56,615</td><td>392,78</td></tr>
+<tr><td>J88</td><td>G28</td><td>LA25_N</td><td>LA</td><td>56,076</td><td>389,099</td></tr>
+<tr><td>J89</td><td>G25</td><td>LA22_N</td><td>LA</td><td>55,601</td><td>386,102</td></tr>
+<tr><td>J90</td><td>G22</td><td>LA20_N</td><td>LA</td><td>56,477</td><td>391,886</td></tr>
+<tr><td>J91</td><td>G19</td><td>LA16_N</td><td>LA</td><td>56,12</td><td>389,32</td></tr>
+<tr><td>J92</td><td>G15</td><td>LA12_P</td><td>LA</td><td>57,061</td><td>396,602</td></tr>
+<tr><td>J93</td><td>G12</td><td>LA08_P</td><td>LA</td><td>58,663</td><td>408,193</td></tr>
+<tr><td>J94</td><td>G9</td><td>LA03_P</td><td>LA</td><td>60,018</td><td>418,057</td></tr>
+<tr><td>J95</td><td>G6</td><td>LA00_P_CC</td><td>LA</td><td>62,433</td><td>435,365</td></tr>
+<tr><td>J96</td><td>H4</td><td>CLK0_M2C_P</td><td>CLK_0</td><td>69,137</td><td>484,005</td></tr>
+<tr><td>J97</td><td>G36</td><td>LA33_P</td><td>LA</td><td>60,46</td><td>420,685</td></tr>
+<tr><td>J98</td><td>G33</td><td>LA31_P</td><td>LA</td><td>57,126</td><td>396,872</td></tr>
+<tr><td>J99</td><td>G30</td><td>LA29_P</td><td>LA</td><td>56,693</td><td>393,58</td></tr>
+<tr><td>J100</td><td>G27</td><td>LA25_P</td><td>LA</td><td>56,016</td><td>389,117</td></tr>
+<tr><td>J101</td><td>G24</td><td>LA22_P</td><td>LA</td><td>55,668</td><td>386,236</td></tr>
+<tr><td>J102</td><td>G21</td><td>LA20_P</td><td>LA</td><td>56,241</td><td>390,337</td></tr>
+<tr><td>J103</td><td>G18</td><td>LA16_P</td><td>LA</td><td>56,414</td><td>391,524</td></tr>
+<tr><td>J104</td><td>G16</td><td>LA12_N</td><td>LA</td><td>57,079</td><td>396,568</td></tr>
+<tr><td>J105</td><td>G13</td><td>LA08_N</td><td>LA</td><td>58,565</td><td>407,176</td></tr>
+<tr><td>J106</td><td>G10</td><td>LA03_N</td><td>LA</td><td>60,062</td><td>418,191</td></tr>
+<tr><td>J107</td><td>G7</td><td>LA00_N_CC</td><td>LA</td><td>62,486</td><td>435,641</td></tr>
+<tr><td>J108</td><td>H5</td><td>CLK0_M2C_N</td><td>CLK_0</td><td>69,122</td><td>484,112</td></tr>
+<tr><td>J109</td><td>H37</td><td>LA32_P</td><td>LA</td><td>72,738</td><td>509,988</td></tr>
+<tr><td>J110</td><td>H34</td><td>LA30_P</td><td>LA</td><td>66,931</td><td>467,955</td></tr>
+<tr><td>J111</td><td>H31</td><td>LA28_P</td><td>LA</td><td>65,727</td><td>458,957</td></tr>
+<tr><td>J112</td><td>H28</td><td>LA24_P</td><td>LA</td><td>65,069</td><td>454,422</td></tr>
+<tr><td>J113</td><td>H25</td><td>LA21_P</td><td>LA</td><td>64,976</td><td>453,849</td></tr>
+<tr><td>J114</td><td>H22</td><td>LA19_P</td><td>LA</td><td>64,942</td><td>453,588</td></tr>
+<tr><td>J115</td><td>H19</td><td>LA15_P</td><td>LA</td><td>65,319</td><td>456,201</td></tr>
+<tr><td>J116</td><td>H16</td><td>LA11_P</td><td>LA</td><td>65,623</td><td>458,335</td></tr>
+<tr><td>J117</td><td>H13</td><td>LA07_P</td><td>LA</td><td>67,552</td><td>472,601</td></tr>
+<tr><td>J118</td><td>H10</td><td>LA04_P</td><td>LA</td><td>69,091</td><td>483,783</td></tr>
+<tr><td>J119</td><td>H7</td><td>LA02_P</td><td>LA</td><td>71,544</td><td>501,367</td></tr>
+<tr><td>J120</td><td>J2</td><td>CLK3_M2C_P</td><td>CLK_3</td><td>70,346</td><td>405,208</td></tr>
+<tr><td>J121</td><td>H38</td><td>LA32_N</td><td>LA</td><td>72,739</td><td>510,109</td></tr>
+<tr><td>J122</td><td>H35</td><td>LA30_N</td><td>LA</td><td>66,944</td><td>467,629</td></tr>
+<tr><td>J123</td><td>H32</td><td>LA28_N</td><td>LA</td><td>65,75</td><td>459,378</td></tr>
+<tr><td>J124</td><td>H29</td><td>LA24_N</td><td>LA</td><td>65,096</td><td>454,629</td></tr>
+<tr><td>J125</td><td>H26</td><td>LA21_N</td><td>LA</td><td>64,916</td><td>453,143</td></tr>
+<tr><td>J126</td><td>H23</td><td>LA19_N</td><td>LA</td><td>64,906</td><td>453,065</td></tr>
+<tr><td>J127</td><td>H20</td><td>LA15_N</td><td>LA</td><td>65,55</td><td>457,573</td></tr>
+<tr><td>J128</td><td>H17</td><td>LA11_N</td><td>LA</td><td>65,935</td><td>460,469</td></tr>
+<tr><td>J129</td><td>H14</td><td>LA07_N</td><td>LA</td><td>67,476</td><td>471,912</td></tr>
+<tr><td>J130</td><td>H11</td><td>LA04_N</td><td>LA</td><td>69,043</td><td>483,285</td></tr>
+<tr><td>J131</td><td>H8</td><td>LA02_N</td><td>LA</td><td>71,623</td><td>501,692</td></tr>
+<tr><td>J132</td><td>J3</td><td>CLK3_M2C_N</td><td>CLK_3</td><td>70,341</td><td>405,174</td></tr>
+<tr><td>J133</td><td>J21</td><td>HA22_P</td><td>HA</td><td>84,145</td><td>488,445</td></tr>
+<tr><td>J134</td><td>K19</td><td>HA21_P</td><td>HA</td><td>81,885</td><td>474,816</td></tr>
+<tr><td>J135</td><td>J18</td><td>HA18_P</td><td>HA</td><td>82,95</td><td>481,239</td></tr>
+<tr><td>J136</td><td>K16</td><td>HA17_P_CC</td><td>HA</td><td>79,301</td><td>459,227</td></tr>
+<tr><td>J137</td><td>J15</td><td>HA14_P</td><td>HA</td><td>80,12</td><td>464,167</td></tr>
+<tr><td>J138</td><td>K13</td><td>HA10_P</td><td>HA</td><td>76,601</td><td>442,937</td></tr>
+<tr><td>J139</td><td>J12</td><td>HA11_P</td><td>HA</td><td>77,784</td><td>450,075</td></tr>
+<tr><td>J140</td><td>K10</td><td>HA06_P</td><td>HA</td><td>74,074</td><td>427,697</td></tr>
+<tr><td>J141</td><td>J9</td><td>HA07_P</td><td>HA</td><td>75,83</td><td>438,29</td></tr>
+<tr><td>J142</td><td>J7</td><td>HA03_N</td><td>HA</td><td>75,238</td><td>434,716</td></tr>
+<tr><td>J143</td><td>J6</td><td>HA03_P</td><td>HA</td><td>75,099</td><td>433,881</td></tr>
+<tr><td>J144</td><td>K4</td><td>CLK2_M2C_P</td><td>CLK_2</td><td>77,11</td><td>446,01</td></tr>
+<tr><td>J145</td><td>J22</td><td>HA22_N</td><td>HA</td><td>84,282</td><td>489,277</td></tr>
+<tr><td>J146</td><td>K20</td><td>HA21_N</td><td>HA</td><td>81,811</td><td>474,371</td></tr>
+<tr><td>J147</td><td>J19</td><td>HA18_N</td><td>HA</td><td>82,917</td><td>481,041</td></tr>
+<tr><td>J148</td><td>K17</td><td>HA17_N_CC</td><td>HA</td><td>79,299</td><td>459,217</td></tr>
+<tr><td>J149</td><td>J16</td><td>HA14_N</td><td>HA</td><td>80,159</td><td>464,405</td></tr>
+<tr><td>J150</td><td>K14</td><td>HA10_N</td><td>HA</td><td>76,755</td><td>443,871</td></tr>
+<tr><td>J151</td><td>J13</td><td>HA11_N</td><td>HA</td><td>77,713</td><td>449,648</td></tr>
+<tr><td>J152</td><td>K11</td><td>HA06_N</td><td>HA</td><td>74,19</td><td>428,395</td></tr>
+<tr><td>J153</td><td>J10</td><td>HA07_N</td><td>HA</td><td>75,843</td><td>438,367</td></tr>
+<tr><td>J154</td><td>K8</td><td>HA02_N</td><td>HA</td><td>78,29</td><td>453,13</td></tr>
+<tr><td>J155</td><td>K7</td><td>HA02_P</td><td>HA</td><td>78,313</td><td>453,265</td></tr>
+<tr><td>J156</td><td>K5</td><td>CLK2_M2C_N</td><td>CLK_2</td><td>77,122</td><td>446,083</td></tr>
+</table>
+
+   </br></br><i>Table 3.2: FMC signals to U.FL connectors assignment (sorted by FMC signals).</i></br></br>
+   <table width="98%" cellspacing="0" border="0">
+   <tr>
+      <td width="20%" style="border-bottom: 1px solid #000000" align="left">FMC Signal Name</td>
+      <td width="15%" style="border-bottom: 1px solid #000000" align="left">FMC Pin</td> 
+      <td width="15%" style="border-bottom: 1px solid #000000" align="left">Connector</td>
+      <td width="15%" style="border-bottom: 1px solid #000000" align="left">Bank</td>
+      <td width="20%" style="border-bottom: 1px solid #000000" align="left">Routed length (mm)</td>
+      <td width="15%" style="border-bottom: 1px solid #000000" align="left">Delay (ps)</td>
+   </tr>
+   <tr><td>CLK0_M2C_N</td><td>H5</td><td>J108</td><td>CLK_0</td><td>69,122</td><td>484,112</td></tr>
+   <tr><td>CLK0_M2C_P</td><td>H4</td><td>J96</td><td>CLK_0</td><td>69,137</td><td>484,005</td></tr>
+   <tr><td>CLK1_M2C_N</td><td>G3</td><td>J68</td><td>CLK_1</td><td>58,715</td><td>403,135</td></tr>
+   <tr><td>CLK1_M2C_P</td><td>G2</td><td>J80</td><td>CLK_1</td><td>58,673</td><td>403,155</td></tr>
+   <tr><td>CLK2_M2C_N</td><td>K5</td><td>J156</td><td>CLK_2</td><td>77,122</td><td>446,083</td></tr>
+   <tr><td>CLK2_M2C_P</td><td>K4</td><td>J144</td><td>CLK_2</td><td>77,11</td><td>446,01</td></tr>
+   <tr><td>CLK3_M2C_N</td><td>J3</td><td>J132</td><td>CLK_3</td><td>70,341</td><td>405,174</td></tr>
+   <tr><td>CLK3_M2C_P</td><td>J2</td><td>J120</td><td>CLK_3</td><td>70,346</td><td>405,208</td></tr>
+   <tr><td>DP0_C2M_N</td><td>C3</td><td>J24</td><td>DP_0</td><td>65,647</td><td>458,08</td></tr>
+   <tr><td>DP0_C2M_P</td><td>C2</td><td>J36</td><td>DP_0</td><td>65,886</td><td>459,817</td></tr>
+   <tr><td>DP0_M2C_N</td><td>C7</td><td>J34</td><td>DP_0</td><td>74,253</td><td>520,627</td></tr>
+   <tr><td>DP0_M2C_P</td><td>C6</td><td>J22</td><td>DP_0</td><td>74,716</td><td>523,992</td></tr>
+   <tr><td>DP1_C2M_N</td><td>A23</td><td>J84</td><td>DP_1</td><td>82,186</td><td>459,886</td></tr>
+   <tr><td>DP1_C2M_P</td><td>A22</td><td>J83</td><td>DP_1</td><td>92,299</td><td>517,588</td></tr>
+   <tr><td>DP1_M2C_N</td><td>A3</td><td>J70</td><td>DP_1</td><td>82,241</td><td>460,196</td></tr>
+   <tr><td>DP1_M2C_P</td><td>A2</td><td>J69</td><td>DP_1</td><td>92,583</td><td>519,207</td></tr>
+   <tr><td>DP2_C2M_N</td><td>A27</td><td>J2</td><td>DP_2</td><td>94,3</td><td>519,947</td></tr>
+   <tr><td>DP2_C2M_P</td><td>A26</td><td>J1</td><td>DP_2</td><td>94,31</td><td>520,008</td></tr>
+   <tr><td>DP2_M2C_N</td><td>A7</td><td>J82</td><td>DP_2</td><td>91,721</td><td>514,287</td></tr>
+   <tr><td>DP2_M2C_P</td><td>A6</td><td>J81</td><td>DP_2</td><td>91,805</td><td>514,768</td></tr>
+   <tr><td>DP3_C2M_N</td><td>A31</td><td>J4</td><td>DP_3</td><td>69,796</td><td>488,362</td></tr>
+   <tr><td>DP3_C2M_P</td><td>A30</td><td>J3</td><td>DP_3</td><td>69,843</td><td>488,574</td></tr>
+   <tr><td>DP3_M2C_N</td><td>A11</td><td>J46</td><td>DP_3</td><td>88,934</td><td>489,33</td></tr>
+   <tr><td>DP3_M2C_P</td><td>A10</td><td>J45</td><td>DP_3</td><td>88,901</td><td>489,14</td></tr>
+   <tr><td>DP4_C2M_N</td><td>A35</td><td>J6</td><td>DP_4</td><td>81,038</td><td>570,36</td></tr>
+   <tr><td>DP4_C2M_P</td><td>A34</td><td>J5</td><td>DP_4</td><td>81,039</td><td>570,434</td></tr>
+   <tr><td>DP4_M2C_N</td><td>A15</td><td>J58</td><td>DP_4</td><td>81,754</td><td>457,416</td></tr>
+   <tr><td>DP4_M2C_P</td><td>A14</td><td>J57</td><td>DP_4</td><td>81,492</td><td>455,921</td></tr>
+   <tr><td>DP5_C2M_N</td><td>A39</td><td>J10</td><td>DP_5</td><td>92,427</td><td>509,263</td></tr>
+   <tr><td>DP5_C2M_P</td><td>A38</td><td>J9</td><td>DP_5</td><td>92,455</td><td>509,424</td></tr>
+   <tr><td>DP5_M2C_N</td><td>A19</td><td>J60</td><td>DP_5</td><td>81,62</td><td>456,656</td></tr>
+   <tr><td>DP5_M2C_P</td><td>A18</td><td>J59</td><td>DP_5</td><td>81,709</td><td>457,162</td></tr>
+   <tr><td>DP6_C2M_N</td><td>B37</td><td>J8</td><td>DP_6</td><td>97,88</td><td>540,377</td></tr>
+   <tr><td>DP6_C2M_P</td><td>B36</td><td>J7</td><td>DP_6</td><td>97,897</td><td>540,472</td></tr>
+   <tr><td>DP6_M2C_N</td><td>B17</td><td>J48</td><td>DP_6</td><td>81,375</td><td>455,255</td></tr>
+   <tr><td>DP6_M2C_P</td><td>B16</td><td>J47</td><td>DP_6</td><td>81,399</td><td>455,394</td></tr>
+   <tr><td>GBTCLK0_M2C_N</td><td>D5</td><td>J23</td><td>GBTCLK_0</td><td>74,346</td><td>521,305</td></tr>
+   <tr><td>GBTCLK0_M2C_P</td><td>D4</td><td>J35</td><td>GBTCLK_0</td><td>74,417</td><td>521,82</td></tr>
+   <tr><td>GBTCLK1_M2C_N</td><td>B21</td><td>J72</td><td>GBTCLK_1</td><td>89,282</td><td>491,314</td></tr>
+   <tr><td>GBTCLK1_M2C_P</td><td>B20</td><td>J71</td><td>GBTCLK_1</td><td>89,27</td><td>491,246</td></tr>
+   <tr><td>HA00_N_CC</td><td>F5</td><td>J20</td><td>HA</td><td>58,205</td><td>399,819</td></tr>
+   <tr><td>HA00_P_CC</td><td>F4</td><td>J32</td><td>HA</td><td>58,3</td><td>399,73</td></tr>
+   <tr><td>HA01_N_CC</td><td>E3</td><td>J44</td><td>HA</td><td>50,329</td><td>342,043</td></tr>
+   <tr><td>HA01_P_CC</td><td>E2</td><td>J56</td><td>HA</td><td>50,37</td><td>342,477</td></tr>
+   <tr><td>HA02_N</td><td>K8</td><td>J154</td><td>HA</td><td>78,29</td><td>453,13</td></tr>
+   <tr><td>HA02_P</td><td>K7</td><td>J155</td><td>HA</td><td>78,313</td><td>453,265</td></tr>
+   <tr><td>HA03_N</td><td>J7</td><td>J142</td><td>HA</td><td>75,238</td><td>434,716</td></tr>
+   <tr><td>HA03_P</td><td>J6</td><td>J143</td><td>HA</td><td>75,099</td><td>433,881</td></tr>
+   <tr><td>HA04_N</td><td>F8</td><td>J66</td><td>HA</td><td>60,597</td><td>416,665</td></tr>
+   <tr><td>HA04_P</td><td>F7</td><td>J78</td><td>HA</td><td>60,708</td><td>417,358</td></tr>
+   <tr><td>HA05_N</td><td>E7</td><td>J21</td><td>HA</td><td>50,453</td><td>343,004</td></tr>
+   <tr><td>HA05_P</td><td>E6</td><td>J33</td><td>HA</td><td>50,476</td><td>342,918</td></tr>
+   <tr><td>HA06_N</td><td>K11</td><td>J152</td><td>HA</td><td>74,19</td><td>428,395</td></tr>
+   <tr><td>HA06_P</td><td>K10</td><td>J140</td><td>HA</td><td>74,074</td><td>427,697</td></tr>
+   <tr><td>HA07_N</td><td>J10</td><td>J153</td><td>HA</td><td>75,843</td><td>438,367</td></tr>
+   <tr><td>HA07_P</td><td>J9</td><td>J141</td><td>HA</td><td>75,83</td><td>438,29</td></tr>
+   <tr><td>HA08_N</td><td>F11</td><td>J18</td><td>HA</td><td>45,7</td><td>308,492</td></tr>
+   <tr><td>HA08_P</td><td>F10</td><td>J30</td><td>HA</td><td>45,622</td><td>307,92</td></tr>
+   <tr><td>HA09_N</td><td>E10</td><td>J42</td><td>HA</td><td>57,391</td><td>393,386</td></tr>
+   <tr><td>HA09_P</td><td>E9</td><td>J54</td><td>HA</td><td>57,371</td><td>393,24</td></tr>
+   <tr><td>HA10_N</td><td>K14</td><td>J150</td><td>HA</td><td>76,755</td><td>443,871</td></tr>
+   <tr><td>HA10_P</td><td>K13</td><td>J138</td><td>HA</td><td>76,601</td><td>442,937</td></tr>
+   <tr><td>HA11_N</td><td>J13</td><td>J151</td><td>HA</td><td>77,713</td><td>449,648</td></tr>
+   <tr><td>HA11_P</td><td>J12</td><td>J139</td><td>HA</td><td>77,784</td><td>450,075</td></tr>
+   <tr><td>HA12_N</td><td>F14</td><td>J41</td><td>HA</td><td>51,258</td><td>348,85</td></tr>
+   <tr><td>HA12_P</td><td>F13</td><td>J53</td><td>HA</td><td>51,259</td><td>348,604</td></tr>
+   <tr><td>HA13_N</td><td>E13</td><td>J65</td><td>HA</td><td>56,931</td><td>390,043</td></tr>
+   <tr><td>HA13_P</td><td>E12</td><td>J77</td><td>HA</td><td>57,017</td><td>390,67</td></tr>
+   <tr><td>HA14_N</td><td>J16</td><td>J149</td><td>HA</td><td>80,159</td><td>464,405</td></tr>
+   <tr><td>HA14_P</td><td>J15</td><td>J137</td><td>HA</td><td>80,12</td><td>464,167</td></tr>
+   <tr><td>HA15_N</td><td>F17</td><td>J16</td><td>HA</td><td>48,354</td><td>327,935</td></tr>
+   <tr><td>HA15_P</td><td>F16</td><td>J28</td><td>HA</td><td>48,399</td><td>327,734</td></tr>
+   <tr><td>HA16_N</td><td>E16</td><td>J17</td><td>HA</td><td>49,328</td><td>334,831</td></tr>
+   <tr><td>HA16_P</td><td>E15</td><td>J29</td><td>HA</td><td>49,297</td><td>334,605</td></tr>
+   <tr><td>HA17_N_CC</td><td>K17</td><td>J148</td><td>HA</td><td>79,299</td><td>459,217</td></tr>
+   <tr><td>HA17_P_CC</td><td>K16</td><td>J136</td><td>HA</td><td>79,301</td><td>459,227</td></tr>
+   <tr><td>HA18_N</td><td>J19</td><td>J147</td><td>HA</td><td>82,917</td><td>481,041</td></tr>
+   <tr><td>HA18_P</td><td>J18</td><td>J135</td><td>HA</td><td>82,95</td><td>481,239</td></tr>
+   <tr><td>HA19_N</td><td>F20</td><td>J76</td><td>HA</td><td>60,765</td><td>417,885</td></tr>
+   <tr><td>HA19_P</td><td>F19</td><td>J64</td><td>HA</td><td>60,807</td><td>418,11</td></tr>
+   <tr><td>HA20_N</td><td>E19</td><td>J52</td><td>HA</td><td>56,198</td><td>384,721</td></tr>
+   <tr><td>HA20_P</td><td>E18</td><td>J40</td><td>HA</td><td>56,402</td><td>385,95</td></tr>
+   <tr><td>HA21_N</td><td>K20</td><td>J146</td><td>HA</td><td>81,811</td><td>474,371</td></tr>
+   <tr><td>HA21_P</td><td>K19</td><td>J134</td><td>HA</td><td>81,885</td><td>474,816</td></tr>
+   <tr><td>HA22_N</td><td>J22</td><td>J145</td><td>HA</td><td>84,282</td><td>489,277</td></tr>
+   <tr><td>HA22_P</td><td>J21</td><td>J133</td><td>HA</td><td>84,145</td><td>488,445</td></tr>
+   <tr><td>HA23_N</td><td>K23</td><td>J11</td><td>HA</td><td>58,702</td><td>344,537</td></tr>
+   <tr><td>HA23_P</td><td>K22</td><td>J12</td><td>HA</td><td>58,628</td><td>344,092</td></tr>
+   <tr><td>LA00_N_CC</td><td>G7</td><td>J107</td><td>LA</td><td>62,486</td><td>435,641</td></tr>
+   <tr><td>LA00_P_CC</td><td>G6</td><td>J95</td><td>LA</td><td>62,433</td><td>435,365</td></tr>
+   <tr><td>LA01_N_CC</td><td>D9</td><td>J31</td><td>LA</td><td>112,529</td><td>793,769</td></tr>
+   <tr><td>LA01_P_CC</td><td>D8</td><td>J19</td><td>LA</td><td>112,277</td><td>791,942</td></tr>
+   <tr><td>LA02_N</td><td>H8</td><td>J131</td><td>LA</td><td>71,623</td><td>501,692</td></tr>
+   <tr><td>LA02_P</td><td>H7</td><td>J119</td><td>LA</td><td>71,544</td><td>501,367</td></tr>
+   <tr><td>LA03_N</td><td>G10</td><td>J106</td><td>LA</td><td>60,062</td><td>418,191</td></tr>
+   <tr><td>LA03_P</td><td>G9</td><td>J94</td><td>LA</td><td>60,018</td><td>418,057</td></tr>
+   <tr><td>LA04_N</td><td>H11</td><td>J130</td><td>LA</td><td>69,043</td><td>483,285</td></tr>
+   <tr><td>LA04_P</td><td>H10</td><td>J118</td><td>LA</td><td>69,091</td><td>483,783</td></tr>
+   <tr><td>LA05_N</td><td>D12</td><td>J79</td><td>LA</td><td>110,361</td><td>778,026</td></tr>
+   <tr><td>LA05_P</td><td>D11</td><td>J67</td><td>LA</td><td>110,349</td><td>777,938</td></tr>
+   <tr><td>LA06_N</td><td>C11</td><td>J55</td><td>LA</td><td>110,61</td><td>779,932</td></tr>
+   <tr><td>LA06_P</td><td>C10</td><td>J43</td><td>LA</td><td>110,664</td><td>780,224</td></tr>
+   <tr><td>LA07_N</td><td>H14</td><td>J129</td><td>LA</td><td>67,476</td><td>471,912</td></tr>
+   <tr><td>LA07_P</td><td>H13</td><td>J117</td><td>LA</td><td>67,552</td><td>472,601</td></tr>
+   <tr><td>LA08_N</td><td>G13</td><td>J105</td><td>LA</td><td>58,565</td><td>407,176</td></tr>
+   <tr><td>LA08_P</td><td>G12</td><td>J93</td><td>LA</td><td>58,663</td><td>408,193</td></tr>
+   <tr><td>LA09_N</td><td>D15</td><td>J37</td><td>LA</td><td>88,386</td><td>618,455</td></tr>
+   <tr><td>LA09_P</td><td>D14</td><td>J49</td><td>LA</td><td>88,403</td><td>618,58</td></tr>
+   <tr><td>LA10_N</td><td>C15</td><td>J61</td><td>LA</td><td>100,809</td><td>708,769</td></tr>
+   <tr><td>LA10_P</td><td>C14</td><td>J73</td><td>LA</td><td>100,961</td><td>709,863</td></tr>
+   <tr><td>LA11_N</td><td>H17</td><td>J128</td><td>LA</td><td>65,935</td><td>460,469</td></tr>
+   <tr><td>LA11_P</td><td>H16</td><td>J116</td><td>LA</td><td>65,623</td><td>458,335</td></tr>
+   <tr><td>LA12_N</td><td>G16</td><td>J104</td><td>LA</td><td>57,079</td><td>396,568</td></tr>
+   <tr><td>LA12_P</td><td>G15</td><td>J92</td><td>LA</td><td>57,061</td><td>396,602</td></tr>
+   <tr><td>LA13_N</td><td>D18</td><td>J13</td><td>LA</td><td>72,524</td><td>503,013</td></tr>
+   <tr><td>LA13_P</td><td>D17</td><td>J25</td><td>LA</td><td>72,542</td><td>503,406</td></tr>
+   <tr><td>LA14_N</td><td>C19</td><td>J62</td><td>LA</td><td>86,443</td><td>604,345</td></tr>
+   <tr><td>LA14_P</td><td>C18</td><td>J74</td><td>LA</td><td>86,411</td><td>604,092</td></tr>
+   <tr><td>LA15_N</td><td>H20</td><td>J127</td><td>LA</td><td>65,55</td><td>457,573</td></tr>
+   <tr><td>LA15_P</td><td>H19</td><td>J115</td><td>LA</td><td>65,319</td><td>456,201</td></tr>
+   <tr><td>LA16_N</td><td>G19</td><td>J91</td><td>LA</td><td>56,12</td><td>389,32</td></tr>
+   <tr><td>LA16_P</td><td>G18</td><td>J103</td><td>LA</td><td>56,414</td><td>391,524</td></tr>
+   <tr><td>LA17_N_CC</td><td>D21</td><td>J27</td><td>LA</td><td>53,212</td><td>363,041</td></tr>
+   <tr><td>LA17_P_CC</td><td>D20</td><td>J15</td><td>LA</td><td>53,119</td><td>362,364</td></tr>
+   <tr><td>LA18_N_CC</td><td>C23</td><td>J51</td><td>LA</td><td>55,48</td><td>379,51</td></tr>
+   <tr><td>LA18_P_CC</td><td>C22</td><td>J39</td><td>LA</td><td>55,427</td><td>379,123</td></tr>
+   <tr><td>LA19_N</td><td>H23</td><td>J126</td><td>LA</td><td>64,906</td><td>453,065</td></tr>
+   <tr><td>LA19_P</td><td>H22</td><td>J114</td><td>LA</td><td>64,942</td><td>453,588</td></tr>
+   <tr><td>LA20_N</td><td>G22</td><td>J90</td><td>LA</td><td>56,477</td><td>391,886</td></tr>
+   <tr><td>LA20_P</td><td>G21</td><td>J102</td><td>LA</td><td>56,241</td><td>390,337</td></tr>
+   <tr><td>LA21_N</td><td>H26</td><td>J125</td><td>LA</td><td>64,916</td><td>453,143</td></tr>
+   <tr><td>LA21_P</td><td>H25</td><td>J113</td><td>LA</td><td>64,976</td><td>453,849</td></tr>
+   <tr><td>LA22_N</td><td>G25</td><td>J89</td><td>LA</td><td>55,601</td><td>386,102</td></tr>
+   <tr><td>LA22_P</td><td>G24</td><td>J101</td><td>LA</td><td>55,668</td><td>386,236</td></tr>
+   <tr><td>LA23_N</td><td>D24</td><td>J75</td><td>LA</td><td>61,28</td><td>421,624</td></tr>
+   <tr><td>LA23_P</td><td>D23</td><td>J63</td><td>LA</td><td>61,244</td><td>421,335</td></tr>
+   <tr><td>LA24_N</td><td>H29</td><td>J124</td><td>LA</td><td>65,096</td><td>454,629</td></tr>
+   <tr><td>LA24_P</td><td>H28</td><td>J112</td><td>LA</td><td>65,069</td><td>454,422</td></tr>
+   <tr><td>LA25_N</td><td>G28</td><td>J88</td><td>LA</td><td>56,076</td><td>389,099</td></tr>
+   <tr><td>LA25_P</td><td>G27</td><td>J100</td><td>LA</td><td>56,016</td><td>389,117</td></tr>
+   <tr><td>LA26_N</td><td>D27</td><td>J26</td><td>LA</td><td>55,954</td><td>382,948</td></tr>
+   <tr><td>LA26_P</td><td>D26</td><td>J14</td><td>LA</td><td>55,929</td><td>382,769</td></tr>
+   <tr><td>LA27_N</td><td>C27</td><td>J38</td><td>LA</td><td>63,545</td><td>438,07</td></tr>
+   <tr><td>LA27_P</td><td>C26</td><td>J50</td><td>LA</td><td>63,536</td><td>438,007</td></tr>
+   <tr><td>LA28_N</td><td>H32</td><td>J123</td><td>LA</td><td>65,75</td><td>459,378</td></tr>
+   <tr><td>LA28_P</td><td>H31</td><td>J111</td><td>LA</td><td>65,727</td><td>458,957</td></tr>
+   <tr><td>LA29_N</td><td>G31</td><td>J87</td><td>LA</td><td>56,615</td><td>392,78</td></tr>
+   <tr><td>LA29_P</td><td>G30</td><td>J99</td><td>LA</td><td>56,693</td><td>393,58</td></tr>
+   <tr><td>LA30_N</td><td>H35</td><td>J122</td><td>LA</td><td>66,944</td><td>467,629</td></tr>
+   <tr><td>LA30_P</td><td>H34</td><td>J110</td><td>LA</td><td>66,931</td><td>467,955</td></tr>
+   <tr><td>LA31_N</td><td>G34</td><td>J86</td><td>LA</td><td>57,384</td><td>398,599</td></tr>
+   <tr><td>LA31_P</td><td>G33</td><td>J98</td><td>LA</td><td>57,126</td><td>396,872</td></tr>
+   <tr><td>LA32_N</td><td>H38</td><td>J121</td><td>LA</td><td>72,739</td><td>510,109</td></tr>
+   <tr><td>LA32_P</td><td>H37</td><td>J109</td><td>LA</td><td>72,738</td><td>509,988</td></tr>
+   <tr><td>LA33_N</td><td>G37</td><td>J85</td><td>LA</td><td>60,564</td><td>421,835</td></tr>
+   <tr><td>LA33_P</td><td>G36</td><td>J97</td><td>LA</td><td>60,46</td><td>420,685</td></tr>   
+   </table>
+</p>
+
+<p align="justify">
+	<font class="subsubheadline">3.2 Reference Files</font></br>
+    </br>To ensure reproducibility and allow community collaboration, all hardware design files are made publicly available:
+</br></br>Schematics: [Link to schematic PDF, t.b.d.]
+
+</br></br>Mechanical drawings: [Link to mech PDF, t.b.d.]
+
+</br></br>PCB Layers: [Link to layer PDF, t.b.d.]
+
+</br></br>GitHub Repository: [Link to Github, t.b.d.]
+</p>
+
+<p align="justify">
+	<font class="subsubheadline">3.3 Bill of Materials (BoM)</font></br>
+</br><i>Table 3.3: Parts List</i></br>
+<table width="98%" cellspacing="0" border="0">
+<tr>
+   <td width="10%" style="border-bottom: 1px solid #000000" align="left">Item No.</td>
+   <td width="40%" style="border-bottom: 1px solid #000000" align="left">Component Description</td> 
+   <td width="20%" style="border-bottom: 1px solid #000000" align="left">Manufacturer</td>
+   <td width="20%" style="border-bottom: 1px solid #000000" align="left">Part Number</td>      
+   <td width="10%" style="border-bottom: 1px solid #000000" align="left">Quantity	</td>
+</tr>
+<tr>
+   <td valign="top">1</td>
+   <td valign="top">CC-HPC-10</td>
+   <td valign="top">Samtec </td>
+   <td valign="top">ASP-134486-01</td>
+   <td valign="top">1</td>
+</tr>
+<tr>
+   <td valign="top">2</td>
+   <td valign="top">MC-HPC-10</td>
+   <td valign="top">Samtec </td>
+   <td valign="top">ASP-134488-01</td>
+   <td valign="top">1</td>
+</tr>
+<tr>
+   <td valign="top">3</td>
+   <td valign="top">RF Coax Connector, U.FL Jack</td>
+   <td valign="top">Hirose Electric</td>
+   <td valign="top">U-FL-R-SMT-1</td>
+   <td valign="top">164</td>
+</tr>
+<tr>
+   <td valign="top">4</td>
+   <td valign="top">SMA Edge Mount</td>
+   <td valign="top">Samtec</td>
+   <td valign="top">SMA-J-P-H-ST-EM1</td>
+   <td valign="top">8</td>
+</tr>
+<tr>
+   <td valign="top">5</td>
+   <td valign="top">Clamp Testpoints</td>
+   <td valign="top">Keystone Electronic</td>
+   <td valign="top">5095</td>
+   <td valign="top">8</td>
+</tr>
+<tr>
+   <td valign="top">6</td>
+   <td valign="top">U.FL RF Cable Assembly, Length .1 m</td>
+   <td valign="top">TE Connectivity </td>
+   <td valign="top">2015699-1</td>
+   <td valign="top">8</td>
+</tr>
+<tr>
+   <td valign="top">7</td>
+   <td valign="top">Screwed spacer, 10mm, Int.thread: M2.5, hexagonal</td>
+   <td valign="top">Dremec</td>
+   <td valign="top">142X10</td>
+   <td valign="top">4</td>
+</tr>
+<tr>
+   <td valign="top">8</td>
+   <td valign="top">Screwed spacer, 10mm, Int.thread: M2.5, Ext.thread: M2.5</td>
+   <td valign="top">Dremec</td>
+   <td valign="top">242X10</td>
+   <td valign="top">2</td>
+</tr>
+<tr>
+   <td valign="top">9</td>
+   <td valign="top">Screw M2.5 x 6mm, stainless steel, length: 6mm, head diameter: 5mm</td>
+   <td valign="top">Standard</td>
+   <td valign="top">Standard</td>
+   <td valign="top">8</td>
+</tr>
+</table>
+</p>
+</p>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">4. Mechanical data</font></br>
+<p align="justify">
+The board outline exceed the size defined by ANSI/VITA 57.1 standard for single width FMC modules. A single width FMC module with board dimensions of 78.80&nbsp;mm&nbsp;x&nbsp;69&nbsp;mm can be attached on top of the debug board.
+<br>Exact dimensions are given in figure 4.1</br></br>
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_DIMENSIONS.JPG" width="95%"></br>
+<i>Fig. 4.1: Mechanical drawing of the FMC HPC-U.FL Debug Board.</i></br>
+</br>
+The mounting holes are plated. Their sizes and positions are in accordance with ANSI/VITA 57.1 single width FMC modules with commercial grade mounting (air cooled).</p>
+
+<br><br>
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_TOP_MAIN.jpg" alt="FMC HPC-U.FL Debug Board" width="99%"/><br>
+<center>Bottom side</center>
+<img src="./FMC_HPC_UFL_DEBUG_BOARD_BOTTOM_MAIN.jpg" alt="FMC HPC-U.FL Debug Board" width="99%"/></br>
+<center>Top side</center>
+
+</td>
+</tr>
+
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">5. Ordering information</font></br>
+
+The FMC HPC-U.FL Debug Board can be ordered at various online market places, or you can request a quotation by sending an e-mail to <a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20HPC-U.FL%20Debug%20Board">info@iamelectronic.com</a>.</br>
+</br>
+<i>Tab. 5.1: Assembly variants of FMC HPC-U.FL Debug Board with product numbers and market places.</i></br>
+<table width="98%" cellspacing="0" border="0">
+<tr>
+   <td width="15%" style="border-bottom: 1px solid #000000" align="left">Product no.</td>
+   <td width="40%" style="border-bottom: 1px solid #000000" align="left">Description</td> 
+   <td width="20%" style="border-bottom: 1px solid #000000" align="left">Market place</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Request quote</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Standard lead time</td>
+</tr>
+
+<tr>
+   <td valign="top">T0017</td>
+   <td valign="top">FMC HPC-U.FL Debug Board with both MC-HPC-10 and CC-HPC-10 connectors on bottom and top side.</td>
+   <td valign="top"><!--<a href="https://www.ebay.com/itm/183089704738" target="_newebayfmc">Ebay #183074495134</a></br>
+                    <a href="https://www.tindie.com/products/11490/" target="_newtindiefmc">Tindie</br>#11490</a>//-->T.B.D.</td>
+   <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20HPC-U.FL%20Debug%20Board">info@iamelectronic.com</a></td>
+   <td valign="top">Normally in stock, 6 weeks</td>
+</tr>
+
+</table>
+
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">6. Document history</font></br>
+Document number:</br>
+DS#T0017</br>
+</br>
+Version history: </br>
+<!-- 2024/12/18: Minor changes</br> //-->
+<!-- 2024/12/18: Minor changes</br> //-->
+2025/05/09: Initial release
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">7. Imprint</font></br>
+<font class="imprint">
+Name and registered office of the company:</br>
+IAM Electronic GmbH</br>
+Bucksdorffstr. 43</br>
+04159 Leipzig</br>
+Germany</br>
+</br>
+Contact:</br>
+Phone: +49 341 26496031</br>
+E-Mail: info@iamelectronic.com</br>
+</br>
+Chief Executive Officer: Dr. Philipp F&oumldisch</br>
+</br>
+Commercial register:</br>
+Register court: Amtsgericht Leipzig</br>
+Register number: HRB 34071</br>
+Value Added Tax Identification Number: DE313797981</br>
+</font>
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
