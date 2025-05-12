@@ -83,7 +83,7 @@ ul.applicationinfo {
       <td align="right" width="48%"><font class="topright">
 
 FMC HPC-U.FL</br>Debug Board&nbsp;</font></br>
-</br></br><font class="revision">DS#T0017 REV 2025/05/09&nbsp;</br>
+</br></br><font class="revision">DS#T0017 REV 2025/05/12&nbsp;</br>
 PDF version (coming soon),
 <a href="http://fmchub.github.io/projects/FMC_HPC_UFL_DEBUG_BOARD/Datasheet/FMC_HPC_UFL_DEBUG_BOARD_datasheet.html">HTML version</a>
 </font>
@@ -293,8 +293,10 @@ This allows developers to bridge FMC modules, create test setups across multiple
 <p align="justify"><font class="subsubheadline">2.5 General Information</font></br>
 The board is supplied with 8 U.FL cables to support common probing and interconnection tasks.
 Users are responsible for configuring the routing using these cables or compatible jumpers.
+It is recommended to connect the U.FL test points of the FMC signals to the SMA/clamp connections using the cables supplied.
 To ensure mechanical safety and electrical reliability, spacers or standoffs should be installed when mounting the board to an FMC carrier or chassis.
 This prevents connector damage and minimizes mechanical stress.
+The scope of delivery includes 8 U.FL cables and a mounting kit with spacers and screws.
 Note that the debug board's mechanical dimensions do not comply with the FMC single-width standard.
 Due to extended breakout areas and connector placement, users must verify fitment with mechanical enclosures or adjacent components on the carrier board.
 The board includes breakout pad arrays for JTAG and I2C access and a dedicated power pin array.
@@ -307,7 +309,7 @@ The PCB layout supports common through-hole headers for flexible system integrat
 
 
 <br><img src="./FMC_HPC_UFL_DEBUG_BOARD_KIT.JPG" alt="FMC HPC-U.FL Debug Board with included accessories" width="65%"></br>
-<i>Figure 2.10: FMC HPC-U.FL Debug Board with included accessories</i></br>
+<i>Figure 2.10: FMC HPC-U.FL Debug Board with included accessories. The set includes the circuit board, 8 U.FL cables and a mounting kit with spacers and screws.</i></br>
 </p>
 
 
@@ -668,13 +670,13 @@ This section details the electrical design information, including signal routing
 <p align="justify">
 	<font class="subsubheadline">3.2 Reference Files</font></br>
     </br>To ensure reproducibility and allow community collaboration, all hardware design files are made publicly available:
-</br></br>Schematics: [Link to schematic PDF, t.b.d.]
+</br></br>Schematics: <a href="https://raw.githubusercontent.com/FMCHUB/FMC_HPC_UFL_DEBUG_BOARD/master/Drawings/T0017_HPC_UFL_DEBUG_BOARD_SCHEMATICS_2024_12_13_REV_A.pdf" target="_newfmchpcuflschem">T0017_HPC_UFL_DEBUG_BOARD_SCHEMATICS_2024_12_13_REV_A.pdf</a>
 
-</br></br>Mechanical drawings: [Link to mech PDF, t.b.d.]
+</br></br>PCB Layers: <a href="https://raw.githubusercontent.com/FMCHUB/FMC_HPC_UFL_DEBUG_BOARD/master/Drawings/T0017_HPC_UFL_DEBUG_BOARD_LAYERS_2024_12_13_REV_A.pdf" target="_newfmchpcuflpcb">T0017_HPC_UFL_DEBUG_BOARD_LAYERS_2024_12_13_REV_A.pdf</a>
 
-</br></br>PCB Layers: [Link to layer PDF, t.b.d.]
+</br></br>Mechanical drawings: <a href="https://raw.githubusercontent.com/FMCHUB/FMC_HPC_UFL_DEBUG_BOARD/master/Drawings/T0017_HPC_UFL_DEBUG_BOARD_MECHANICAL_2024_12_13_REV_A.pdf" target="_newfmchpcuflmech">T0017_HPC_UFL_DEBUG_BOARD_MECHANICAL_2024_12_13_REV_A.pdf</a>
 
-</br></br>GitHub Repository: [Link to Github, t.b.d.]
+</br></br>GitHub Repository: <a href="https://github.com/FMCHUB/FMC_HPC_UFL_DEBUG_BOARD" target="_newfmchpcuflgit">https://github.com/FMCHUB/FMC_HPC_UFL_DEBUG_BOARD</a>
 </p>
 
 <p align="justify">
@@ -825,7 +827,7 @@ DS#T0017</br>
 </br>
 Version history: </br>
 <!-- 2024/12/18: Minor changes</br> //-->
-<!-- 2024/12/18: Minor changes</br> //-->
+2025/05/12: add links to reference files in section 3.2</br>
 2025/05/09: Initial release
 
 </td>
