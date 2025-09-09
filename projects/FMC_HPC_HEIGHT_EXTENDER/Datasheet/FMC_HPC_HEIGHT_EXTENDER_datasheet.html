@@ -1,0 +1,364 @@
+
+<html>
+<head>
+<title>FPGA Mezzanine Card (FMC) HPC Height Extender</title>
+<style>
+font { 
+   font-family: Times New Roman, Serif;
+   color: navy;
+}
+
+font.topright { 
+   font-size: 2em;
+   font-weight: bold;
+}
+
+font.revision { 
+   font-size: 1em;
+}
+
+font.headline { 
+   font-size: 2.5em;
+   color: black;
+   font-weight: bold;
+}
+
+font.subheadline { 
+   font-size: 1.5em;
+   color: black;
+   font-weight: bold;
+}
+font.imprint { 
+   font-size: 0.75em;
+   color: black;
+   font-weight: none;
+}
+
+hr.style-one {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.0));
+}
+
+hr.style-two {
+   border: 0;
+   height: 2px;
+   background-image: linear-gradient(to right, rgba(0, 0, 128, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 128, 0));
+}
+
+ul {
+   font-size: 1.33em;
+   font-face: bold;
+   color: black;
+}
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83790429-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<table width="750px" border="0" bgcolor="#FFFFFF">
+   <tr>
+      <td align="left" width="52%"><a href="http://www.iamelectronic.com" target="_newiam"><img src="./LOGO_IAM_NAVY_WHITE.jpg" width="300px" border="0" alt="IAM Electronic - Instrumentation And Measurement Electronics"/></a></td>
+      <td align="right" width="48%"><font class="topright">
+
+FMC HPC<br>Height Extender&nbsp;</font></br>
+</br></br><font class="revision">DS#T0019 REV 2025/09/09&nbsp;</br>
+PDF version (coming soon),
+<a href="https://fmchub.github.io/projects/FMC_HPC_HEIGHT_EXTENDER/Datasheet/FMC_HPC_HEIGHT_EXTENDER_datasheet.html">HTML version</a>
+</font>
+
+      </td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="center"><font class="headline">Height Extender Board for</br>FPGA Mezzanine Cards</font></td>
+   </tr>
+
+   <tr> 
+      <td colspan="2" align="right"><hr class="style-two"></td>
+   </tr>
+
+<tr>
+<td align="left" valign="top"><font class="subheadline">
+   Features</font></br>
+   <ul>
+      <li>VITA 57.1 FMC form-factor height extender card</li>
+	  <li>Compatible with LPC (low-pin-count) and HPC (high-pin-count) boards</li>
+      <li>High-Pin-Count (HPC) VITA 57.1 male connector</li>
+      <li>HPC VITA 57.1 female connector</li>
+	  <li>Full 400-pin direct pass-through connectivity</li>      
+      <li>Flexible I/O voltage (VADJ) support</li>
+      <li>Supports convenient use of non-standard carrier and mezzanine card outlines</li>
+	  <li>Stackable assembly</li>
+      <li>Open-source hardware</li>
+   </ul>
+</td>
+
+<td rowspan="2" align="left" valign="top">
+
+   <font class="subheadline">
+   Block diagram</br></font></br>
+   <img src="./FMC_HPC_HEIGHT_EXTENDER_BLOCK_DIAGRAM.JPG" width="100%" alt="FMC HPC Height Extender Board Block Diagram"/></br>
+   <p align="justify">The photos below show the bottom side with HPC mezzanine card connector (MC-HPC-10) and top side with HPC carrier card connector (CC-HPC-10).</p>
+&nbsp;
+<img src="./FMC_HPC_HEIGHT_EXTENDER_BOTTOM.JPG" alt="FMC HPC Height Extender with MC-HPC-10 on bottom" width="45%"/>
+<img src="./FMC_HPC_HEIGHT_EXTENDER_TOP.JPG" alt="FMC HPC Height Extender with CC-HPC-10 on top" width="50%"/></br>
+<center>Bottom side&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Top side</center>
+</td>
+
+</tr>
+<tr>
+<td align="left" valign="top">
+
+<font class="subheadline">Applications</font></br>
+   <ul>      
+      <li>Extending board-to-board spacing for FPGA carrier and mezzanine cards</li>
+	  <li>Facilitating additional I/O expansion during prototyping</li>
+	  <li>Extending lifecycle of FPGA carrier card FMC connectors in test platforms</li>
+      <li>Research and education with FPGAs</li>
+   </ul>
+</br>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left">
+<font class="subheadline">1. Description</font></br>
+<p align="justify">
+The <b>FMC Height Extender</b> is a passive PCB module designed to increase the vertical spacing between an FPGA&nbsp;carrier&nbsp;card and an FMC&nbsp;mezzanine&nbsp;module in compliance with <i>ANSI/VITA 57.1 FPGA&nbsp;Mezzanine&nbsp;Card&nbsp;(FMC) Standard</i>.<br>
+It provides a high-pin count (HPC) male connector on one side, and an HPC female connector on the other, routing all 400 pins directly through.
+This enables enhanced accessibility and flexibility during prototyping or testing of FMC I/O interfaces.
+<br>
+The module is fully compatible with both FMC LPC and HPC modules, ensuring maximum flexibility for all types of designs.
+In addition to its standard functionality, the height extender also supports the convenient use of non-standard compliant FMC cards.
+If a carrier card places components inside the forbidden regions defined by the FMC outline, or if a mezzanine module has a larger outline than standard FMC modules, the extender adds mechanical clearance.
+This allows engineers to combine otherwise incompatible carrier and mezzanine cards without redesigning hardware.
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">2. Application information</font></br>
+
+<p align="justify">
+The FMC HPC Height Extender was developed for use in various applications:</br>
+
+<img src="./FMC_HPC_HEIGHT_EXTENDER.JPG" alt="FMC HPC Height Extender" width="80%"></br>
+<i>Fig. 1: FMC HPC Height Extender</i></br>
+
+<p align="justify"><b>1. Prototyping Support</b></br>
+Use the extender to introduce space for auxiliary circuitry, custom cabling, or debugging access between an FPGA and FMC module.</p>
+
+<p align="justify"><b>2. Test Platform Extension</b></br>
+Ideal for testing setups where added clearance mitigates connector crowding or signal integrity issues.</p>
+
+<p align="justify"><b>3. Signal Inspection / Access</b></br>
+With increased height, engineers can insert test probes (e.g., oscilloscopes) or wiring between the FMC connectors for monitoring or rerouting signals.</p>
+
+<p align="justify"><b>4. Non-Standard FMC Card Integration</b></br>
+<br>
+<b>Carrier boards with non-compliant layouts:</b><br>The extender allows usage of carrier boards that place tall components in the otherwise restricted FMC keep-out zones.<br>
+<b>Oversized mezzanine cards:</b><br>If an FMC mezzanine exceeds the standard outline dimensions, the extender provides the necessary clearance to fit above the carrier board safely.</p>
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">3. Electrical data (pin description)</font></br>
+<p align="justify">
+
+<p align="justify">The printed circuit board is open-source hardware! You can download the <a href="https://raw.githubusercontent.com/FMCHUB/FMC_HPC_HEIGHT_EXTENDER/master/Drawings/FMC_HPC_HEIGHT_EXTENDER_SCHEMATICS.pdf" target="_newfmchpcheight_schematic">FMC HPC Height Extender Board schematics</a> and
+<a href="https://github.com/FMCHUB/FMC_HPC_HEIGHT_EXTENDER" target="_newgithubfmchpcheight">PCB layout files</a> in their latest
+revision from <a href="http://www.fmchub.com" target="_newfmchub">http://www.fmchub.com</a>. The parts list (see tab. 2) is very simple, because it consists of only two parts.</br></br>
+
+<i>Tab. 1: Parts list of the FMC Height Extender Board.</i></br>
+<table border="0" cellspacing="0" width="80%">
+	<tr>
+		<td width="20%" style="border-bottom: 1px solid #000000" align="left"><b>FMC connector</b></td>
+		<td width="20%" style="border-bottom: 1px solid #000000" align="left"><b>Samtec part no.</b></td>
+		<td width="20%" style="border-bottom: 1px solid #000000" align="left"><b>Molex part no.</b></td>
+		<td width="40%" style="border-bottom: 1px solid #000000" align="left"><b>Description</b></td>
+	</tr>
+	<tr>
+		<td>1. CC-HPC-10</td>
+		<td><a target="_new7" href="https://octopart.com/search?q=ASP-134486-01">ASP-134486-01</a></td>
+		<td><a target="_new8" href="https://octopart.com/search?q=45971-4315">45971-4315</a></td>
+		<td>female, baseboard side, High-pin count (HPC), 400 I/O, tin-lead</td>
+	</tr>
+        <tr>
+		<td>2. MC-HPC-10</b></td>
+        <td><a target="_new23" href="https://octopart.com/search?q=ASP-134488-01">ASP-134488-01</a></td>
+		<td><a target="_new24" href="https://octopart.com/search?q=45970-4315">45970-4315</a></td>
+		<td>male, mezzanine card side, High-pin count (HPC), 400 I/O, lead-free, 10 mm mated stack height</td>
+	</tr>
+</table></br>
+
+A description of the signals from the HPC and LPC connector can be found at <a href="https://fmchub.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html" target="_newfmcsignals">https://fmchub.github.io/appendix/VITA57_FMC_HPC_LPC_SIGNALS_AND_PINOUT.html</a>.</p>
+
+<p align="justify"><b>Pin Mapping:</b></br>
+All 400 pins (rows A-K, pins 1-40) are directly routed through, preserving signal integrity.</p>
+
+
+<p align="justify"><b>HPC Compatibility:</b></br>
+ Provides full 400-pin connectivity.</p>
+
+<p align="justify"><b>LPC Compatibility:</b></br>
+Supports Low-Pin-Count (LPC) modules, which use a defined subset of the HPC pins. Unused pins remain unconnected when operating in LPC mode.</p>
+
+<p align="justify"><b>Voltage Support:</b></br>
+Compliant with carrier card VADJ voltage (1.2 V / 1.5 V / 2.5 V / 3.3 V).</p>
+
+<p align="justify"><b>PCB Design:</b></br>
+Passive pass-through with Via-in-Pad design (filled and capped vias) and no additional active components.</p>
+
+</p>
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">4. Mechanical data</font></br>
+<p align="justify">
+The board outline is defined by ANSI/VITA 57.1 standard for single width FMC modules. 
+The board was designed with minimal outline, such that absolute board dimensions are 21.00&nbsp;mm&nbsp;x&nbsp;69&nbsp;mm.
+Exact dimensions are given in figure 2.</br></br>
+
+<img src="./FMC_HPC_HEIGHT_EXTENDER_MECH.JPG" width="75%"></br>
+<i>Fig. 2: Mechanical drawing of the FMC HPC Height Extender Board.</i></br>
+</br>
+</p>
+
+
+
+<p align="justify"><b>Form Factor:</b></br>
+ANSI/VITA 57.1 single-width FMC module</p>
+
+<p align="justify"><b>Board Dimensions:</b></br>
+To match standard FMC size (21 mm × 69 mm)</p>
+
+<p align="justify"><b>Mounting Holes:</b></br>
+Plated, standard positions per VITA 57.1; no electrical connection</p>
+
+<p align="justify"><b>Clearance Provided:</b></br>
+10 mm mated stack height</p>
+
+<p align="justify"><b>Mounting Kit (included):</b></br>
+ Two 10 mm spacers, two screws, and two nuts for secure mechanical attachment between carrier and mezzanine cards.</p>
+
+<img src="./FMC_HPC_HEIGHT_EXTENDER_SIDEVIEW.JPG" width="75%"></br>
+<i>Fig. 3: Side view of the FMC HPC Height Extender board with mounting kit.</i></br>
+</br>
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">5. Ordering information</font></br>
+
+The FMC HPC Height Extender can be ordered at various online market places, or you can request a quotation by sending an e-mail to <a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20HPC%20Height%20Extender%20Board">info@iamelectronic.com</a>.</br>
+</br>
+<i>Tab. 5: Assembly variants of FMC HPC to LPC Breakout board with product numbers and market places.</i></br>
+<table width="98%" cellspacing="0" border="0">
+<tr>
+   <td width="15%" style="border-bottom: 1px solid #000000" align="left">Product no.</td>
+   <td width="40%" style="border-bottom: 1px solid #000000" align="left">Description</td> 
+   <td width="20%" style="border-bottom: 1px solid #000000" align="left">Market place</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Request quote</td>
+   <td width="25%" style="border-bottom: 1px solid #000000" align="left">Standard lead time</td>
+</tr>
+
+<tr>
+   <td valign="top">T0019</td>
+   <td valign="top">FMC HPC Height Extender Board with both</br>MC-HPC-10 and CC-HPC-10 connectors on bottom and top side.</td>
+   <td valign="top"><a href="https://www.iamelectronic.com/shop/produkt/fpga-mezzanine-card-fmc-hpc-to-lpc-breakout-board/" target="_newiamshophpcbreakout">IAM Electronic Shop</a></br></br>
+                    <a href="https://www.ebay.com/itm/186883255131" target="_newebayfmchpc">Ebay #186883255131</a></br></br>
+                    <a href="https://www.tindie.com/products/37080/" target="_newtindiefmchpc">Tindie</br>#37080</td>
+   <td valign="top"><a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20LPC%20Breakout%20T0003">info@iamelectronic.com</a></td>
+   <td valign="top">Normally in stock, 6 weeks</td>
+</tr>
+
+</table>
+
+
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">6. Document history</font></br>
+Document number:</br>
+DS#T0019</br>
+</br>
+Version history: </br>
+<!--2025/01/08: Minor changes (wording, formatting, etc.)</br>//-->
+<!--2025/09/99: added IAM Electronic shop link in section 5</br>//-->
+2025/09/09: Initial release
+</td>
+</tr>
+
+<tr> 
+<td colspan="2" align="right"><hr class="style-one"></td>
+</tr>
+
+<tr> 
+<td colspan="2" align="left"><font class="subheadline">7. Imprint</font></br>
+<font class="imprint">
+Name and registered office of the company:</br>
+IAM Electronic GmbH</br>
+Bucksdorffstr. 43</br>
+04159 Leipzig</br>
+Germany</br>
+</br>
+Contact:</br>
+Phone: +49 341 26496031</br>
+E-Mail: info@iamelectronic.com</br>
+</br>
+Chief Executive Officer: Dr. Philipp F&oumldisch</br>
+</br>
+Commercial register:</br>
+Register court: Amtsgericht Leipzig</br>
+Register number: HRB 34071</br>
+Value Added Tax Identification Number: DE313797981</br>
+</font>
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
