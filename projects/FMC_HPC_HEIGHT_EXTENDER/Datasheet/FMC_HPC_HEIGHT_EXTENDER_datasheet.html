@@ -71,7 +71,7 @@ ul {
       <td align="right" width="48%"><font class="topright">
 
 FMC HPC<br>Height Extender&nbsp;</font></br>
-</br></br><font class="revision">DS#T0019 REV 2025/09/15&nbsp;</br>
+</br></br><font class="revision">DS#T0019 REV 2025/09/26&nbsp;</br>
 PDF version (coming soon),
 <a href="https://fmchub.github.io/projects/FMC_HPC_HEIGHT_EXTENDER/Datasheet/FMC_HPC_HEIGHT_EXTENDER_datasheet.html">HTML version</a>
 </font>
@@ -236,6 +236,18 @@ Compliant with carrier card VADJ voltage (1.2 V / 1.5 V / 2.5 V / 3.3 V).</p>
 <p align="justify"><b>PCB Design:</b></br>
 Passive pass-through with Via-in-Pad design (filled and capped vias) and no additional active components.</p>
 
+<p align="justify"><b>Data Rate Capabilities:</b></br>
+The height extender has been successfully tested to support link speeds of up to 10 Gbps using multi-gigabit transceivers. Testing was performed using a loopback module connected to the FMC connector.
+
+Signal integrity was verified through eye diagram analysis (Figure 2) and bit error rate testing (Figure 3).<br><br>
+
+<a href="./FMC_HPC_HEIGHT_EXTENDER_EYESCAN_10G.JPG" target="_neweye10"><img src="./FMC_HPC_HEIGHT_EXTENDER_EYESCAN_10G.JPG" width="75%"></a></br>
+<i>Fig. 2: Eye diagram captured at the FMC loopback under 10 Gbps operation.</i></br><br>
+
+<a href="./FMC_HPC_HEIGHT_EXTENDER_BERT_10G.JPG" target="_newbert10"><img src="./FMC_HPC_HEIGHT_EXTENDER_BERT_10G.JPG" width="75%"></a></br>
+<i>Fig. 3: BERT results confirming error-free operation over the test duration.</i></br>
+</p>
+
 </p>
 </td>
 </tr>
@@ -252,7 +264,7 @@ The board was designed with minimal outline, such that absolute board dimensions
 Exact dimensions are given in figure 2.</br></br>
 
 <img src="./FMC_HPC_HEIGHT_EXTENDER_MECH.JPG" width="75%"></br>
-<i>Fig. 2: Mechanical drawing of the FMC HPC Height Extender Board.</i></br>
+<i>Fig. 4: Mechanical drawing of the FMC HPC Height Extender Board.</i></br>
 </br>
 </p>
 
@@ -274,7 +286,7 @@ Plated, standard positions per VITA 57.1; no electrical connection</p>
  Two 10 mm spacers, two screws, and two nuts for secure mechanical attachment between carrier and mezzanine cards.</p>
 
 <img src="./FMC_HPC_HEIGHT_EXTENDER_SIDEVIEW.JPG" width="75%"></br>
-<i>Fig. 3: Side view of the FMC HPC Height Extender board with mounting kit.</i></br>
+<i>Fig. 5: Side view of the FMC HPC Height Extender board with mounting kit.</i></br>
 </br>
 
 </td>
@@ -289,7 +301,7 @@ Plated, standard positions per VITA 57.1; no electrical connection</p>
 
 The FMC HPC Height Extender can be ordered at various online market places, or you can request a quotation by sending an e-mail to <a href="mailto:info@iamelectronic.com?subject=Request%20quote:%20FMC%20HPC%20Height%20Extender%20Board">info@iamelectronic.com</a>.</br>
 </br>
-<i>Tab. 5: Assembly variants of FMC HPC to LPC Breakout board with product numbers and market places.</i></br>
+<i>Tab. 2: Assembly variants of FMC HPC Height Extender board with product numbers and market places.</i></br>
 <table width="98%" cellspacing="0" border="0">
 <tr>
    <td width="15%" style="border-bottom: 1px solid #000000" align="left">Product no.</td>
@@ -328,6 +340,7 @@ DS#T0019</br>
 Version history: </br>
 <!--2025/01/08: Minor changes (wording, formatting, etc.)</br>//-->
 <!--2025/09/99: added IAM Electronic shop link in section 5</br>//-->
+2025/09/26: added eye diagram and BER test</br>//-->
 2025/09/15: added links to ordering info section 5</br>//-->
 2025/09/09: Initial release
 </td>
